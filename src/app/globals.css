@@ -56,4 +56,57 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Leaflet popup customization */
+.leaflet-popup-content-wrapper {
+  padding: 0;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+.leaflet-popup-content {
+  margin: 0;
+}
+
+.property-popup .leaflet-popup-content {
+  margin: 0;
+  min-width: 200px;
+}
+
+.property-popup .leaflet-popup-content-wrapper {
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.property-popup .leaflet-popup-tip-container {
+  margin-top: -1px;
+}
+
+.district-marker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.district-marker > div {
+  transition: all 0.2s ease;
+  transform: scale(1);
+}
+
+.district-marker:hover > div {
+  transform: scale(1.1);
+}
+
+.district-popup .leaflet-popup-content-wrapper {
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.district-popup .leaflet-popup-content {
+  margin: 0;
+}
+
+.district-popup .leaflet-popup-tip-container {
+  margin-top: -1px;
 } 

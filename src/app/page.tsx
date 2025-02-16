@@ -1,77 +1,34 @@
 'use client'
 
-import { useEffect, useState } from 'react'
-import { RentalMap } from '@/components/map/RentalMap'
-import { PropertyFilters } from '@/components/filters/PropertyFilters'
-import { getProperties } from '@/lib/supabase/properties'
-import type { Property, FilterParams } from '@/types/property'
-
-// Refresh interval in milliseconds (e.g., every 5 minutes)
-const REFRESH_INTERVAL = 5 * 60 * 1000
+import { useState } from 'react'
+import { MapView } from '@/components/map/MapView'
+import { FilterPanel } from '@/components/filters/FilterPanel'
+import { FilterSummary } from '@/components/filters/FilterSummary'
+import { useProperties } from '@/hooks/useProperties'
+import type { FilterParams } from '@/types/property'
 
 export default function Home() {
-  const [properties, setProperties] = useState<Property[]>([])
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState<string | null>(null)
-
-  async function loadProperties(filters?: FilterParams) {
-    try {
-      setLoading(true)
-      const data = await getProperties(filters)
-      setProperties(data)
-      setError(null)
-    } catch (err) {
-      setError('Failed to load properties')
-      console.error('Error loading properties:', err)
-    } finally {
-      setLoading(false)
-    }
-  }
-
-  // Initial load and periodic refresh
-  useEffect(() => {
-    loadProperties()
-
-    const interval = setInterval(() => {
-      loadProperties()
-    }, REFRESH_INTERVAL)
-
-    return () => clearInterval(interval)
-  }, [])
+  const [filters, setFilters] = useState<FilterParams>({})
+  const { properties, isLoading, error } = useProperties(filters)
 
   return (
-    <main className="flex min-h-screen flex-col">
-      {/* Header */}
-      <header className="border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
-        <div className="p-4">
-          <h1 className="text-2xl font-bold tracking-tight">Singapore Rental Dashboard</h1>
-          <p className="text-sm text-muted-foreground mt-1">
-            Explore and filter rental properties across Singapore with real-time updates and interactive mapping
-          </p>
-          {error && (
-            <div className="text-sm text-red-500 mt-1">
-              {error}
-            </div>
-          )}
-        </div>
-      </header>
+    <main className="flex min-h-screen">
+      <FilterPanel 
+        filters={filters} 
+        onChange={setFilters}
+        properties={properties || []}
+      />
+      <div className="flex-1 relative">
+        {isLoading && (
+          <div className="absolute inset-0 bg-background/50 backdrop-blur-sm z-50 flex items-center justify-center">
+            <div className="text-sm text-muted-foreground">Loading properties...</div>
+          </div>
+        )}
 
-      {/* Main Content */}
-      <div className="flex-1 flex">
-        <aside className="w-80 border-r">
-          <PropertyFilters 
-            onFilterChange={loadProperties}
-            disabled={loading}
-          />
-        </aside>
-        <div className="flex-1 relative">
-          {loading && (
-            <div className="absolute inset-0 bg-background/50 backdrop-blur-sm flex items-center justify-center z-50">
-              Loading...
-            </div>
-          )}
-          <RentalMap properties={properties} />
-        </div>
+        <MapView 
+          properties={properties || []} 
+          selectedDistricts={filters.district_ids || []}
+        />
       </div>
     </main>
   )

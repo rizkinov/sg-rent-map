@@ -10,6 +10,7 @@ export interface Property {
   latitude: number
   longitude: number
   created_at: string
+  district_id: number
 }
 
 export interface FilterParams {
@@ -18,4 +19,5 @@ export interface FilterParams {
   sqft_max?: number
   bedrooms?: number[]
   bathrooms?: number[]
+  district_ids?: number[]
 }
