@@ -3,7 +3,7 @@ import { supabase } from '@/lib/supabase/client'
 import type { Property } from '@/types/property'
 import type { Database } from '@/types/database'
 
-const PAGE_SIZE = 100 // Adjust based on your needs
+const PAGE_SIZE = 1000
 
 export interface PaginatedResponse<T> {
   data: T[]

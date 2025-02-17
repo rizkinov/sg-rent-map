@@ -1,31 +1,34 @@
-import { useQuery, useInfiniteQuery } from '@tanstack/react-query'
+import { useQuery } from '@tanstack/react-query'
 import { getProperties, PaginatedResponse } from '@/lib/supabase/properties'
 import type { Property, FilterParams } from '@/types/property'
-import { useMemo } from 'react'
+import { useMemo, useState, useEffect } from 'react'
 
 export function useProperties(filters: FilterParams) {
-  const {
-    data,
-    isLoading,
-    fetchNextPage,
-    hasNextPage,
-    isFetchingNextPage
-  } = useInfiniteQuery({
-    queryKey: ['properties'] as const,
-    queryFn: ({ pageParam }) => getProperties(pageParam as number),
-    initialPageParam: 0,
-    getNextPageParam: (lastPage) => 
-      lastPage.hasMore ? lastPage.currentPage + 1 : undefined,
-    staleTime: 1000 * 60 * 5,
+  const [allProperties, setAllProperties] = useState<Property[]>([])
+  const [currentPage, setCurrentPage] = useState(0)
+  const [hasMore, setHasMore] = useState(true)
+  const [totalCount, setTotalCount] = useState(0)
+
+  const { data, isLoading, isFetching } = useQuery({
+    queryKey: ['properties', currentPage] as const,
+    queryFn: () => getProperties(currentPage),
+    staleTime: 1000 * 60 * 5, // Cache for 5 minutes
     refetchOnWindowFocus: false,
-    refetchOnMount: false
+    refetchOnMount: false,
+    enabled: hasMore
   })
 
-  // Combine all pages of properties
-  const allProperties = useMemo(() => {
-    if (!data?.pages) return []
-    return data.pages.flatMap(page => page.data)
-  }, [data?.pages])
+  // Load next batch when current one is done
+  useEffect(() => {
+    if (data) {
+      setAllProperties(prev => [...prev, ...data.data])
+      setHasMore(data.hasMore)
+      setTotalCount(data.total)
+      if (data.hasMore) {
+        setCurrentPage(prev => prev + 1)
+      }
+    }
+  }, [data])
 
   // Filter properties
   const filteredProperties = useMemo(() => {
@@ -49,18 +52,15 @@ export function useProperties(filters: FilterParams) {
     })
   }, [allProperties, filters])
 
-  const total = data?.pages[0]?.total || 0
+  const isInitialLoading = isLoading && allProperties.length === 0
 
   return {
     properties: filteredProperties,
-    isLoading,
-    isFiltering: isLoading || allProperties.length === 0,
-    loadMore: fetchNextPage,
-    hasMore: hasNextPage,
-    isFetchingMore: isFetchingNextPage,
+    isLoading: isInitialLoading,
+    isLoadingMore: isFetching && !isInitialLoading,
     loadingStatus: {
       loaded: allProperties.length,
-      total
+      total: totalCount
     }
   }
 } 
