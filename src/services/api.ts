@@ -1,5 +1,5 @@
 import { createClient } from '@supabase/supabase-js'
-import type { Property, FilterParams } from '@/types/property'
+import type { Property, FilterParams, PropertyType } from '@/types/property'
 import districtData from '@/data/districts.json'
 import type { District, DistrictResponse } from '@/types/district'
 
@@ -93,7 +93,7 @@ export async function fetchDistricts(filters: FilterParams = {
           Condo: d.condo_count,
           HDB: d.hdb_count,
           Landed: d.landed_count
-        },
+        } as Record<PropertyType, number>,
         price_range: {
           min: d.min_price,
           max: d.max_price
@@ -106,7 +106,7 @@ export async function fetchDistricts(filters: FilterParams = {
     if (filters.property_type?.length) {
       districts = districts.filter(district => 
         filters.property_type!.some(type => 
-          district.summary.property_types[type] > 0
+          district.summary.property_types[type as PropertyType] > 0
         )
       )
     }
