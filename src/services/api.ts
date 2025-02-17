@@ -23,12 +23,8 @@ export async function fetchProperties(filters: FilterParams = {
       query = query.in('property_type', filters.property_type)
     }
 
-    if (filters.bedrooms?.length) {
-      query = query.in('bedrooms', filters.bedrooms)
-    }
-
-    if (filters.bathrooms?.length) {
-      query = query.in('bathrooms', filters.bathrooms)
+    if (filters.beds?.length) {
+      query = query.in('beds', filters.beds)
     }
 
     if (filters.sqft_min) {
