@@ -76,7 +76,7 @@ async function verifyDistricts() {
     .in('property_name', propertiesToCheck.map(p => p.name))
 
   console.log('\n=== Property District Verification ===')
-  if (recentUpdates?.length > 0) {
+  if (recentUpdates && recentUpdates.length > 0) {
     console.log('Checking specific properties:')
     recentUpdates.forEach(property => {
       const expected = propertiesToCheck.find(p => p.name === property.property_name)
@@ -87,6 +87,8 @@ async function verifyDistricts() {
       console.log(`   Type: ${property.property_type}`)
       console.log('')
     })
+  } else {
+    console.log('No properties found to verify')
   }
 
   // Calculate statistics from all fetched data
