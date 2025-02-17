@@ -20,11 +20,12 @@ import type { FilterParams } from '@/types/property'
 const filterSchema = z.object({
   property_type: z.array(z.string()),
   sqft_range: z.array(z.number()).length(2),
-  bedrooms: z.array(z.number()),
+  beds: z.array(z.number()),
   bathrooms: z.array(z.number()),
 })
 
 interface PropertyFiltersProps {
+  filters: FilterParams
   onFilterChange: (filters: FilterParams) => void
 }
 
@@ -32,24 +33,23 @@ const MIN_SQFT = 300
 const MAX_SQFT = 2100
 const SQFT_STEP = 100
 
-export function PropertyFilters({ onFilterChange }: PropertyFiltersProps) {
+export function PropertyFilters({ filters, onFilterChange }: PropertyFiltersProps) {
   const form = useForm<z.infer<typeof filterSchema>>({
     resolver: zodResolver(filterSchema),
     defaultValues: {
-      property_type: [],
-      sqft_range: [MIN_SQFT, MAX_SQFT],
-      bedrooms: [],
-      bathrooms: [],
+      property_type: filters.property_type || [],
+      beds: filters.beds || [],
+      sqft_range: [filters.sqft_min || 0, filters.sqft_max || 10000],
     },
   })
 
   const onSubmit = (values: z.infer<typeof filterSchema>) => {
     onFilterChange({
+      ...filters,
       property_type: values.property_type as ('Condo' | 'HDB' | 'Landed')[],
       sqft_min: values.sqft_range[0],
       sqft_max: values.sqft_range[1],
-      bedrooms: values.bedrooms,
-      bathrooms: values.bathrooms,
+      beds: values.beds,
     })
   }
 
@@ -62,10 +62,9 @@ export function PropertyFilters({ onFilterChange }: PropertyFiltersProps) {
 
   const hasActiveFilters = 
     form.watch('property_type').length > 0 ||
-    form.watch('bedrooms').length > 0 ||
-    form.watch('bathrooms').length > 0 ||
-    form.watch('sqft_range')[0] !== MIN_SQFT ||
-    form.watch('sqft_range')[1] !== MAX_SQFT
+    form.watch('beds').length > 0 ||
+    form.watch('sqft_range')[0] !== 0 ||
+    form.watch('sqft_range')[1] !== 10000
 
   return (
     <Form {...form}>
@@ -108,16 +107,10 @@ export function PropertyFilters({ onFilterChange }: PropertyFiltersProps) {
                   <span className="text-muted-foreground">Size:</span>
                   <span>{form.watch('sqft_range')[0]} - {form.watch('sqft_range')[1]} sqft</span>
                 </div>
-                {form.watch('bedrooms').length > 0 && (
+                {form.watch('beds').length > 0 && (
                   <div className="flex gap-2">
                     <span className="text-muted-foreground">Beds:</span>
-                    <span>{form.watch('bedrooms').sort((a, b) => a - b).join(', ')}</span>
-                  </div>
-                )}
-                {form.watch('bathrooms').length > 0 && (
-                  <div className="flex gap-2">
-                    <span className="text-muted-foreground">Baths:</span>
-                    <span>{form.watch('bathrooms').sort((a, b) => a - b).join(', ')}</span>
+                    <span>{form.watch('beds').sort((a, b) => a - b).join(', ')}</span>
                   </div>
                 )}
               </div>
@@ -161,8 +154,8 @@ export function PropertyFilters({ onFilterChange }: PropertyFiltersProps) {
                   <FormLabel className="text-base font-semibold">Size (sqft)</FormLabel>
                   <div className="pt-2 px-1">
                     <Slider
-                      min={MIN_SQFT}
-                      max={MAX_SQFT}
+                      min={0}
+                      max={10000}
                       step={SQFT_STEP}
                       value={field.value}
                       onValueChange={field.onChange}
@@ -180,41 +173,12 @@ export function PropertyFilters({ onFilterChange }: PropertyFiltersProps) {
             {/* Bedrooms */}
             <FormField
               control={form.control}
-              name="bedrooms"
+              name="beds"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel className="text-base font-semibold">Bedrooms</FormLabel>
                   <div className="grid grid-cols-5 gap-2 mt-2">
                     {[1, 2, 3, 4, 5].map((num) => (
-                      <Button
-                        key={num}
-                        type="button"
-                        variant={field.value?.includes(num) ? "default" : "outline"}
-                        className="h-8"
-                        onClick={() => {
-                          const newValue = field.value?.includes(num)
-                            ? field.value.filter((n) => n !== num)
-                            : [...(field.value || []), num]
-                          field.onChange(newValue)
-                        }}
-                      >
-                        {num}
-                      </Button>
-                    ))}
-                  </div>
-                </FormItem>
-              )}
-            />
-
-            {/* Bathrooms */}
-            <FormField
-              control={form.control}
-              name="bathrooms"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="text-base font-semibold">Bathrooms</FormLabel>
-                  <div className="grid grid-cols-4 gap-2 mt-2">
-                    {[1, 2, 3, 4].map((num) => (
                       <Button
                         key={num}
                         type="button"

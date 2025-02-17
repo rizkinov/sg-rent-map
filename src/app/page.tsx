@@ -1,32 +1,41 @@
 'use client'
 
-import { useState } from 'react'
-import { MapView } from '@/components/map/MapView'
+import { useState, useEffect } from 'react'
 import { FilterPanel } from '@/components/filters/FilterPanel'
-import { FilterSummary } from '@/components/filters/FilterSummary'
-import { useProperties } from '@/hooks/useProperties'
+import { Map } from '@/components/map/Map'
 import type { FilterParams } from '@/types/property'
+import { useProperties } from '@/hooks/useProperties'
 
 export default function Home() {
-  const [filters, setFilters] = useState<FilterParams>({})
-  const { properties, isLoading, error } = useProperties(filters)
+  const [filters, setFilters] = useState<FilterParams>({
+    district_ids: [],
+    property_type: [],
+    beds: []
+  })
+
+  const { data: properties = [], isLoading, isFiltering } = useProperties(filters)
+
+  useEffect(() => {
+    console.log('Properties count:', properties.length)
+  }, [properties])
+
+  if (isLoading) return null
 
   return (
-    <main className="flex min-h-screen">
-      <FilterPanel 
-        filters={filters} 
-        onChange={setFilters}
-        properties={properties || []}
-      />
-      <div className="flex-1 relative">
-        {isLoading && (
-          <div className="absolute inset-0 bg-background/50 backdrop-blur-sm z-50 flex items-center justify-center">
-            <div className="text-sm text-muted-foreground">Loading properties...</div>
-          </div>
-        )}
-
-        <MapView 
-          properties={properties || []} 
+    <main className="relative h-screen">
+      {/* Fixed position FilterPanel */}
+      <div className="fixed top-0 left-0 h-full w-[380px] z-50 bg-background border-r">
+        <FilterPanel
+          filters={filters}
+          onChange={setFilters}
+          properties={properties}
+        />
+      </div>
+      
+      {/* Map with offset */}
+      <div className="absolute top-0 right-0 h-full" style={{ left: '380px' }}>
+        <Map 
+          properties={properties}
           selectedDistricts={filters.district_ids || []}
         />
       </div>

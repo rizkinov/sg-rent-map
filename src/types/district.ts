@@ -1,11 +1,31 @@
+export interface DistrictSummary {
+  property_count: number
+  avg_price: number
+  property_types: {
+    Condo: number
+    HDB: number
+    Landed: number
+  }
+  price_range: {
+    min: number
+    max: number
+  }
+  avg_size: number
+}
+
 export interface District {
-  id: number;
-  name: string;
-  region: string;
-  coordinates: {
-    lat: number;
-    lng: number;
-  }[];
+  id: number
+  name: string
+  region: string
+  center: {
+    lat: number
+    lng: number
+  }
+  summary: DistrictSummary
+}
+
+export interface DistrictResponse {
+  districts: District[]
 }
 
 export interface DistrictGeoJSON {

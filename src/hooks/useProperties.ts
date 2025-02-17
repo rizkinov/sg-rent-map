@@ -1,12 +1,54 @@
 import { useQuery } from '@tanstack/react-query'
-import { fetchProperties } from '@/services/api'
+import { getProperties } from '@/lib/supabase/properties'
 import type { Property, FilterParams } from '@/types/property'
+import { useMemo } from 'react'
 
 export function useProperties(filters: FilterParams) {
-  return useQuery<Property[], Error>({
-    queryKey: ['properties', filters],
-    queryFn: () => fetchProperties(filters),
-    staleTime: 1000 * 60 * 5, // Consider data fresh for 5 minutes
-    keepPreviousData: true, // Keep showing old data while fetching new data
+  // Fetch all properties once
+  const { data: allProperties = [], isLoading } = useQuery<Property[]>({
+    queryKey: ['properties'],  // Remove filters from queryKey
+    queryFn: () => getProperties(),  // Don't pass filters
+    staleTime: 1000 * 60 * 5,
+    refetchOnWindowFocus: false,
+    refetchOnMount: false,
   })
+
+  // Filter properties client-side
+  const filteredProperties = useMemo(() => {
+    return allProperties.filter(property => {
+      if (filters.property_type?.length > 0 && !filters.property_type.includes(property.property_type)) {
+        return false
+      }
+      
+      if (filters.district_ids?.length > 0 && !filters.district_ids.includes(property.district)) {
+        return false
+      }
+
+      if (filters.beds?.length > 0) {
+        if (!property.beds) return false
+        
+        if (filters.beds.includes(5)) {
+          if (property.beds < 5) return false
+        } else {
+          if (!filters.beds.includes(property.beds)) return false
+        }
+      }
+
+      if (filters.sqft_min && property.sqft < filters.sqft_min) {
+        return false
+      }
+
+      if (filters.sqft_max && property.sqft > filters.sqft_max) {
+        return false
+      }
+
+      return true
+    })
+  }, [allProperties, filters])
+
+  return {
+    data: filteredProperties,
+    isLoading,
+    isFiltering: isLoading || allProperties.length === 0
+  }
 } 

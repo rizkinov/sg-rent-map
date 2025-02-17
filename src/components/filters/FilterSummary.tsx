@@ -1,126 +1,177 @@
-import { 
-  MapPin, Home, BedDouble, Bath, Ruler, TrendingUp, 
-  ArrowDown, ArrowUp, SlidersHorizontal 
-} from 'lucide-react'
-import { Property, FilterParams } from '@/types/property'
-import { districtData } from '@/data/districts/singapore-districts'
+import { useMemo } from 'react'
+import type { Property } from '@/types/property'
 import { formatPrice } from '@/lib/utils'
-import { ScrollArea } from '@/components/ui/scroll-area'
-import { Separator } from '@/components/ui/separator'
+import { districtData, regions, type Region } from '@/data/districts/singapore-districts'
+import { Building2, Home, Building, Bed, Square } from 'lucide-react'
+import { cn } from '@/lib/utils'
 
 interface FilterSummaryProps {
-  filters: FilterParams
   properties: Property[]
+  selectedDistricts: number[]
+  selectedTypes: string[]
+  selectedBeds?: number[]
+  sqftRange?: { min?: number; max?: number }
 }
 
-const propertyTypeColors = {
-  Condo: 'bg-blue-100 text-blue-800',
-  HDB: 'bg-green-100 text-green-800',
-  Landed: 'bg-orange-100 text-orange-800'
-} as const
+const propertyTypeIcons: Record<string, any> = {
+  'Condo': Building2,
+  'HDB': Building,
+  'Landed': Home,
+}
 
-export function FilterSummary({ filters, properties }: FilterSummaryProps) {
-  const hasActiveFilters = Object.values(filters).some(value => 
-    Array.isArray(value) ? value.length > 0 : value !== undefined
-  )
+const propertyTypeColors: Record<string, string> = {
+  'Condo': 'bg-blue-500/10 text-blue-600',
+  'HDB': 'bg-green-500/10 text-green-600',
+  'Landed': 'bg-orange-500/10 text-orange-600',
+}
 
-  if (!hasActiveFilters) {
-    return (
-      <div className="bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/60 rounded-lg border shadow-lg p-4">
-        <div className="flex items-center gap-2 text-sm text-muted-foreground">
-          <SlidersHorizontal className="h-4 w-4" />
-          <p>Use filters to refine your search across {properties.length} properties</p>
-        </div>
-      </div>
-    )
-  }
+export function FilterSummary({ properties, selectedDistricts, selectedTypes, selectedBeds, sqftRange }: FilterSummaryProps) {
+  // Get filtered properties based on all filters
+  const filteredProperties = useMemo(() => {
+    return properties.filter(property => {
+      // Filter by district
+      if (selectedDistricts.length && !selectedDistricts.includes(property.district || 0)) {
+        return false
+      }
+      // Filter by property type
+      if (selectedTypes.length && !selectedTypes.includes(property.property_type)) {
+        return false
+      }
+      return true
+    })
+  }, [properties, selectedDistricts, selectedTypes])
 
-  const stats = {
-    avgPrice: properties.length 
-      ? Math.round(properties.reduce((sum, p) => sum + p.rental_price, 0) / properties.length)
-      : 0,
-    minPrice: Math.min(...properties.map(p => p.rental_price)),
-    maxPrice: Math.max(...properties.map(p => p.rental_price)),
-  }
+  // Calculate stats from filtered properties
+  const stats = useMemo(() => {
+    if (!filteredProperties.length) return null
 
-  const selectedDistricts = filters.district_ids?.map(id => 
-    districtData.find(d => d.id === id)
-  ).filter(Boolean) || []
+    const prices = filteredProperties.map(p => p.rental_price)
+    return {
+      avg: Math.round(prices.reduce((a, b) => a + b, 0) / prices.length),
+      min: Math.min(...prices),
+      max: Math.max(...prices),
+    }
+  }, [filteredProperties])
+
+  // Group districts by region
+  const groupedDistricts = useMemo(() => {
+    if (!selectedDistricts.length) return {}
+
+    return regions.reduce((acc, region) => {
+      const districtsInRegion = districtData
+        .filter(d => d.region === region && selectedDistricts.includes(d.id))
+        .map(d => d.id)
+        .sort((a, b) => a - b)
+
+      if (districtsInRegion.length) {
+        acc[region] = districtsInRegion
+      }
+      return acc
+    }, {} as Record<Region, number[]>)
+  }, [selectedDistricts])
+
+  if (!stats) return null
 
   return (
-    <div className="bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/60 rounded-lg border shadow-lg p-4 space-y-4">
-      <div className="flex items-center justify-between">
-        <h3 className="font-semibold text-foreground">Active Filters</h3>
-        <span className="text-xs font-medium bg-primary/10 text-primary px-2 py-0.5 rounded-full">
-          {properties.length} properties
-        </span>
+    <div className="space-y-3">
+      {/* Price Stats */}
+      <div className="grid grid-cols-3 gap-4">
+        <div>
+          <div className="text-sm font-medium text-muted-foreground">Average</div>
+          <div className="text-lg font-semibold">${formatPrice(stats.avg)}</div>
+        </div>
+        <div>
+          <div className="text-sm font-medium text-muted-foreground">Min</div>
+          <div className="text-lg font-semibold">${formatPrice(stats.min)}</div>
+        </div>
+        <div>
+          <div className="text-sm font-medium text-muted-foreground">Max</div>
+          <div className="text-lg font-semibold">${formatPrice(stats.max)}</div>
+        </div>
       </div>
 
-      {properties.length > 0 && (
-        <div className="grid grid-cols-3 gap-2">
-          <div className="p-2 bg-muted/50 rounded-lg">
-            <div className="text-xs text-muted-foreground">Avg. Price</div>
-            <div className="font-medium text-sm">${formatPrice(stats.avgPrice)}</div>
-          </div>
-          <div className="p-2 bg-muted/50 rounded-lg">
-            <div className="text-xs text-muted-foreground">Min</div>
-            <div className="font-medium text-sm">${formatPrice(stats.minPrice)}</div>
-          </div>
-          <div className="p-2 bg-muted/50 rounded-lg">
-            <div className="text-xs text-muted-foreground">Max</div>
-            <div className="font-medium text-sm">${formatPrice(stats.maxPrice)}</div>
+      {/* Selected Property Types */}
+      {selectedTypes.length > 0 && (
+        <div className="space-y-1">
+          <div className="text-xs font-medium text-muted-foreground">Property Types</div>
+          <div className="flex flex-wrap gap-1">
+            {selectedTypes.map(type => {
+              const Icon = propertyTypeIcons[type]
+              return (
+                <span
+                  key={type}
+                  className={cn(
+                    "inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-medium",
+                    propertyTypeColors[type]
+                  )}
+                >
+                  <Icon className="h-3 w-3" />
+                  {type}
+                </span>
+              )
+            })}
           </div>
         </div>
       )}
 
-      <div className="space-y-2 text-sm">
-        {filters.property_type?.length > 0 && (
-          <div className="flex gap-1 flex-wrap">
-            {filters.property_type.map(type => (
-              <span 
-                key={type}
-                className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium ${
-                  propertyTypeColors[type as keyof typeof propertyTypeColors]
-                }`}
+      {/* Selected Bedrooms */}
+      {selectedBeds?.length > 0 && (
+        <div className="space-y-1">
+          <div className="text-xs font-medium text-muted-foreground">Bedrooms</div>
+          <div className="flex flex-wrap gap-1">
+            {selectedBeds.map(beds => (
+              <span
+                key={beds}
+                className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-medium bg-violet-500/10 text-violet-600"
               >
-                {type}
+                <Bed className="h-3 w-3" />
+                {beds} {beds === 1 ? 'bed' : 'beds'}
               </span>
             ))}
           </div>
-        )}
-
-        {selectedDistricts.length > 0 && (
-          <div className="grid grid-cols-3 gap-1.5">
-            {selectedDistricts.map(district => (
-              <span 
-                key={district?.id} 
-                className="text-xs bg-muted/50 px-2 py-0.5 rounded"
-              >
-                D{district?.id}
-              </span>
-            ))}
-          </div>
-        )}
-
-        <div className="flex gap-3 text-xs text-muted-foreground">
-          {filters.bedrooms?.length > 0 && (
-            <span>{filters.bedrooms.join('/')} bed</span>
-          )}
-          {filters.bathrooms?.length > 0 && (
-            <span>{filters.bathrooms.join('/')} bath</span>
-          )}
-          {(filters.sqft_min || filters.sqft_max) && (
-            <span>
-              {filters.sqft_min && filters.sqft_max
-                ? `${formatPrice(filters.sqft_min)}-${formatPrice(filters.sqft_max)} ft²`
-                : filters.sqft_min
-                ? `>${formatPrice(filters.sqft_min)} ft²`
-                : `<${formatPrice(filters.sqft_max!)} ft²`
-              }
-            </span>
-          )}
         </div>
-      </div>
+      )}
+
+      {/* Add Sqft Range */}
+      {(sqftRange?.min || sqftRange?.max) && (
+        <div className="space-y-1">
+          <div className="text-xs font-medium text-muted-foreground">Size</div>
+          <div className="flex items-center gap-1">
+            <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-medium bg-primary/10 text-primary">
+              <Square className="h-3 w-3" />
+              {sqftRange.min && sqftRange.max
+                ? `${formatPrice(sqftRange.min)} - ${formatPrice(sqftRange.max)} sqft`
+                : sqftRange.min
+                ? `>${formatPrice(sqftRange.min)} sqft`
+                : `<${formatPrice(sqftRange.max!)} sqft`}
+            </span>
+          </div>
+        </div>
+      )}
+
+      {/* Selected Districts */}
+      {selectedDistricts.length > 0 && (
+        <div className="space-y-1">
+          <div className="text-xs font-medium text-muted-foreground">Selected Districts</div>
+          <div className="space-y-2">
+            {Object.entries(groupedDistricts).map(([region, districts]) => (
+              <div key={region} className="space-y-0.5">
+                <div className="text-[10px] font-medium text-muted-foreground">{region}</div>
+                <div className="flex flex-wrap gap-1">
+                  {districts.map(id => (
+                    <span
+                      key={id}
+                      className="inline-flex items-center justify-center px-1.5 py-0.5 rounded-full text-[10px] font-medium bg-primary/10 text-primary"
+                    >
+                      D{id}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   )
 } 

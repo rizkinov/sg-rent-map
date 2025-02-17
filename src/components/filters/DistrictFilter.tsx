@@ -1,190 +1,144 @@
-import { Checkbox } from "@/components/ui/checkbox"
-import { Label } from "@/components/ui/label"
-import { Input } from "@/components/ui/input"
-import { ScrollArea } from "@/components/ui/scroll-area"
-import { Button } from "@/components/ui/button"
-import { Search } from "lucide-react"
-import { useState } from "react"
-import { districtData } from '@/data/districts/singapore-districts'
+import { useState, useMemo } from 'react'
+import { Input } from '@/components/ui/input'
+import { ScrollArea } from '@/components/ui/scroll-area'
+import { Search } from 'lucide-react'
+import { cn } from '@/lib/utils'
+import { districtData, regions, type Region } from '@/data/districts/singapore-districts'
 import type { Property } from '@/types/property'
+import { DistrictCheckbox } from './DistrictCheckbox'
 
 interface DistrictFilterProps {
-  selectedDistricts: number[]
+  selected: number[]
   onChange: (districts: number[]) => void
   properties: Property[]
 }
 
-// Group districts by region
-const groupedDistricts = districtData.reduce((acc, district) => {
-  const region = district.region
-  if (!acc[region]) {
-    acc[region] = []
-  }
-  acc[region].push(district)
-  return acc
-}, {} as Record<string, typeof districtData>)
+export function DistrictFilter({ selected, onChange, properties }: DistrictFilterProps) {
+  const [searchTerm, setSearchTerm] = useState('')
 
-const regions = Object.keys(groupedDistricts)
+  // Get count of properties in each district
+  const districtCounts = useMemo(() => {
+    return properties.reduce((acc, property) => {
+      if (property.district) {
+        acc[property.district] = (acc[property.district] || 0) + 1
+      }
+      return acc
+    }, {} as Record<number, number>)
+  }, [properties])
 
-export function DistrictFilter({ 
-  selectedDistricts, 
-  onChange,
-  properties 
-}: DistrictFilterProps) {
-  const [search, setSearch] = useState("")
+  // Group districts by region
+  const groupedDistricts = useMemo(() => {
+    return regions.reduce((acc, region) => {
+      acc[region] = districtData.filter(d => d.region === region)
+      return acc
+    }, {} as Record<Region, typeof districtData>)
+  }, [])
 
-  const handleChange = (checked: boolean, districtId: number) => {
-    if (checked) {
-      onChange([...selectedDistricts, districtId])
-    } else {
-      onChange(selectedDistricts.filter(id => id !== districtId))
-    }
-  }
+  // Calculate region states
+  const regionStates = useMemo(() => {
+    return regions.reduce((acc, region) => {
+      const regionDistricts = groupedDistricts[region].map(d => d.id)
+      const selectedInRegion = regionDistricts.filter(id => selected.includes(id))
+      
+      acc[region] = {
+        isSelected: selectedInRegion.length === regionDistricts.length,
+        isPartiallySelected: selectedInRegion.length > 0 && selectedInRegion.length < regionDistricts.length
+      }
+      return acc
+    }, {} as Record<Region, { isSelected: boolean; isPartiallySelected: boolean }>)
+  }, [selected, groupedDistricts])
 
-  const handleRegionSelect = (region: string) => {
-    const regionDistricts = groupedDistricts[region].map(d => d.id)
-    const isAllSelected = regionDistricts.every(id => selectedDistricts.includes(id))
+  // Filter districts based on search
+  const filteredDistricts = useMemo(() => {
+    if (!searchTerm) return groupedDistricts
     
-    if (isAllSelected) {
+    return regions.reduce((acc, region) => {
+      acc[region] = groupedDistricts[region].filter(district => 
+        district.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        `D${district.id}`.toLowerCase().includes(searchTerm.toLowerCase())
+      )
+      return acc
+    }, {} as Record<Region, typeof districtData>)
+  }, [searchTerm, groupedDistricts])
+
+  // Handle region toggle
+  const handleRegionToggle = (region: Region) => {
+    const regionDistricts = groupedDistricts[region].map(d => d.id)
+    
+    if (regionStates[region].isSelected) {
       // Deselect all districts in this region
-      onChange(selectedDistricts.filter(id => !regionDistricts.includes(id)))
+      onChange(selected.filter(id => !regionDistricts.includes(id)))
     } else {
       // Select all districts in this region
-      const newSelection = [...new Set([...selectedDistricts, ...regionDistricts])]
-      onChange(newSelection)
+      const newSelected = [...new Set([...selected, ...regionDistricts])]
+      onChange(newSelected)
     }
-  }
-
-  const filteredDistricts = search
-    ? districtData.filter(district =>
-        district.name.toLowerCase().includes(search.toLowerCase()) ||
-        `D${district.id}`.includes(search)
-      )
-    : districtData
-
-  const getDistrictPropertyCount = (district: typeof districtData[0]) => {
-    return properties.filter(p => {
-      const latDiff = Math.abs(district.center.lat - p.latitude)
-      const lngDiff = Math.abs(district.center.lng - p.longitude)
-      return latDiff < 0.02 && lngDiff < 0.02
-    }).length
   }
 
   return (
     <div className="space-y-4">
-      {/* Quick select buttons */}
-      <div className="flex flex-wrap gap-2">
-        {regions.map(region => {
-          const regionDistricts = groupedDistricts[region].map(d => d.id)
-          const isAllSelected = regionDistricts.every(id => selectedDistricts.includes(id))
-          const hasSelected = regionDistricts.some(id => selectedDistricts.includes(id))
-          
-          return (
-            <Button
-              key={region}
-              variant={isAllSelected ? "default" : hasSelected ? "secondary" : "outline"}
-              size="sm"
-              onClick={() => handleRegionSelect(region)}
-              className="h-7 text-xs"
-            >
-              {region}
-            </Button>
-          )
-        })}
-      </div>
-
-      {/* Search input */}
+      {/* Search input - more compact */}
       <div className="relative">
-        <Search className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground" />
+        <Search className="absolute left-2 top-1.5 h-4 w-4 text-muted-foreground" />
         <Input
           placeholder="Search districts..."
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          className="pl-8"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          className="pl-8 h-7 text-sm"
         />
       </div>
-      
-      {/* District list */}
-      <ScrollArea className="h-[300px] pr-4">
-        {search ? (
-          // Show flat list when searching
-          <div className="space-y-3">
-            {filteredDistricts.map(district => (
-              <DistrictCheckbox
-                key={district.id}
-                district={district}
-                checked={selectedDistricts.includes(district.id)}
-                onChange={handleChange}
-                propertyCount={getDistrictPropertyCount(district)}
-              />
-            ))}
-          </div>
-        ) : (
-          // Show grouped list normally
-          <div className="space-y-6">
-            {regions.map(region => (
-              <div key={region} className="space-y-3">
-                <div className="flex items-center justify-between">
-                  <h4 className="text-sm font-medium text-muted-foreground">{region}</h4>
-                  <span className="text-xs text-muted-foreground">
-                    {selectedDistricts.filter(id => 
-                      groupedDistricts[region].some(d => d.id === id)
-                    ).length} / {groupedDistricts[region].length}
-                  </span>
-                </div>
-                <div className="space-y-3 pl-2">
-                  {groupedDistricts[region].map(district => (
-                    <DistrictCheckbox
-                      key={district.id}
-                      district={district}
-                      checked={selectedDistricts.includes(district.id)}
-                      onChange={handleChange}
-                      propertyCount={getDistrictPropertyCount(district)}
-                    />
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
-      </ScrollArea>
-    </div>
-  )
-}
 
-// Extracted checkbox component for reuse
-function DistrictCheckbox({ 
-  district, 
-  checked, 
-  onChange,
-  propertyCount,
-}: { 
-  district: (typeof districtData)[0]
-  checked: boolean
-  onChange: (checked: boolean, id: number) => void
-  propertyCount: number
-}) {
-  return (
-    <div className="flex items-start space-x-2">
-      <Checkbox
-        id={`district-${district.id}`}
-        checked={checked}
-        onCheckedChange={(checked) => onChange(checked as boolean, district.id)}
-      />
-      <Label 
-        htmlFor={`district-${district.id}`}
-        className="text-sm leading-tight"
-      >
-        <div className="flex flex-col">
-          <div>
-            <span className="font-medium">D{district.id}</span>
-            <span className="text-muted-foreground"> - {district.name}</span>
-          </div>
-          <div className="text-xs text-primary-foreground">
-            {propertyCount} properties
-          </div>
+      {/* Region toggle buttons */}
+      <div className="flex flex-wrap gap-1.5">
+        {regions.map(region => (
+          <button
+            key={region}
+            onClick={() => handleRegionToggle(region)}
+            className={cn(
+              "px-2 py-1 text-xs rounded-md border transition-colors",
+              "hover:bg-muted",
+              regionStates[region].isSelected && "bg-primary text-primary-foreground border-primary",
+              regionStates[region].isPartiallySelected && "bg-muted border-muted-foreground",
+              !regionStates[region].isSelected && !regionStates[region].isPartiallySelected && 
+                "text-muted-foreground border-transparent"
+            )}
+          >
+            {region}
+          </button>
+        ))}
+      </div>
+
+      {/* District list */}
+      <ScrollArea className="h-[280px] pr-4">
+        <div className="space-y-4">
+          {regions.map(region => (
+            <div key={region} className="space-y-1">
+              {filteredDistricts[region]?.length > 0 && (
+                <>
+                  <h4 className="text-[11px] font-medium text-muted-foreground">{region}</h4>
+                  <div className="space-y-1">
+                    {filteredDistricts[region].map(district => (
+                      <DistrictCheckbox
+                        key={district.id}
+                        district={district}
+                        checked={selected.includes(district.id)}
+                        onChange={(checked) => {
+                          if (checked) {
+                            onChange([...selected, district.id])
+                          } else {
+                            onChange(selected.filter(id => id !== district.id))
+                          }
+                        }}
+                        propertyCount={districtCounts[district.id] || 0}
+                      />
+                    ))}
+                  </div>
+                </>
+              )}
+            </div>
+          ))}
         </div>
-      </Label>
+      </ScrollArea>
     </div>
   )
 } 

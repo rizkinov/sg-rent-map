@@ -46,16 +46,17 @@ interface PropertyMarkersProps {
 
 export function PropertyMarkers({ properties }: PropertyMarkersProps) {
   const getDistrictInfo = (property: Property) => {
-    // First try to use district_id
-    if (property.district_id) {
-      return districtData.find(d => d.id === property.district_id)
+    // First try to use district
+    if (property.district) {
+      return districtData.find(d => d.id === property.district)
     }
     
     // Fallback to lat/lng check
-    return districtData.find(d => 
-      Math.abs(d.center.lat - property.latitude) < 0.02 && 
-      Math.abs(d.center.lng - property.longitude) < 0.02
-    )
+    return districtData.find(district => {
+      const latDiff = Math.abs(district.center.lat - property.latitude)
+      const lngDiff = Math.abs(district.center.lng - property.longitude)
+      return latDiff < 0.02 && lngDiff < 0.02
+    })
   }
 
   const getDistrictAvgPrice = (district: typeof districtData[0]) => {
@@ -82,59 +83,24 @@ export function PropertyMarkers({ properties }: PropertyMarkersProps) {
             icon={icons[property.property_type]}
           >
             <Popup className="property-popup">
-              <div className="p-4">
-                {/* Header with Property Type and Date */}
-                <div className="flex items-center justify-between mb-3">
-                  <div className="flex items-center gap-1.5">
-                    <span className={`w-2 h-2 rounded-full ${
-                      property.property_type === 'Condo' ? 'bg-blue-500' :
-                      property.property_type === 'HDB' ? 'bg-green-500' :
-                      'bg-orange-500'
-                    }`} />
-                    <h3 className="font-medium text-foreground">
-                      {property.property_type}
-                    </h3>
-                  </div>
-                  <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">
-                    {formatDate(property.created_at)}
+              <div className="space-y-2">
+                <div className="font-medium">{property.property_name}</div>
+                <div className="flex items-center gap-3 text-sm text-muted-foreground">
+                  <span className="flex items-center gap-1">
+                    <Bed className="h-4 w-4" />
+                    {property.beds >= 5 ? "5+" : property.beds}BR
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <Bath className="h-4 w-4" />
+                    {property.bathrooms}B
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <Move className="h-4 w-4" />
+                    {formatPrice(property.sqft)}sqft
                   </span>
                 </div>
-
-                {/* Location */}
-                {district && (
-                  <div className="flex items-center gap-1.5 text-xs text-muted-foreground mb-3">
-                    <MapPin className="h-3 w-3" />
-                    <span>
-                      District {district.id} ({district.name})
-                    </span>
-                  </div>
-                )}
-
-                {/* Price */}
-                <div className="mb-4">
-                  <p className="text-xl font-bold text-primary">
-                    ${formatPrice(property.rental_price)}
-                    <span className="text-sm font-normal text-muted-foreground">/mo</span>
-                  </p>
-                </div>
-                
-                {/* Property Features */}
-                <div className="grid grid-cols-3 gap-2 text-sm">
-                  <div className="flex flex-col items-center p-2 bg-muted/50 rounded-lg">
-                    <Bed className="h-4 w-4 text-muted-foreground mb-1" />
-                    <span className="font-medium text-foreground">{property.bedrooms}</span>
-                    <span className="text-xs text-muted-foreground">Beds</span>
-                  </div>
-                  <div className="flex flex-col items-center p-2 bg-muted/50 rounded-lg">
-                    <Bath className="h-4 w-4 text-muted-foreground mb-1" />
-                    <span className="font-medium text-foreground">{property.bathrooms}</span>
-                    <span className="text-xs text-muted-foreground">Baths</span>
-                  </div>
-                  <div className="flex flex-col items-center p-2 bg-muted/50 rounded-lg">
-                    <Move className="h-4 w-4 text-muted-foreground mb-1" />
-                    <span className="font-medium text-foreground">{property.sqft}</span>
-                    <span className="text-xs text-muted-foreground">ft²</span>
-                  </div>
+                <div className="text-lg font-semibold">
+                  ${formatPrice(property.rental_price)}
                 </div>
               </div>
             </Popup>

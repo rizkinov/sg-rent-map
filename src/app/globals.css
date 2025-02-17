@@ -92,21 +92,46 @@
 .district-marker > div {
   transition: all 0.2s ease;
   transform: scale(1);
+  background-color: white !important;
+  color: hsl(var(--primary));
+  border-color: hsl(var(--primary));
+}
+
+.dark .district-marker > div {
+  background-color: white !important;
+  color: hsl(var(--primary));
 }
 
 .district-marker:hover > div {
   transform: scale(1.1);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
+/* Update the district popup styles */
 .district-popup .leaflet-popup-content-wrapper {
-  border-radius: 0.75rem;
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  padding: 0;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1), 0 4px 8px rgba(0,0,0,0.05);
 }
 
 .district-popup .leaflet-popup-content {
   margin: 0;
+  min-width: 260px;
 }
 
-.district-popup .leaflet-popup-tip-container {
-  margin-top: -1px;
-} 
+.district-popup .leaflet-popup-tip {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.district-popup .leaflet-popup-close-button {
+  color: hsl(var(--muted-foreground));
+  margin: 4px;
+}
+
+.district-popup .leaflet-popup-close-button:hover {
+  background: none;
+  color: hsl(var(--foreground));
+}
+
+/* Add back all the shadcn/ui styles and theme configuration */ 

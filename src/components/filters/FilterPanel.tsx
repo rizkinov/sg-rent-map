@@ -1,158 +1,136 @@
-import { PropertyTypeFilter } from './PropertyTypeFilter'
-import { BedroomFilter } from './BedroomFilter'
-import { BathroomFilter } from './BathroomFilter'
-import { SqftFilter } from './SqftFilter'
-import { DistrictFilter } from './DistrictFilter'
+import { Property, FilterParams } from '@/types/property'
+import { Card } from '@/components/ui/card'
+import { Label } from '@/components/ui/label'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
-import { X, SlidersHorizontal, Home, MapPin, Ruler, BedDouble, Bath } from 'lucide-react'
-import type { FilterParams } from '@/types/property'
-import { districtData } from '@/data/districts/singapore-districts'
 import { ScrollArea } from '@/components/ui/scroll-area'
+import { Cross2Icon } from "@radix-ui/react-icons"
+import { Filter } from "lucide-react"
+import { PropertyTypeFilter } from './PropertyTypeFilter'
+import { DistrictFilter } from './DistrictFilter'
+import { BedroomFilter } from './BedroomFilter'
+import { SqftFilter } from './SqftFilter'
 import { FilterSummary } from './FilterSummary'
 
 interface FilterPanelProps {
   filters: FilterParams
   onChange: (filters: FilterParams) => void
-  totalProperties: number
-  filteredCount: number
-  properties: any[]
+  properties: Property[]
 }
 
-export function FilterPanel({ 
-  filters, 
-  onChange, 
-  totalProperties,
-  filteredCount,
-  properties
-}: FilterPanelProps) {
-  const updateFilters = (updates: Partial<FilterParams>) => {
-    onChange({ ...filters, ...updates })
-  }
-
-  const resetFilters = () => {
-    onChange({})
-  }
-
-  const hasActiveFilters = Object.values(filters).some(value => 
+export function FilterPanel({ filters, onChange, properties }: FilterPanelProps) {
+  const hasFilters = Object.values(filters).some(value => 
     Array.isArray(value) ? value.length > 0 : value !== undefined
   )
 
+  const handleReset = () => {
+    onChange({
+      district_ids: [],
+      property_type: [],
+      beds: []
+    })
+  }
+
   return (
-    <div className="w-[400px] h-screen flex flex-col border-r">
-      <div className="sticky top-0 z-20 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b">
-        <div className="p-4 space-y-4">
-          <div className="flex items-center justify-between">
-            <div className="space-y-1">
-              <h2 className="text-lg font-semibold tracking-tight">Filters</h2>
-              <p className="text-sm text-muted-foreground">
-                Showing {properties.length} of {properties.length} properties
+    <Card className="h-full border-0 rounded-none w-[380px] overflow-hidden">
+      <div className="flex flex-col h-full">
+        <div className="sticky top-0 z-10 bg-background shadow-[0_4px_10px_-4px_rgba(0,0,0,0.1)]">
+          <div className="p-4 space-y-4">
+            <div className="flex items-center justify-between">
+              <h2 className="text-lg font-semibold">Filters</h2>
+              {hasFilters && (
+                <Button 
+                  variant="ghost" 
+                  size="sm"
+                  onClick={handleReset}
+                  className="h-8 px-2 text-muted-foreground hover:text-foreground"
+                >
+                  <Cross2Icon className="h-4 w-4 mr-1" />
+                  Reset
+                </Button>
+              )}
+            </div>
+
+            <FilterSummary 
+              properties={properties}
+              selectedDistricts={filters.district_ids || []}
+              selectedTypes={filters.property_type || []}
+              selectedBeds={filters.beds || []}
+              sqftRange={{
+                min: filters.sqft_min,
+                max: filters.sqft_max
+              }}
+            />
+          </div>
+        </div>
+
+        <ScrollArea className="flex-1 px-4">
+          <div className="space-y-6 pb-8 pt-6">
+            {/* Property Type */}
+            <div className="space-y-4">
+              <Label className="text-sm font-medium">Property Type</Label>
+              <PropertyTypeFilter
+                selected={filters.property_type || []}
+                onChange={types => onChange({ ...filters, property_type: types })}
+                properties={properties}
+              />
+            </div>
+
+            <Separator />
+
+            {/* Size - Moved up, right after Property Type */}
+            <div className="space-y-4">
+              <Label className="text-sm font-medium">Size (sqft)</Label>
+              <SqftFilter
+                min={filters.sqft_min}
+                max={filters.sqft_max}
+                onChange={(min, max) => onChange({ ...filters, sqft_min: min, sqft_max: max })}
+                properties={properties}
+              />
+            </div>
+
+            <Separator />
+
+            {/* Districts */}
+            <div className="space-y-4">
+              <Label className="text-sm font-medium">Districts</Label>
+              <DistrictFilter
+                selected={filters.district_ids || []}
+                onChange={districts => onChange({ ...filters, district_ids: districts })}
+                properties={properties}
+              />
+            </div>
+
+            <Separator />
+
+            {/* Bedrooms - with extra bottom margin */}
+            <div className="space-y-4 mb-4">
+              <Label className="text-sm font-medium">Bedrooms</Label>
+              <BedroomFilter
+                selected={filters.beds || []}
+                onChange={beds => onChange({ ...filters, beds })}
+                properties={properties}
+              />
+            </div>
+
+            {/* Disclaimer */}
+            <div className="text-[11px] text-muted-foreground space-y-1">
+              <p>Note: This data is sourced from the 2024 Urban Redevelopment Authority dataset.</p>
+              <p>
+                For more details, visit{' '}
+                <a 
+                  href="https://eservice.ura.gov.sg/property-market-information/pmiResidentialRentalSearch"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline"
+                >
+                  URA Property Market Information
+                </a>
               </p>
             </div>
-            <Button
-              variant="ghost"
-              onClick={() => onChange({})}
-              className="h-8"
-              disabled={!hasActiveFilters}
-            >
-              Reset
-            </Button>
           </div>
-
-          <FilterSummary 
-            filters={filters}
-            properties={properties}
-          />
-        </div>
+        </ScrollArea>
       </div>
-
-      <ScrollArea className="flex-1 p-4">
-        <FilterSection 
-          title="Property Type" 
-          icon={<Home className="h-4 w-4" />}
-          activeCount={filters.property_type?.length}
-        >
-          <PropertyTypeFilter
-            selected={filters.property_type || []}
-            onChange={property_type => updateFilters({ property_type })}
-          />
-        </FilterSection>
-
-        <FilterSection 
-          title="District" 
-          icon={<MapPin className="h-4 w-4" />}
-          activeCount={filters.district_ids?.length}
-        >
-          <DistrictFilter
-            selectedDistricts={filters.district_ids || []}
-            onChange={district_ids => updateFilters({ district_ids })}
-            properties={properties}
-          />
-        </FilterSection>
-
-        <FilterSection 
-          title="Size" 
-          icon={<Ruler className="h-4 w-4" />}
-          activeCount={filters.sqft_min || filters.sqft_max ? 1 : 0}
-        >
-          <SqftFilter
-            min={filters.sqft_min}
-            max={filters.sqft_max}
-            onChange={({ min, max }) => updateFilters({ sqft_min: min, sqft_max: max })}
-          />
-        </FilterSection>
-
-        <FilterSection 
-          title="Bedrooms" 
-          icon={<BedDouble className="h-4 w-4" />}
-          activeCount={filters.bedrooms?.length}
-        >
-          <BedroomFilter
-            selected={filters.bedrooms || []}
-            onChange={bedrooms => updateFilters({ bedrooms })}
-          />
-        </FilterSection>
-
-        <FilterSection 
-          title="Bathrooms" 
-          icon={<Bath className="h-4 w-4" />}
-          activeCount={filters.bathrooms?.length}
-        >
-          <BathroomFilter
-            selected={filters.bathrooms || []}
-            onChange={bathrooms => updateFilters({ bathrooms })}
-          />
-        </FilterSection>
-      </ScrollArea>
-    </div>
-  )
-}
-
-interface FilterSectionProps {
-  title: string
-  icon: React.ReactNode
-  children: React.ReactNode
-  activeCount?: number
-}
-
-function FilterSection({ title, icon, children, activeCount = 0 }: FilterSectionProps) {
-  return (
-    <div className="space-y-3">
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-2 text-sm font-medium text-foreground">
-          {icon}
-          <span>{title}</span>
-        </div>
-        {activeCount > 0 && (
-          <span className="text-xs font-medium bg-primary/10 text-primary px-2 py-0.5 rounded-full">
-            {activeCount}
-          </span>
-        )}
-      </div>
-      <div className="pl-6">
-        {children}
-      </div>
-      <Separator className="mt-6" />
-    </div>
+    </Card>
   )
 } 

@@ -1,12 +1,8 @@
 'use client'
 
-import dynamic from 'next/dynamic'
+import { MapContainer, TileLayer } from 'react-leaflet'
 import type { Property } from '@/types/property'
-
-// Dynamically import the map components with no SSR
-const MapWithNoSSR = dynamic(() => import('./MapComponent'), {
-  ssr: false
-})
+import { DistrictLayers } from './DistrictLayers'
 
 interface MapViewProps {
   properties: Property[]
@@ -14,5 +10,23 @@ interface MapViewProps {
 }
 
 export function MapView({ properties, selectedDistricts }: MapViewProps) {
-  return <MapWithNoSSR properties={properties} selectedDistricts={selectedDistricts} />
+  return (
+    <div className="absolute inset-0">
+      <MapContainer
+        center={[1.3521, 103.8198]}
+        zoom={11}
+        className="h-full w-full"
+        zoomControl={false}
+      >
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/attributions">CARTO</a>'
+          url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
+        />
+        <DistrictLayers 
+          properties={properties}
+          selectedDistricts={selectedDistricts}
+        />
+      </MapContainer>
+    </div>
+  )
 } 
