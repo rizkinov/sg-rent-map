@@ -5,6 +5,7 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 import type { Property } from '@/types/property'
 import { Home, Bed, Bath, Square } from 'lucide-react'
+import type { Icon } from 'leaflet'
 
 const SINGAPORE_CENTER = {
   lat: 1.3521,
@@ -31,12 +32,19 @@ export default function RentalMapComponent({ properties }: RentalMapComponentPro
   useEffect(() => {
     (async () => {
       const L = (await import('leaflet')).default
-      delete L.Icon.Default.prototype._getIconUrl
+      
+      // Fix Leaflet default icon paths
       L.Icon.Default.mergeOptions({
         iconUrl: '/marker-icon.png',
         iconRetinaUrl: '/marker-icon-2x.png',
-        shadowUrl: '/marker-shadow.png',
+        shadowUrl: '/marker-shadow.png'
       })
+
+      // Safely delete the internal property if it exists
+      const iconPrototype = L.Icon.Default.prototype as any
+      if (iconPrototype._getIconUrl) {
+        delete iconPrototype._getIconUrl
+      }
     })()
   }, [])
 
