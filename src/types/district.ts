@@ -22,8 +22,7 @@ export interface District {
     lng: number
   }
   boundaries: [number, number][]
-  avgPrice?: number
-  summary: string
+  summary: DistrictSummary
 }
 
 export interface DistrictResponse {

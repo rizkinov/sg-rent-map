@@ -10,21 +10,13 @@ if (!process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
   throw new Error('Missing NEXT_PUBLIC_SUPABASE_ANON_KEY')
 }
 
-export function createClient() {
-  try {
-    return createBrowserClient<Database>(
-      process.env.NEXT_PUBLIC_SUPABASE_URL,
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
-    )
-  } catch (error) {
-    console.error('Failed to create Supabase client:', error)
-    throw new ApiError('Database connection failed', 500)
-  }
-}
+// Create a single instance
+export const supabase = createBrowserClient<Database>(
+  process.env.NEXT_PUBLIC_SUPABASE_URL,
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+)
 
-// For browser usage
-export const supabase = createClient()
-
+// Helper function to get the client
 export function getSupabaseClient() {
   return supabase
 }

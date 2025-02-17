@@ -2,32 +2,35 @@ import { NextResponse } from 'next/server'
 import { createServerClient } from '@/lib/supabase/server'
 import { generateURAToken } from '@/lib/utils/ura-token'
 import { fetchRentalData } from '@/lib/utils/ura-api'
+import { supabase } from '@/lib/supabase/client'
 
 export async function GET(request: Request) {
   try {
-    // Verify the request is from a cron job
-    const authHeader = request.headers.get('authorization')
-    if (authHeader !== `Bearer ${process.env.CRON_SECRET}`) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+    // Verify cron secret
+    const { searchParams } = new URL(request.url)
+    const secret = searchParams.get('secret')
+
+    if (secret !== process.env.CRON_SECRET) {
+      return NextResponse.json(
+        { success: false, error: 'Unauthorized' },
+        { status: 401 }
+      )
     }
 
-    // Generate new URA token
-    const token = await generateURAToken()
-
     // Fetch new data
-    const properties = await fetchRentalData(token)
+    const properties = await fetchRentalData()  // Removed token parameter
     console.log('Fetched properties count:', properties.length)
 
     if (!properties || properties.length === 0) {
-      throw new Error('No properties fetched')
+      throw new Error('No properties returned from URA API')
     }
 
     // Use server client instead
-    const supabase = createServerClient()
+    const supabaseServer = createServerClient()
     
     try {
       // Clear existing data
-      const { error: deleteError } = await supabase
+      const { error: deleteError } = await supabaseServer
         .from('properties')
         .delete()
         .gte('created_at', '2000-01-01')
@@ -47,7 +50,7 @@ export async function GET(request: Request) {
       }))
 
       // Modified insert query without count
-      const { error: insertError, data } = await supabase
+      const { error: insertError, data } = await supabaseServer
         .from('properties')
         .insert(propertiesWithIds)
         .select()
