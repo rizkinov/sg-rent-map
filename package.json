@@ -7,18 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "clean-data": "ts-node -r tsconfig-paths/register src/scripts/clean-property-data.ts",
-    "import-data": "ts-node -r tsconfig-paths/register src/scripts/import-to-supabase.ts",
-    "add-coordinates": "ts-node -r tsconfig-paths/register src/scripts/add-coordinates.ts",
-    "migrate": "ts-node -r tsconfig-paths/register src/scripts/run-migration.ts",
-    "process-data": "ts-node -r tsconfig-paths/register src/scripts/process-gov-data.ts",
-    "import-gov-data": "ts-node -r tsconfig-paths/register src/scripts/import-gov-data.ts",
-    "analyze": "ts-node -r tsconfig-paths/register src/scripts/analyze-districts.ts",
-    "check-raw": "ts-node -r tsconfig-paths/register src/scripts/check-raw-data.ts",
-    "analyze-names": "ts-node -r tsconfig-paths/register src/scripts/analyze-property-names.ts",
-    "analyze-landed": "ts-node -r tsconfig-paths/register src/scripts/analyze-landed.ts",
-    "import-landed": "ts-node -r tsconfig-paths/register src/scripts/import-landed-data.ts",
-    "update-types": "ts-node -r tsconfig-paths/register src/scripts/update-property-types.ts"
+    "verify-deployment": "ts-node --project tsconfig.scripts.json src/scripts/verify-deployment.ts",
+    "verify-deployment-v2": "ts-node --project tsconfig.scripts.json src/scripts/verify-deployment-v2.ts"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.0",
@@ -53,7 +43,7 @@
   "devDependencies": {
     "@shadcn/ui": "^0.0.4",
     "@types/leaflet": "^1.9.8",
-    "@types/node": "^20.11.0",
+    "@types/node": "^20.17.19",
     "@types/react": "^18.2.47",
     "@types/react-dom": "^18.2.21",
     "autoprefixer": "^10.4.18",
@@ -62,7 +52,8 @@
     "eslint-config-next": "14.1.3",
     "postcss": "^8.4.35",
     "tailwindcss": "^3.4.1",
+    "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",
-    "typescript": "^5.3.3"
+    "typescript": "^5.7.3"
   }
 }

@@ -27,7 +27,20 @@ export const districtData: District[] = [
     region: "Central",
     center: { lat: 1.2830, lng: 103.8511 },
     boundaries: districtBoundaries[1] as Coordinate[],
-    summary: "Prime central business district with luxury condos and offices"
+    summary: {
+      property_count: 156,
+      avg_price: 5200,
+      property_types: {
+        Condo: 89,
+        HDB: 45,
+        Landed: 22
+      },
+      price_range: {
+        min: 3500,
+        max: 8900
+      },
+      avg_size: 950
+    }
   },
   {
     id: 2,
@@ -35,7 +48,20 @@ export const districtData: District[] = [
     region: "Central",
     center: { lat: 1.2764, lng: 103.8446 },
     boundaries: districtBoundaries[2] as Coordinate[],
-    summary: "Historic district with mix of heritage shophouses and modern developments"
+    summary: {
+      property_count: 142,
+      avg_price: 4800,
+      property_types: {
+        Condo: 95,
+        HDB: 38,
+        Landed: 9
+      },
+      price_range: {
+        min: 3200,
+        max: 7800
+      },
+      avg_size: 880
+    }
   },
   {
     id: 3,
@@ -43,7 +69,20 @@ export const districtData: District[] = [
     region: "Central",
     center: { lat: 1.2878, lng: 103.8320 },
     boundaries: districtBoundaries[3] as Coordinate[],
-    summary: "Mix of heritage and modern residential areas with good amenities"
+    summary: {
+      property_count: 135,
+      avg_price: 4300,
+      property_types: {
+        Condo: 75,
+        HDB: 52,
+        Landed: 8
+      },
+      price_range: {
+        min: 2800,
+        max: 7200
+      },
+      avg_size: 920
+    }
   },
   {
     id: 4,
@@ -51,7 +90,20 @@ export const districtData: District[] = [
     region: "Central",
     center: { lat: 1.2937, lng: 103.8357 },
     boundaries: districtBoundaries[4] as Coordinate[],
-    summary: "Upscale residential area near Orchard Road"
+    summary: {
+      property_count: 128,
+      avg_price: 5500,
+      property_types: {
+        Condo: 98,
+        HDB: 12,
+        Landed: 18
+      },
+      price_range: {
+        min: 3800,
+        max: 9200
+      },
+      avg_size: 1100
+    }
   },
   {
     id: 5,
@@ -59,7 +111,20 @@ export const districtData: District[] = [
     region: "Central",
     center: { lat: 1.3139, lng: 103.8377 },
     boundaries: districtBoundaries[5] as Coordinate[],
-    summary: "Popular expat area with medical hub and good schools"
+    summary: {
+      property_count: 145,
+      avg_price: 4900,
+      property_types: {
+        Condo: 92,
+        HDB: 35,
+        Landed: 18
+      },
+      price_range: {
+        min: 3200,
+        max: 8500
+      },
+      avg_size: 980
+    }
   },
   {
     id: 6,
@@ -67,7 +132,20 @@ export const districtData: District[] = [
     region: "Central",
     center: { lat: 1.3031, lng: 103.8519 },
     boundaries: districtBoundaries[6] as Coordinate[],
-    summary: "Vibrant area with mix of heritage buildings and modern amenities"
+    summary: {
+      property_count: 132,
+      avg_price: 4600,
+      property_types: {
+        Condo: 82,
+        HDB: 42,
+        Landed: 8
+      },
+      price_range: {
+        min: 3000,
+        max: 7500
+      },
+      avg_size: 900
+    }
   },
   {
     id: 7,
@@ -75,7 +153,20 @@ export const districtData: District[] = [
     region: "Central",
     center: { lat: 1.3038, lng: 103.8554 },
     boundaries: districtBoundaries[7] as Coordinate[],
-    summary: "Cultural district with rich heritage and shopping options"
+    summary: {
+      property_count: 138,
+      avg_price: 4200,
+      property_types: {
+        Condo: 78,
+        HDB: 48,
+        Landed: 12
+      },
+      price_range: {
+        min: 2800,
+        max: 7000
+      },
+      avg_size: 850
+    }
   },
   {
     id: 8,
@@ -83,7 +174,20 @@ export const districtData: District[] = [
     region: "Central",
     center: { lat: 1.3294, lng: 103.8159 },
     boundaries: districtBoundaries[8] as Coordinate[],
-    summary: "Prestigious residential area with good schools"
+    summary: {
+      property_count: 165,
+      avg_price: 5800,
+      property_types: {
+        Condo: 95,
+        HDB: 35,
+        Landed: 35
+      },
+      price_range: {
+        min: 3800,
+        max: 9500
+      },
+      avg_size: 1200
+    }
   },
 
   // East Region
@@ -93,7 +197,20 @@ export const districtData: District[] = [
     region: "East",
     center: { lat: 1.3170, lng: 103.8930 },
     boundaries: districtBoundaries[14] as Coordinate[],
-    summary: "Diverse neighborhood with excellent food options"
+    summary: {
+      property_count: 158,
+      avg_price: 3800,
+      property_types: {
+        Condo: 68,
+        HDB: 82,
+        Landed: 8
+      },
+      price_range: {
+        min: 2500,
+        max: 6800
+      },
+      avg_size: 850
+    }
   },
   {
     id: 15,
@@ -101,7 +218,20 @@ export const districtData: District[] = [
     region: "East",
     center: { lat: 1.3030, lng: 103.9030 },
     boundaries: districtBoundaries[15] as Coordinate[],
-    summary: "Heritage area known for Peranakan culture"
+    summary: {
+      property_count: 145,
+      avg_price: 4200,
+      property_types: {
+        Condo: 85,
+        HDB: 45,
+        Landed: 15
+      },
+      price_range: {
+        min: 2800,
+        max: 7200
+      },
+      avg_size: 920
+    }
   },
   {
     id: 16,
@@ -109,7 +239,20 @@ export const districtData: District[] = [
     region: "East",
     center: { lat: 1.3236, lng: 103.9273 },
     boundaries: districtBoundaries[16] as Coordinate[],
-    summary: "Popular residential area near East Coast Park"
+    summary: {
+      property_count: 168,
+      avg_price: 3900,
+      property_types: {
+        Condo: 72,
+        HDB: 85,
+        Landed: 11
+      },
+      price_range: {
+        min: 2600,
+        max: 6500
+      },
+      avg_size: 890
+    }
   },
   {
     id: 17,
@@ -117,7 +260,20 @@ export const districtData: District[] = [
     region: "East",
     center: { lat: 1.3450, lng: 103.9630 },
     boundaries: districtBoundaries[17] as Coordinate[],
-    summary: "Aviation hub with coastal living"
+    summary: {
+      property_count: 125,
+      avg_price: 3500,
+      property_types: {
+        Condo: 55,
+        HDB: 65,
+        Landed: 5
+      },
+      price_range: {
+        min: 2400,
+        max: 5800
+      },
+      avg_size: 860
+    }
   },
   {
     id: 18,
@@ -125,7 +281,20 @@ export const districtData: District[] = [
     region: "East",
     center: { lat: 1.3530, lng: 103.9440 },
     boundaries: districtBoundaries[18] as Coordinate[],
-    summary: "Major regional center with family-friendly amenities"
+    summary: {
+      property_count: 185,
+      avg_price: 3600,
+      property_types: {
+        Condo: 65,
+        HDB: 110,
+        Landed: 10
+      },
+      price_range: {
+        min: 2300,
+        max: 5500
+      },
+      avg_size: 880
+    }
   },
 
   // North-East Region
@@ -135,7 +304,20 @@ export const districtData: District[] = [
     region: "North-East",
     center: { lat: 1.3730, lng: 103.8930 },
     boundaries: districtBoundaries[19] as Coordinate[],
-    summary: "Waterfront living with modern amenities"
+    summary: {
+      property_count: 195,
+      avg_price: 3400,
+      property_types: {
+        Condo: 65,
+        HDB: 120,
+        Landed: 10
+      },
+      price_range: {
+        min: 2200,
+        max: 5200
+      },
+      avg_size: 920
+    }
   },
   {
     id: 20,
@@ -143,7 +325,20 @@ export const districtData: District[] = [
     region: "North-East",
     center: { lat: 1.3610, lng: 103.8480 },
     boundaries: districtBoundaries[20] as Coordinate[],
-    summary: "Mature estates with excellent schools"
+    summary: {
+      property_count: 175,
+      avg_price: 3800,
+      property_types: {
+        Condo: 75,
+        HDB: 90,
+        Landed: 10
+      },
+      price_range: {
+        min: 2500,
+        max: 6000
+      },
+      avg_size: 950
+    }
   },
 
   // North Region
@@ -153,7 +348,20 @@ export const districtData: District[] = [
     region: "North",
     center: { lat: 1.4380, lng: 103.7890 },
     boundaries: createBoundaryBox({ lat: 1.4380, lng: 103.7890 }),
-    summary: "Gateway to Malaysia with waterfront developments"
+    summary: {
+      property_count: 155,
+      avg_price: 2800,
+      property_types: {
+        Condo: 45,
+        HDB: 105,
+        Landed: 5
+      },
+      price_range: {
+        min: 1800,
+        max: 4500
+      },
+      avg_size: 880
+    }
   },
   {
     id: 26,
@@ -161,7 +369,20 @@ export const districtData: District[] = [
     region: "North",
     center: { lat: 1.4180, lng: 103.8120 },
     boundaries: createBoundaryBox({ lat: 1.4180, lng: 103.8120 }),
-    summary: "Nature reserves and wildlife attractions"
+    summary: {
+      property_count: 125,
+      avg_price: 3200,
+      property_types: {
+        Condo: 55,
+        HDB: 55,
+        Landed: 15
+      },
+      price_range: {
+        min: 2200,
+        max: 5000
+      },
+      avg_size: 950
+    }
   },
   {
     id: 27,
@@ -169,7 +390,20 @@ export const districtData: District[] = [
     region: "North",
     center: { lat: 1.4300, lng: 103.8350 },
     boundaries: createBoundaryBox({ lat: 1.4300, lng: 103.8350 }),
-    summary: "Coastal living with upcoming developments"
+    summary: {
+      property_count: 165,
+      avg_price: 2900,
+      property_types: {
+        Condo: 50,
+        HDB: 108,
+        Landed: 7
+      },
+      price_range: {
+        min: 1900,
+        max: 4800
+      },
+      avg_size: 900
+    }
   },
   {
     id: 28,
@@ -177,7 +411,20 @@ export const districtData: District[] = [
     region: "North",
     center: { lat: 1.3920, lng: 103.8780 },
     boundaries: createBoundaryBox({ lat: 1.3920, lng: 103.8780 }),
-    summary: "Aviation heritage with peaceful residential areas"
+    summary: {
+      property_count: 135,
+      avg_price: 3100,
+      property_types: {
+        Condo: 48,
+        HDB: 75,
+        Landed: 12
+      },
+      price_range: {
+        min: 2000,
+        max: 5200
+      },
+      avg_size: 920
+    }
   },
 
   // West Region
@@ -187,7 +434,20 @@ export const districtData: District[] = [
     region: "West",
     center: { lat: 1.3330, lng: 103.7760 },
     boundaries: createBoundaryBox({ lat: 1.3330, lng: 103.7760 }),
-    summary: "Educational hub with nature reserves nearby"
+    summary: {
+      property_count: 158,
+      avg_price: 3600,
+      property_types: {
+        Condo: 68,
+        HDB: 80,
+        Landed: 10
+      },
+      price_range: {
+        min: 2400,
+        max: 5800
+      },
+      avg_size: 910
+    }
   },
   {
     id: 22,
@@ -195,7 +455,20 @@ export const districtData: District[] = [
     region: "West",
     center: { lat: 1.3330, lng: 103.7220 },
     boundaries: createBoundaryBox({ lat: 1.3330, lng: 103.7220 }),
-    summary: "Second CBD with lakeside living"
+    summary: {
+      property_count: 175,
+      avg_price: 3200,
+      property_types: {
+        Condo: 55,
+        HDB: 112,
+        Landed: 8
+      },
+      price_range: {
+        min: 2100,
+        max: 5200
+      },
+      avg_size: 880
+    }
   },
   {
     id: 23,
@@ -203,7 +476,20 @@ export const districtData: District[] = [
     region: "West",
     center: { lat: 1.3590, lng: 103.7490 },
     boundaries: createBoundaryBox({ lat: 1.3590, lng: 103.7490 }),
-    summary: "Family-friendly neighborhoods with nature parks"
+    summary: {
+      property_count: 168,
+      avg_price: 3000,
+      property_types: {
+        Condo: 48,
+        HDB: 115,
+        Landed: 5
+      },
+      price_range: {
+        min: 2000,
+        max: 4800
+      },
+      avg_size: 850
+    }
   },
   {
     id: 24,
@@ -211,7 +497,20 @@ export const districtData: District[] = [
     region: "West",
     center: { lat: 1.3940, lng: 103.7220 },
     boundaries: createBoundaryBox({ lat: 1.3940, lng: 103.7220 }),
-    summary: "Future forest town with sustainable living"
+    summary: {
+      property_count: 95,
+      avg_price: 2800,
+      property_types: {
+        Condo: 25,
+        HDB: 65,
+        Landed: 5
+      },
+      price_range: {
+        min: 1800,
+        max: 4200
+      },
+      avg_size: 820
+    }
   },
 
   // Central Region (continued)
@@ -221,7 +520,20 @@ export const districtData: District[] = [
     region: "Central",
     center: { lat: 1.3046, lng: 103.8318 },
     boundaries: districtBoundaries[9] as Coordinate[],
-    summary: "Prime shopping district with luxury residences"
+    summary: {
+      property_count: 185,
+      avg_price: 6200,
+      property_types: {
+        Condo: 145,
+        HDB: 15,
+        Landed: 25
+      },
+      price_range: {
+        min: 4200,
+        max: 12000
+      },
+      avg_size: 1250
+    }
   },
   {
     id: 10,
@@ -229,7 +541,20 @@ export const districtData: District[] = [
     region: "Central",
     center: { lat: 1.3253, lng: 103.8169 },
     boundaries: districtBoundaries[10] as Coordinate[],
-    summary: "Exclusive residential area with prestigious schools"
+    summary: {
+      property_count: 175,
+      avg_price: 6500,
+      property_types: {
+        Condo: 95,
+        HDB: 25,
+        Landed: 55
+      },
+      price_range: {
+        min: 4500,
+        max: 15000
+      },
+      avg_size: 1500
+    }
   },
   {
     id: 11,
@@ -237,7 +562,20 @@ export const districtData: District[] = [
     region: "Central",
     center: { lat: 1.3174, lng: 103.8384 },
     boundaries: districtBoundaries[11] as Coordinate[],
-    summary: "Prime residential area with medical facilities"
+    summary: {
+      property_count: 165,
+      avg_price: 5800,
+      property_types: {
+        Condo: 115,
+        HDB: 25,
+        Landed: 25
+      },
+      price_range: {
+        min: 4000,
+        max: 11000
+      },
+      avg_size: 1200
+    }
   },
   {
     id: 12,
@@ -245,7 +583,20 @@ export const districtData: District[] = [
     region: "Central",
     center: { lat: 1.3300, lng: 103.8500 },
     boundaries: districtBoundaries[12] as Coordinate[],
-    summary: "Mature estate with excellent connectivity"
+    summary: {
+      property_count: 185,
+      avg_price: 4200,
+      property_types: {
+        Condo: 85,
+        HDB: 85,
+        Landed: 15
+      },
+      price_range: {
+        min: 2800,
+        max: 7500
+      },
+      avg_size: 950
+    }
   },
   {
     id: 13,
@@ -253,7 +604,20 @@ export const districtData: District[] = [
     region: "Central",
     center: { lat: 1.3400, lng: 103.8700 },
     boundaries: districtBoundaries[13] as Coordinate[],
-    summary: "Established neighborhood with good amenities"
+    summary: {
+      property_count: 155,
+      avg_price: 3900,
+      property_types: {
+        Condo: 65,
+        HDB: 80,
+        Landed: 10
+      },
+      price_range: {
+        min: 2600,
+        max: 6800
+      },
+      avg_size: 920
+    }
   }
 ];
 

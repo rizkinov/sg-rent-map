@@ -1,3 +1,5 @@
+import type { PropertyRecord } from './supabase'
+
 export type PropertyType = 'Condo' | 'HDB' | 'Landed'
 
 export interface Property extends Omit<PropertyRecord, 'property_type'> {

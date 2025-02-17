@@ -1,9 +1,10 @@
 import { createClient } from '@supabase/supabase-js'
-import type { Property, FilterParams, PropertyType, District } from '@/types/property'
+import type { Property, FilterParams } from '@/types/property'
 import type { Database } from '@/types/database'
-import { districtBoundaries } from '@/data/districts/boundaries'
+import type { District } from '@/types/district'
+import { supabase } from '@/lib/supabase/client'
 
-const supabase = createClient<Database>(
+const supabaseClient = createClient<Database>(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 )
@@ -14,7 +15,7 @@ export async function fetchProperties(filters: FilterParams = {
   beds: []
 }): Promise<Property[]> {
   try {
-    const { data, error } = await supabase
+    const { data, error } = await supabaseClient
       .from('properties')
       .select('*')
       .in('property_type', filters.property_type)
@@ -23,7 +24,6 @@ export async function fetchProperties(filters: FilterParams = {
       .lte('sqft', filters.sqft_max || Number.MAX_VALUE)
 
     if (error) throw error
-
     return data
   } catch (error) {
     console.error('Error fetching properties:', error)
@@ -31,44 +31,48 @@ export async function fetchProperties(filters: FilterParams = {
   }
 }
 
-export async function fetchDistricts(filters: FilterParams = {
-  district_ids: [],
-  property_type: [],
-  beds: []
-}): Promise<District[]> {
+export async function fetchDistricts(): Promise<District[]> {
   try {
     const { data, error } = await supabase
       .from('districts')
-      .select('*')
+      .select(`
+        id,
+        name,
+        region,
+        center,
+        boundaries,
+        summary
+      `)
 
     if (error) throw error
 
-    const districts: District[] = data.map(d => ({
-      id: d.id,
-      name: d.name,
-      region: d.region,
+    return data.map(d => ({
+      id: Number(d.id),
+      name: String(d.name),
+      region: String(d.region),
       center: {
-        lat: d.center_lat,
-        lng: d.center_lng
+        lat: Number(d.center.lat),
+        lng: Number(d.center.lng)
       },
-      boundaries: districtBoundaries[d.id as keyof typeof districtBoundaries] || [],
+      boundaries: d.boundaries.map((coords: [number, number]) => [
+        Number(coords[0]),
+        Number(coords[1])
+      ] as [number, number]),
       summary: {
-        property_count: d.property_count,
-        avg_price: d.avg_price,
+        property_count: Number(d.summary.property_count),
+        avg_price: Number(d.summary.avg_price),
         property_types: {
-          Condo: d.condo_count,
-          HDB: d.hdb_count,
-          Landed: d.landed_count
+          Condo: Number(d.summary.property_types.Condo),
+          HDB: Number(d.summary.property_types.HDB),
+          Landed: Number(d.summary.property_types.Landed)
         },
         price_range: {
-          min: d.min_price,
-          max: d.max_price
+          min: Number(d.summary.price_range.min),
+          max: Number(d.summary.price_range.max)
         },
-        avg_size: d.avg_size
+        avg_size: Number(d.summary.avg_size)
       }
     }))
-
-    return districts
   } catch (error) {
     console.error('Error fetching districts:', error)
     throw error
