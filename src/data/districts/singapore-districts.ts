@@ -15,15 +15,6 @@ export interface District {
   avgPrice?: number // Make avgPrice optional
 }
 
-// Make sure districtBoundaries is properly typed
-const districtBoundaries: Record<number, Coordinate[]> = {
-  1: [
-    [1.2830, 103.8511],
-    // ... other coordinates
-  ],
-  // ... other districts
-}
-
 export const districtData: District[] = [
   // Central Region
   {
@@ -31,14 +22,14 @@ export const districtData: District[] = [
     name: "Raffles Place, Marina, Cecil",
     region: "Central",
     center: { lat: 1.2830, lng: 103.8511 },
-    boundaries: districtBoundaries[1]
+    boundaries: districtBoundaries[1] as Coordinate[]
   },
   {
     id: 2,
     name: "Tanjong Pagar, Chinatown",
     region: "Central",
     center: { lat: 1.2764, lng: 103.8446 },
-    boundaries: districtBoundaries[2]
+    boundaries: districtBoundaries[2] as Coordinate[]
   },
   {
     id: 3,
