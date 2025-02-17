@@ -1,0 +1,83 @@
+[
+  {
+    "property": {
+      "url": "https://www.99.co/singapore/rent/property/ripple-bay-condo-kGjNDAFQfwsUATtjjbKaUV",
+      "property_name": "Ripple Bay",
+      "property_type": "Condo",
+      "district": null,
+      "price": 4288,
+      "beds": -1,
+      "baths": 2,
+      "sqft": 1001,
+      "mrt": null,
+      "completion_year": 2015
+    },
+    "errors": [
+      {
+        "code": "too_small",
+        "minimum": 0,
+        "type": "number",
+        "inclusive": true,
+        "exact": false,
+        "message": "Number must be greater than or equal to 0",
+        "path": [
+          "beds"
+        ]
+      }
+    ]
+  },
+  {
+    "property": {
+      "url": "https://www.99.co/singapore/rent/property/the-m-condo-GXHuN8YHvXcAQ2rUkYBpa5",
+      "property_name": "The M",
+      "property_type": "Condo",
+      "district": 7,
+      "price": 3688,
+      "beds": -1,
+      "baths": 1,
+      "sqft": 410,
+      "mrt": "EW 12DT 14\nBugis MRT · 4 mins (285m)",
+      "completion_year": 2023
+    },
+    "errors": [
+      {
+        "code": "too_small",
+        "minimum": 0,
+        "type": "number",
+        "inclusive": true,
+        "exact": false,
+        "message": "Number must be greater than or equal to 0",
+        "path": [
+          "beds"
+        ]
+      }
+    ]
+  },
+  {
+    "property": {
+      "url": "https://www.99.co/singapore/rent/property/ripple-bay-condo-Tt2De2yD9dgDMco94EVgKJ",
+      "property_name": "Ripple Bay",
+      "property_type": "Condo",
+      "district": null,
+      "price": 4288,
+      "beds": -1,
+      "baths": 2,
+      "sqft": 1001,
+      "mrt": null,
+      "completion_year": 2015
+    },
+    "errors": [
+      {
+        "code": "too_small",
+        "minimum": 0,
+        "type": "number",
+        "inclusive": true,
+        "exact": false,
+        "message": "Number must be greater than or equal to 0",
+        "path": [
+          "beds"
+        ]
+      }
+    ]
+  }
+]

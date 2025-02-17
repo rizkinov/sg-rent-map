@@ -1,0 +1,1942 @@
+[
+  {
+    "name": "Mandarin Gardens",
+    "type": "Condo",
+    "beds": 3,
+    "sqft": 1528,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 6500,
+    "district": "D10"
+  },
+  {
+    "name": "The Hillier",
+    "type": "Condo",
+    "beds": 1,
+    "sqft": 624,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 3400,
+    "district": "D10"
+  },
+  {
+    "name": "Belmont Road",
+    "type": "Landed",
+    "beds": 7,
+    "sqft": 21950,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 48000,
+    "district": "D10"
+  },
+  {
+    "name": "Wilkie 80",
+    "type": "Condo",
+    "beds": 2,
+    "sqft": 603,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 4200,
+    "district": "D09"
+  },
+  {
+    "name": "Riversails",
+    "type": "Condo",
+    "beds": 2,
+    "sqft": 1080,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 4300,
+    "district": "D09"
+  },
+  {
+    "name": "Costa Rhu",
+    "type": "Condo",
+    "beds": 3,
+    "sqft": 1776,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 7500,
+    "district": "D15"
+  },
+  {
+    "name": "Parc Botannia",
+    "type": "Condo",
+    "beds": 2,
+    "sqft": 506,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 3300,
+    "district": "D10"
+  },
+  {
+    "name": "Property In Singapore",
+    "type": "Landed",
+    "beds": 5,
+    "sqft": 15500,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 49000,
+    "district": "D10"
+  },
+  {
+    "name": "The Sterling",
+    "type": "Condo",
+    "beds": 1,
+    "sqft": 753,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 3900,
+    "district": "D10"
+  },
+  {
+    "name": "King Albert Park",
+    "type": "Landed",
+    "beds": 5,
+    "sqft": 15400,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 49000,
+    "district": "D10"
+  },
+  {
+    "name": "8 Empress Road",
+    "type": "HDB",
+    "beds": 2,
+    "sqft": 700,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 3200,
+    "district": "D12"
+  },
+  {
+    "name": "Symphony Suites",
+    "type": "Condo",
+    "beds": 2,
+    "sqft": 689,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 3500,
+    "district": "D09"
+  },
+  {
+    "name": "535 Upper Cross Street",
+    "type": "HDB",
+    "beds": 2,
+    "sqft": 750,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 3500,
+    "district": "D02"
+  },
+  {
+    "name": "Sol Acres",
+    "type": "Condo",
+    "beds": 3,
+    "sqft": 1044,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 4200,
+    "district": "D16"
+  },
+  {
+    "name": "Mattar Residences",
+    "type": "Condo",
+    "beds": 2,
+    "sqft": 560,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 4000,
+    "district": "D12"
+  },
+  {
+    "name": "14 Toh Yi Drive",
+    "type": "HDB",
+    "beds": 3,
+    "sqft": 1141,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 3900,
+    "district": "D12"
+  },
+  {
+    "name": "Midwood",
+    "type": "Condo",
+    "beds": 1,
+    "sqft": 484,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 3100,
+    "district": "D09"
+  },
+  {
+    "name": "253 Bangkit Road",
+    "type": "HDB",
+    "beds": 3,
+    "sqft": 1313,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 3800,
+    "district": "D19"
+  },
+  {
+    "name": "Stratton Drive",
+    "type": "Landed",
+    "beds": 3,
+    "sqft": 2334,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 6800,
+    "district": "D12"
+  },
+  {
+    "name": "Kent Ridge Hill Residences",
+    "type": "Condo",
+    "beds": 1,
+    "sqft": 570,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 3700,
+    "district": "D10"
+  }
+]
+[
+  {
+    "name": "Kingsford Waterbay",
+    "type": "Condo",
+    "beds": 4,
+    "sqft": 980,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 4288,
+    "district": "D10"
+  },
+  {
+    "name": "216 Petir Road",
+    "type": "HDB",
+    "beds": 2,
+    "sqft": 786,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 3288,
+    "district": "D12"
+  },
+  {
+    "name": "V On Shenton",
+    "type": "Condo",
+    "beds": 1,
+    "sqft": 504,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 4150,
+    "district": "D10"
+  },
+  {
+    "name": "18 Cantonment Close",
+    "type": "HDB",
+    "beds": 3,
+    "sqft": 807,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 4500,
+    "district": "D12"
+  },
+  {
+    "name": "Chancery Lane",
+    "type": "Landed",
+    "beds": 3,
+    "sqft": 2411,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 7600,
+    "district": "D11"
+  },
+  {
+    "name": "28 Niven Road",
+    "type": "Condo",
+    "beds": 2,
+    "sqft": 893,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 7999,
+    "district": "D11"
+  },
+  {
+    "name": "High Park Residences",
+    "type": "Condo",
+    "beds": 2,
+    "sqft": 668,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 3500,
+    "district": "D11"
+  },
+  {
+    "name": "Fifth Avenue Condominium",
+    "type": "Condo",
+    "beds": 2,
+    "sqft": 1180,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 5700,
+    "district": "D09"
+  },
+  {
+    "name": "V On Shenton",
+    "type": "Condo",
+    "beds": 2,
+    "sqft": 947,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 6000,
+    "district": "D10"
+  },
+  {
+    "name": "Mandale Heights",
+    "type": "Condo",
+    "beds": 2,
+    "sqft": 818,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 3950,
+    "district": "D10"
+  },
+  {
+    "name": "The Hillford",
+    "type": "Condo",
+    "beds": 1,
+    "sqft": 430,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 3400,
+    "district": "D10"
+  },
+  {
+    "name": "Sant Ritz",
+    "type": "Condo",
+    "beds": 2,
+    "sqft": 656,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 4000,
+    "district": "D10"
+  },
+  {
+    "name": "Costa Rhu",
+    "type": "Condo",
+    "beds": 4,
+    "sqft": 1900,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 8900,
+    "district": "D15"
+  },
+  {
+    "name": "Tamarind Road",
+    "type": "Landed",
+    "beds": 4,
+    "sqft": 3500,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 9288,
+    "district": "D15"
+  },
+  {
+    "name": "Q Bay Residences",
+    "type": "Condo",
+    "beds": 1,
+    "sqft": 528,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 3350,
+    "district": "D10"
+  },
+  {
+    "name": "The Creek Bukit",
+    "type": "Condo",
+    "beds": 2,
+    "sqft": 753,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 3980,
+    "district": "D10"
+  },
+  {
+    "name": "The Tennery",
+    "type": "Condo",
+    "beds": 1,
+    "sqft": 614,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 3200,
+    "district": "D10"
+  },
+  {
+    "name": "Westwood Residences",
+    "type": "Condo",
+    "beds": 3,
+    "sqft": 947,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 4500,
+    "district": "D10"
+  }
+]
+[
+  {
+    "name": "Hillock Green",
+    "type": "Condo",
+    "beds": 3,
+    "sqft": 1186,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 2494,
+    "district": "D23"
+  },
+  {
+    "name": "Liv On Sophia",
+    "type": "Condo",
+    "beds": 2,
+    "sqft": 678,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 4600,
+    "district": "D10"
+  },
+  {
+    "name": "Coastarina",
+    "type": "Condo",
+    "beds": 2,
+    "sqft": 840,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 4500,
+    "district": "D16"
+  },
+  {
+    "name": "Valley Park",
+    "type": "Condo",
+    "beds": 1,
+    "sqft": 861,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 4700,
+    "district": "D10"
+  },
+  {
+    "name": "Garlick Avenue",
+    "type": "Landed",
+    "beds": 5,
+    "sqft": 14700,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 25000,
+    "district": "D10"
+  },
+  {
+    "name": "Shrewsbury Road",
+    "type": "Landed",
+    "beds": 2,
+    "sqft": 1609,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 8000,
+    "district": "D10"
+  },
+  {
+    "name": "131 Rivervale Street",
+    "type": "HDB",
+    "beds": 3,
+    "sqft": 1078,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 3600,
+    "district": "D19"
+  },
+  {
+    "name": "Bijou",
+    "type": "Condo",
+    "beds": 1,
+    "sqft": 400,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 3500,
+    "district": "D10"
+  },
+  {
+    "name": "Botanique At Bartley",
+    "type": "Condo",
+    "beds": 2,
+    "sqft": 657,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 4200,
+    "district": "D12"
+  },
+  {
+    "name": "Sunrise Close",
+    "type": "Landed",
+    "beds": 4,
+    "sqft": 2474,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 8999,
+    "district": "D10"
+  },
+  {
+    "name": "Rv Altitude",
+    "type": "Condo",
+    "beds": 2,
+    "sqft": 624,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 4800,
+    "district": "D19"
+  },
+  {
+    "name": "The Criterion",
+    "type": "Condo",
+    "beds": 3,
+    "sqft": 915,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 3900,
+    "district": "D10"
+  },
+  {
+    "name": "Park Colonial",
+    "type": "Condo",
+    "beds": 1,
+    "sqft": 463,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 3800,
+    "district": "D10"
+  },
+  {
+    "name": "Pebble Bay",
+    "type": "Condo",
+    "beds": 1,
+    "sqft": 850,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 4300,
+    "district": "D10"
+  },
+  {
+    "name": "Holland Residences",
+    "type": "Condo",
+    "beds": 3,
+    "sqft": 1356,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 7500,
+    "district": "D10"
+  },
+  {
+    "name": "Ripple Bay",
+    "type": "Condo",
+    "beds": 0,
+    "sqft": 1001,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 4288,
+    "district": "D10"
+  },
+  {
+    "name": "One Holland Village Residences One Holland Village",
+    "type": "Condo",
+    "beds": 3,
+    "sqft": 1098,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 8300,
+    "district": "D10"
+  },
+  {
+    "name": "Pastoral View",
+    "type": "Condo",
+    "beds": 3,
+    "sqft": 1259,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 4700,
+    "district": "D10"
+  }
+]
+[
+  {
+    "name": "Siglap Bank",
+    "type": "Landed",
+    "beds": 7,
+    "sqft": 6800,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 12000,
+    "district": "D15"
+  },
+  {
+    "name": "The Mercury",
+    "type": "Condo",
+    "beds": 2,
+    "sqft": 1044,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 6500,
+    "district": "D10"
+  },
+  {
+    "name": "Mcnair Road",
+    "type": "Landed",
+    "beds": 3,
+    "sqft": 2424,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 6400,
+    "district": "D10"
+  },
+  {
+    "name": "Kasai Road",
+    "type": "Landed",
+    "beds": 3,
+    "sqft": 1900,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 6800,
+    "district": "D10"
+  },
+  {
+    "name": "Doasia",
+    "type": "Condo",
+    "beds": 1,
+    "sqft": 571,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 3670,
+    "district": "D10"
+  },
+  {
+    "name": "Irwell Hill Residences",
+    "type": "Condo",
+    "beds": 1,
+    "sqft": 495,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 4600,
+    "district": "D10"
+  },
+  {
+    "name": "996b Buangkok Crescent",
+    "type": "HDB",
+    "beds": 3,
+    "sqft": 1000,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 3600,
+    "district": "D19"
+  },
+  {
+    "name": "Nassim Regency",
+    "type": "Condo",
+    "beds": 3,
+    "sqft": 3079,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 12800,
+    "district": "D10"
+  },
+  {
+    "name": "Canne Lodge",
+    "type": "Condo",
+    "beds": 2,
+    "sqft": 818,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 4000,
+    "district": "D10"
+  },
+  {
+    "name": "270 Toh Guan Road",
+    "type": "HDB",
+    "beds": 3,
+    "sqft": 1302,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 3900,
+    "district": "D12"
+  },
+  {
+    "name": "The Mercury",
+    "type": "Condo",
+    "beds": 2,
+    "sqft": 1044,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 6500,
+    "district": "D10"
+  },
+  {
+    "name": "The Topiary",
+    "type": "Condo",
+    "beds": 3,
+    "sqft": 1087,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 4500,
+    "district": "D10"
+  },
+  {
+    "name": "463a Bukit Batok Street 41",
+    "type": "HDB",
+    "beds": 3,
+    "sqft": 1216,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 4000,
+    "district": "D23"
+  },
+  {
+    "name": "Forte Suites",
+    "type": "Condo",
+    "beds": 2,
+    "sqft": 603,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 3900,
+    "district": "D10"
+  },
+  {
+    "name": "Jalan Kenarah",
+    "type": "Landed",
+    "beds": 5,
+    "sqft": 3294,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 8500,
+    "district": "D22"
+  },
+  {
+    "name": "Canne Lodge",
+    "type": "Condo",
+    "beds": 2,
+    "sqft": 818,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 4000,
+    "district": "D10"
+  },
+  {
+    "name": "Greenleaf Place",
+    "type": "Landed",
+    "beds": 4,
+    "sqft": 11442,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 26200,
+    "district": "D21"
+  }
+]
+[
+  {
+    "name": "Eight Riversuites",
+    "type": "Condo",
+    "beds": 1,
+    "sqft": 447,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 3200,
+    "district": "D9"
+  },
+  {
+    "name": "Edelweiss Park Condominium",
+    "type": "Condo",
+    "beds": 3,
+    "sqft": 1281,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 4200,
+    "district": "D10"
+  },
+  {
+    "name": "Jadescape",
+    "type": "Condo",
+    "beds": 2,
+    "sqft": 646,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 4000,
+    "district": "D10"
+  },
+  {
+    "name": "The Avenir",
+    "type": "Condo",
+    "beds": 4,
+    "sqft": 2067,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 17500,
+    "district": "D10"
+  },
+  {
+    "name": "Sunset Close",
+    "type": "Landed",
+    "beds": 5,
+    "sqft": 6000,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 15800,
+    "district": "D10"
+  },
+  {
+    "name": "119a Rivervale Drive",
+    "type": "HDB",
+    "beds": 3,
+    "sqft": 1302,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 3500,
+    "district": "D19"
+  },
+  {
+    "name": "St Francis Lodge",
+    "type": "Condo",
+    "beds": 1,
+    "sqft": 600,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 3500,
+    "district": "D10"
+  },
+  {
+    "name": "Siglap Road",
+    "type": "Landed",
+    "beds": 3,
+    "sqft": 2680,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 7999,
+    "district": "D15"
+  },
+  {
+    "name": "Tiara",
+    "type": "Condo",
+    "beds": 3,
+    "sqft": 1302,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 7000,
+    "district": "D10"
+  },
+  {
+    "name": "Waterbay",
+    "type": "Condo",
+    "beds": 1,
+    "sqft": 150,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 2100,
+    "district": "D16"
+  },
+  {
+    "name": "Ecopolitan",
+    "type": "Condo",
+    "beds": 1,
+    "sqft": 250,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 2200,
+    "district": "D16"
+  },
+  {
+    "name": "Oei Tiong Ham Park Residences",
+    "type": "Condo",
+    "beds": 4,
+    "sqft": 5027,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 20000,
+    "district": "D10"
+  },
+  {
+    "name": "The Poiz Residences",
+    "type": "Condo",
+    "beds": 1,
+    "sqft": 441,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 3400,
+    "district": "D13"
+  },
+  {
+    "name": "The Tre Ver",
+    "type": "Condo",
+    "beds": 2,
+    "sqft": 700,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 4300,
+    "district": "D10"
+  },
+  {
+    "name": "Lake Life",
+    "type": "Condo",
+    "beds": 4,
+    "sqft": 1238,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 5500,
+    "district": "D16"
+  },
+  {
+    "name": "Irwell Hill Residences",
+    "type": "Condo",
+    "beds": 3,
+    "sqft": 861,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 8000,
+    "district": "D10"
+  },
+  {
+    "name": "Seahill",
+    "type": "Condo",
+    "beds": 3,
+    "sqft": 1303,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 6400,
+    "district": "D16"
+  }
+]
+[
+  {
+    "name": "Dleedon",
+    "type": "Condo",
+    "beds": 2,
+    "sqft": 742,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 5500,
+    "district": "D10"
+  },
+  {
+    "name": "River Isles",
+    "type": "Condo",
+    "beds": 1,
+    "sqft": 440,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 2500,
+    "district": "D09"
+  },
+  {
+    "name": "Greenleaf Place",
+    "type": "Landed",
+    "beds": 4,
+    "sqft": 11442,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 28000,
+    "district": "D21"
+  },
+  {
+    "name": "Spottiswoode Suites",
+    "type": "Condo",
+    "beds": 1,
+    "sqft": 452,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 3600,
+    "district": "D14"
+  },
+  {
+    "name": "Eight Riversuites",
+    "type": "Condo",
+    "beds": 3,
+    "sqft": 1324,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 5999,
+    "district": "D9"
+  },
+  {
+    "name": "Swiss View",
+    "type": "Landed",
+    "beds": 5,
+    "sqft": 3300,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 10000,
+    "district": "D22"
+  },
+  {
+    "name": "Spottiswoode Suites",
+    "type": "Condo",
+    "beds": 2,
+    "sqft": 840,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 5500,
+    "district": "D14"
+  },
+  {
+    "name": "Sky Eleven",
+    "type": "Condo",
+    "beds": 5,
+    "sqft": 570,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 20000,
+    "district": "D10"
+  },
+  {
+    "name": "Oue Twin Peaks",
+    "type": "Condo",
+    "beds": 3,
+    "sqft": 1604,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 12000,
+    "district": "D10"
+  },
+  {
+    "name": "289a Bukit Batok Street 25",
+    "type": "HDB",
+    "beds": 2,
+    "sqft": 1313,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 3899,
+    "district": "D23"
+  },
+  {
+    "name": "Laguna Park",
+    "type": "Condo",
+    "beds": 3,
+    "sqft": 1453,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 5300,
+    "district": "D16"
+  },
+  {
+    "name": "V On Shenton",
+    "type": "Condo",
+    "beds": 2,
+    "sqft": 721,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 4999,
+    "district": "D10"
+  },
+  {
+    "name": "Leonie Hill Residences",
+    "type": "Condo",
+    "beds": 2,
+    "sqft": 1141,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 6300,
+    "district": "D9"
+  },
+  {
+    "name": "Kandis Residence",
+    "type": "Condo",
+    "beds": 1,
+    "sqft": 484,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 2900,
+    "district": "D9"
+  },
+  {
+    "name": "Toh Tuck Place",
+    "type": "Landed",
+    "beds": 5,
+    "sqft": 344,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 7800,
+    "district": "D22"
+  },
+  {
+    "name": "The Calrose",
+    "type": "Condo",
+    "beds": 4,
+    "sqft": 1442,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 5800,
+    "district": "D10"
+  },
+  {
+    "name": "View At Kismis",
+    "type": "Condo",
+    "beds": 4,
+    "sqft": 893,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 5000,
+    "district": "D10"
+  }
+]
+[
+  {
+    "name": "Westwood Residences",
+    "type": "Condo",
+    "beds": 3,
+    "sqft": 1033,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 4800,
+    "district": "D10"
+  },
+  {
+    "name": "Irwell Hill Residences",
+    "type": "Condo",
+    "beds": 2,
+    "sqft": 624,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 5600,
+    "district": "D10"
+  },
+  {
+    "name": "601 Senja Road",
+    "type": "HDB",
+    "beds": 4,
+    "sqft": 1001,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 3199,
+    "district": "D22"
+  },
+  {
+    "name": "Rangoon 88",
+    "type": "Condo",
+    "beds": 1,
+    "sqft": 645,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 3400,
+    "district": "D10"
+  },
+  {
+    "name": "The Verve",
+    "type": "Condo",
+    "beds": 1,
+    "sqft": 500,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 2988,
+    "district": "D10"
+  },
+  {
+    "name": "The Pearl Mt Faber",
+    "type": "Condo",
+    "beds": 3,
+    "sqft": 1604,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 7500,
+    "district": "D4"
+  },
+  {
+    "name": "625 Senja Road",
+    "type": "HDB",
+    "beds": 3,
+    "sqft": 1184,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 3800,
+    "district": "D22"
+  },
+  {
+    "name": "8 Empress Road",
+    "type": "HDB",
+    "beds": 2,
+    "sqft": 818,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 3390,
+    "district": "D12"
+  },
+  {
+    "name": "Sennett Avenue",
+    "type": "Landed",
+    "beds": 6,
+    "sqft": 4935,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 15000,
+    "district": "D22"
+  },
+  {
+    "name": "Villa Delle Rose",
+    "type": "Condo",
+    "beds": 3,
+    "sqft": 2788,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 12000,
+    "district": "D10"
+  },
+  {
+    "name": "Greenwood Avenue",
+    "type": "Landed",
+    "beds": 4,
+    "sqft": 1666,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 11000,
+    "district": "D21"
+  },
+  {
+    "name": "Elite Park Avenue",
+    "type": "Landed",
+    "beds": 1,
+    "sqft": 400,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 2200,
+    "district": "D22"
+  },
+  {
+    "name": "Dleedon",
+    "type": "Condo",
+    "beds": 1,
+    "sqft": 635,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 4300,
+    "district": "D10"
+  },
+  {
+    "name": "Eastbay",
+    "type": "Condo",
+    "beds": 2,
+    "sqft": 689,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 3600,
+    "district": "D16"
+  },
+  {
+    "name": "Riveria Gardens",
+    "type": "Condo",
+    "beds": 2,
+    "sqft": 969,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 5800,
+    "district": "D16"
+  },
+  {
+    "name": "Bartley Residences",
+    "type": "Condo",
+    "beds": 1,
+    "sqft": 462,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 3100,
+    "district": "D12"
+  },
+  {
+    "name": "Regent Residences",
+    "type": "Condo",
+    "beds": 2,
+    "sqft": 689,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 3800,
+    "district": "D12"
+  }
+]
+[
+  {
+    "name": "The Interweave",
+    "type": "Condo",
+    "beds": 1,
+    "sqft": 377,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 2800,
+    "district": "D12"
+  },
+  {
+    "name": "Lush On Holland Hill",
+    "type": "Condo",
+    "beds": 3,
+    "sqft": 1516,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 7000,
+    "district": "D10"
+  },
+  {
+    "name": "Leedon Residence",
+    "type": "Condo",
+    "beds": 4,
+    "sqft": 2669,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 22000,
+    "district": "D10"
+  },
+  {
+    "name": "317a Anchorvale Road",
+    "type": "HDB",
+    "beds": 3,
+    "sqft": 1184,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 3800,
+    "district": "D19"
+  },
+  {
+    "name": "Casa Fortuna",
+    "type": "Condo",
+    "beds": 1,
+    "sqft": 508,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 3300,
+    "district": "D10"
+  },
+  {
+    "name": "The Mezzo",
+    "type": "Condo",
+    "beds": 2,
+    "sqft": 840,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 3867,
+    "district": "D10"
+  },
+  {
+    "name": "The Avenir",
+    "type": "Condo",
+    "beds": 2,
+    "sqft": 1141,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 6500,
+    "district": "D10"
+  },
+  {
+    "name": "View At Kismis",
+    "type": "Condo",
+    "beds": 2,
+    "sqft": 592,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 3500,
+    "district": "D10"
+  },
+  {
+    "name": "Oei Tiong Ham Park Residences",
+    "type": "Condo",
+    "beds": 5,
+    "sqft": 5199,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 20000,
+    "district": "D10"
+  },
+  {
+    "name": "The Tre Ver",
+    "type": "Condo",
+    "beds": 2,
+    "sqft": 700,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 4300,
+    "district": "D10"
+  },
+  {
+    "name": "Lake Life",
+    "type": "Condo",
+    "beds": 4,
+    "sqft": 1238,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 5500,
+    "district": "D16"
+  },
+  {
+    "name": "Irwell Hill Residences",
+    "type": "Condo",
+    "beds": 3,
+    "sqft": 861,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 8000,
+    "district": "D10"
+  },
+  {
+    "name": "Seahill",
+    "type": "Condo",
+    "beds": 3,
+    "sqft": 1303,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 6400,
+    "district": "D16"
+  },
+  {
+    "name": "Dleedon",
+    "type": "Condo",
+    "beds": 2,
+    "sqft": 742,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 5500,
+    "district": "D10"
+  },
+  {
+    "name": "River Isles",
+    "type": "Condo",
+    "beds": 3,
+    "sqft": 1938,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 5499,
+    "district": "D10"
+  }
+]
+[
+  {
+    "name": "Gardenvista",
+    "type": "Condo",
+    "beds": 2,
+    "sqft": 861,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 4300,
+    "district": "D10"
+  },
+  {
+    "name": "The Poiz Residences",
+    "type": "Condo",
+    "beds": 1,
+    "sqft": 441,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 3400,
+    "district": "D13"
+  },
+  {
+    "name": "The Tre Ver",
+    "type": "Condo",
+    "beds": 2,
+    "sqft": 700,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 4300,
+    "district": "D10"
+  },
+  {
+    "name": "Lake Life",
+    "type": "Condo",
+    "beds": 4,
+    "sqft": 1238,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 5500,
+    "district": "D16"
+  },
+  {
+    "name": "Irwell Hill Residences",
+    "type": "Condo",
+    "beds": 2,
+    "sqft": 624,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 5600,
+    "district": "D10"
+  },
+  {
+    "name": "Hyll On Holland",
+    "type": "Condo",
+    "beds": 2,
+    "sqft": 603,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 4800,
+    "district": "D10"
+  },
+  {
+    "name": "Floridian",
+    "type": "Condo",
+    "beds": 3,
+    "sqft": 1324,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 7400,
+    "district": "D10"
+  },
+  {
+    "name": "413b Fernvale Link",
+    "type": "HDB",
+    "beds": 3,
+    "sqft": 1227,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 3500,
+    "district": "D19"
+  },
+  {
+    "name": "Mayfair Modern",
+    "type": "Condo",
+    "beds": 2,
+    "sqft": 797,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 4500,
+    "district": "D10"
+  },
+  {
+    "name": "Spottiswoode Suites",
+    "type": "Condo",
+    "beds": 2,
+    "sqft": 581,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 4400,
+    "district": "D14"
+  },
+  {
+    "name": "Pavilion 11",
+    "type": "Condo",
+    "beds": 2,
+    "sqft": 958,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 4600,
+    "district": "D10"
+  },
+  {
+    "name": "290g Bukit Batok Street 24",
+    "type": "HDB",
+    "beds": 3,
+    "sqft": 1270,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 3500,
+    "district": "D23"
+  },
+  {
+    "name": "Urban Treasures",
+    "type": "Condo",
+    "beds": 3,
+    "sqft": 883,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 4700,
+    "district": "D10"
+  },
+  {
+    "name": "Ki Residences At Brookvale",
+    "type": "Condo",
+    "beds": 3,
+    "sqft": 861,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 5500,
+    "district": "D10"
+  },
+  {
+    "name": "Le Quest",
+    "type": "Condo",
+    "beds": 1,
+    "sqft": 495,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 3000,
+    "district": "D12"
+  },
+  {
+    "name": "Bartley Ridge",
+    "type": "Condo",
+    "beds": 2,
+    "sqft": 721,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 4388,
+    "district": "D12"
+  },
+  {
+    "name": "Casa Irrawaddy",
+    "type": "Condo",
+    "beds": 3,
+    "sqft": 1140,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 4500,
+    "district": "D10"
+  }
+]
+[
+  {
+    "name": "Rv Edge",
+    "type": "Condo",
+    "beds": 1,
+    "sqft": 366,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 3300,
+    "district": "D10"
+  },
+  {
+    "name": "V On Shenton",
+    "type": "Condo",
+    "beds": 2,
+    "sqft": 1055,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 6500,
+    "district": "D10"
+  },
+  {
+    "name": "24 Verdun Road",
+    "type": "Condo",
+    "beds": 1,
+    "sqft": 350,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 2850,
+    "district": "D10"
+  },
+  {
+    "name": "Irwell Hill Residences",
+    "type": "Condo",
+    "beds": 2,
+    "sqft": 678,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 5000,
+    "district": "D10"
+  },
+  {
+    "name": "Jalan Jelita",
+    "type": "Landed",
+    "beds": 6,
+    "sqft": 4100,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 20500,
+    "district": "D24"
+  },
+  {
+    "name": "Sunset Way",
+    "type": "Landed",
+    "beds": 4,
+    "sqft": 6684,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 10500,
+    "district": "D24"
+  },
+  {
+    "name": "Toh Heights",
+    "type": "Landed",
+    "beds": 6,
+    "sqft": 5600,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 16500,
+    "district": "D24"
+  },
+  {
+    "name": "Myra",
+    "type": "Condo",
+    "beds": 3,
+    "sqft": 872,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 5600,
+    "district": "D10"
+  },
+  {
+    "name": "Sunset Way",
+    "type": "Landed",
+    "beds": 4,
+    "sqft": 6684,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 12000,
+    "district": "D24"
+  },
+  {
+    "name": "Parc Vera",
+    "type": "Condo",
+    "beds": 2,
+    "sqft": 786,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 3500,
+    "district": "D12"
+  },
+  {
+    "name": "The Interweave",
+    "type": "Condo",
+    "beds": 1,
+    "sqft": 377,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 2800,
+    "district": "D12"
+  },
+  {
+    "name": "Mayfair Gardens",
+    "type": "Condo",
+    "beds": 1,
+    "sqft": 570,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 3600,
+    "district": "D12"
+  },
+  {
+    "name": "Sing Lian Building",
+    "type": "Condo",
+    "beds": 1,
+    "sqft": 501,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 2400,
+    "district": "D12"
+  },
+  {
+    "name": "The Trillium",
+    "type": "Condo",
+    "beds": 2,
+    "sqft": 1399,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 7888,
+    "district": "D10"
+  },
+  {
+    "name": "Torie Ville",
+    "type": "Condo",
+    "beds": 3,
+    "sqft": 1022,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 5600,
+    "district": "D10"
+  },
+  {
+    "name": "The Tessarina",
+    "type": "Condo",
+    "beds": 2,
+    "sqft": 926,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 4500,
+    "district": "D10"
+  },
+  {
+    "name": "Holland Residences",
+    "type": "Condo",
+    "beds": 1,
+    "sqft": 700,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 3800,
+    "district": "D10"
+  }
+]
+[
+  {
+    "name": "Mutiara Crest",
+    "type": "Condo",
+    "beds": 1,
+    "sqft": 750,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 3600,
+    "district": "D10"
+  },
+  {
+    "name": "The Woodleigh Residences The Woodleigh Mall",
+    "type": "Condo",
+    "beds": 4,
+    "sqft": 1270,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 13988,
+    "district": "D10"
+  },
+  {
+    "name": "Dleedon",
+    "type": "Condo",
+    "beds": 5,
+    "sqft": 3810,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 16000,
+    "district": "D10"
+  },
+  {
+    "name": "Peak Residence",
+    "type": "Condo",
+    "beds": 2,
+    "sqft": 807,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 4800,
+    "district": "D10"
+  },
+  {
+    "name": "Oue Twin Peaks",
+    "type": "Condo",
+    "beds": 1,
+    "sqft": 570,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 4600,
+    "district": "D10"
+  },
+  {
+    "name": "The Stellar",
+    "type": "Condo",
+    "beds": 2,
+    "sqft": 1387,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 6800,
+    "district": "D10"
+  },
+  {
+    "name": "Greenwood Avenue",
+    "type": "Landed",
+    "beds": 3,
+    "sqft": 3379,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 14800,
+    "district": "D21"
+  },
+  {
+    "name": "Lichfield Road",
+    "type": "Landed",
+    "beds": 1,
+    "sqft": 1100,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 3800,
+    "district": "D21"
+  },
+  {
+    "name": "Emerald Park",
+    "type": "Condo",
+    "beds": 2,
+    "sqft": 926,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 4400,
+    "district": "D10"
+  },
+  {
+    "name": "River Isles",
+    "type": "Condo",
+    "beds": 3,
+    "sqft": 1938,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 5500,
+    "district": "D10"
+  },
+  {
+    "name": "Grandeur 8",
+    "type": "Condo",
+    "beds": 3,
+    "sqft": 1227,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 5000,
+    "district": "D10"
+  },
+  {
+    "name": "Mayfair Gardens",
+    "type": "Condo",
+    "beds": 1,
+    "sqft": 614,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 3900,
+    "district": "D10"
+  },
+  {
+    "name": "Mill Point",
+    "type": "Condo",
+    "beds": 4,
+    "sqft": 3326,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 13800,
+    "district": "D10"
+  },
+  {
+    "name": "Prestige Heights",
+    "type": "Condo",
+    "beds": 2,
+    "sqft": 581,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 3300,
+    "district": "D10"
+  },
+  {
+    "name": "Sky Everton",
+    "type": "Condo",
+    "beds": 3,
+    "sqft": 958,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 6900,
+    "district": "D10"
+  },
+  {
+    "name": "150a Corporation Drive",
+    "type": "HDB",
+    "beds": 2,
+    "sqft": 731,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 2900,
+    "district": "D20"
+  },
+  {
+    "name": "West Coast Terrace",
+    "type": "Landed",
+    "beds": 4,
+    "sqft": 4284,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 12000,
+    "district": "D22"
+  },
+  {
+    "name": "M5",
+    "type": "Condo",
+    "beds": 1,
+    "sqft": 441,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 3300,
+    "district": "D10"
+  },
+  {
+    "name": "Sage",
+    "type": "Condo",
+    "beds": 4,
+    "sqft": 2842,
+    "latitude": 0,
+    "longitude": 0,
+    "rental_price": 25000,
+    "district": "D10"
+  }
+]

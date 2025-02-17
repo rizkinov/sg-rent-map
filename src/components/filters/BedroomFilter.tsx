@@ -1,38 +1,47 @@
-import { Checkbox } from '@/components/ui/checkbox'
-import { Label } from '@/components/ui/label'
+import { Button } from '@/components/ui/button'
+import type { Property } from '@/types/property'
 
 interface BedroomFilterProps {
   selected: number[]
-  onChange: (bedrooms: number[]) => void
+  onChange: (beds: number[]) => void
+  properties: Property[]
 }
 
-export function BedroomFilter({ selected, onChange }: BedroomFilterProps) {
-  const bedroomOptions = [1, 2, 3, 4, 5]
+export function BedroomFilter({ selected, onChange, properties }: BedroomFilterProps) {
+  // Get bedroom counts for display
+  const bedroomCounts = properties.reduce((acc, property) => {
+    const beds = property.beds
+    if (beds !== null && beds !== undefined) {
+      if (beds >= 5) {
+        // Group all 5+ bedrooms together
+        acc['5+'] = (acc['5+'] || 0) + 1
+      } else {
+        acc[beds] = (acc[beds] || 0) + 1
+      }
+    }
+    return acc
+  }, {} as Record<string, number>)
 
-  const handleChange = (checked: boolean, value: number) => {
-    if (checked) {
-      onChange([...selected, value])
+  const toggleBedroom = (num: number) => {
+    if (selected.includes(num)) {
+      onChange(selected.filter(b => b !== num))
     } else {
-      onChange(selected.filter(b => b !== value))
+      onChange([...selected, num])
     }
   }
 
   return (
-    <div className="space-y-3">
-      {bedroomOptions.map(num => (
-        <div key={num} className="flex items-center space-x-2">
-          <Checkbox
-            id={`bedroom-${num}`}
-            checked={selected.includes(num)}
-            onCheckedChange={(checked) => handleChange(checked as boolean, num)}
-          />
-          <Label
-            htmlFor={`bedroom-${num}`}
-            className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-          >
-            {num} {num === 1 ? 'Bedroom' : 'Bedrooms'}
-          </Label>
-        </div>
+    <div className="grid grid-cols-5 gap-2">
+      {[1, 2, 3, 4, 5].map((num) => (
+        <Button
+          key={num}
+          type="button"
+          variant={selected.includes(num) ? "default" : "outline"}
+          className="h-8"
+          onClick={() => toggleBedroom(num)}
+        >
+          {num === 5 ? "5+" : num}
+        </Button>
       ))}
     </div>
   )

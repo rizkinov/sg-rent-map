@@ -1,59 +1,74 @@
-import { getSupabaseClient } from '@/lib/supabase/client'
-import type { Property, FilterParams } from '@/types/property'
-import { districtData } from '@/data/districts/singapore-districts'
+import { supabase } from '@/lib/supabase/client'
+import type { Property } from '@/types/property'
 
-export async function getProperties(filters?: FilterParams): Promise<Property[]> {
-  const supabase = getSupabaseClient(false)
-  
-  let query = supabase
-    .from('properties')
-    .select('*')
-  
-  if (filters) {
-    if (filters.property_type?.length > 0) {
-      query = query.in('property_type', filters.property_type)
-    }
+const PAGE_SIZE = 1000
+
+export async function getProperties(): Promise<Property[]> {
+  try {
+    // Add loading state element
+    const loadingEl = document.createElement('div')
+    loadingEl.className = 'fixed inset-0 flex items-center justify-center font-inter text-muted-foreground z-50 bg-background/80'
     
-    if (filters.sqft_min) {
-      query = query.gte('sqft', filters.sqft_min)
+    let allProperties: Property[] = []
+    let currentPage = 0
+    let hasMore = true
+    let totalCount = 0
+
+    // Get total count first
+    const { count } = await supabase
+      .from('properties')
+      .select('*', { count: 'exact', head: true })
+
+    if (count) {
+      totalCount = count
     }
-    
-    if (filters.sqft_max) {
-      query = query.lte('sqft', filters.sqft_max)
+
+    while (hasMore) {
+      // Update loading message
+      loadingEl.innerHTML = `
+        <div class="text-center">
+          <div class="text-sm">
+            ${allProperties.length.toLocaleString()} of ${totalCount.toLocaleString()} properties loaded
+          </div>
+        </div>
+      `
+      
+      if (!document.body.contains(loadingEl)) {
+        document.body.appendChild(loadingEl)
+      }
+
+      const { data, error } = await supabase
+        .from('properties')
+        .select('*')
+        .range(currentPage * PAGE_SIZE, (currentPage + 1) * PAGE_SIZE - 1)
+
+      if (error) {
+        throw error
+      }
+
+      if (data) {
+        allProperties = [...allProperties, ...data]
+        hasMore = data.length === PAGE_SIZE
+        currentPage++
+      } else {
+        hasMore = false
+      }
     }
-    
-    if (filters.bedrooms?.length > 0) {
-      query = query.in('bedrooms', filters.bedrooms)
-    }
-    
-    if (filters.bathrooms?.length > 0) {
-      query = query.in('bathrooms', filters.bathrooms)
-    }
-  }
-  
-  const { data, error } = await query
-  
-  if (error) {
-    console.error('Error fetching properties:', error)
+
+    // Remove loading element when done
+    loadingEl.remove()
+
+    // Process bedroom counts for 5+ bedrooms
+    allProperties = allProperties.map(property => ({
+      ...property,
+      // Keep original beds value but ensure filtering works correctly
+      beds: property.beds && property.beds >= 5 ? 5 : property.beds
+    }))
+
+    console.log('Total properties fetched:', allProperties.length)
+    return allProperties
+  } catch (error) {
+    console.error('Error in getProperties:', error)
     throw error
   }
-
-  // Filter by district using the center point method
-  if (filters?.district_ids?.length) {
-    return data.filter(property => {
-      return filters.district_ids!.some(districtId => {
-        const district = districtData.find(d => d.id === districtId)
-        if (!district) return false
-
-        // Use a simple radius check around the district center
-        const latDiff = Math.abs(district.center.lat - property.latitude)
-        const lngDiff = Math.abs(district.center.lng - property.longitude)
-        
-        // Approximately 2km radius (0.02 degrees)
-        return latDiff < 0.02 && lngDiff < 0.02
-      })
-    })
-  }
-  
-  return data
 } 

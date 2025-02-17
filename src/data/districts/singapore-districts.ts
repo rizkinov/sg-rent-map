@@ -1,3 +1,5 @@
+import { districtBoundaries } from './boundaries'
+
 export interface District {
   id: number
   name: string
@@ -7,7 +9,7 @@ export interface District {
     lng: number
   }
   boundaries: [number, number][] // Array of [lat, lng] coordinates forming the polygon
-  avgPrice: number
+  avgPrice?: number // Make avgPrice optional
 }
 
 export const districtData: District[] = [
@@ -17,21 +19,14 @@ export const districtData: District[] = [
     name: "Raffles Place, Marina, Cecil",
     region: "Central",
     center: { lat: 1.2830, lng: 103.8511 },
-    avgPrice: 5200,
-    boundaries: [
-      [1.2780, 103.8461],
-      // ... more coordinates forming the district boundary
-    ]
+    boundaries: districtBoundaries[1]
   },
   {
     id: 2,
     name: "Tanjong Pagar, Chinatown",
     region: "Central",
     center: { lat: 1.2764, lng: 103.8446 },
-    avgPrice: 4800,
-    boundaries: [
-      // ... more coordinates forming the district boundary
-    ]
+    boundaries: districtBoundaries[2]
   },
   {
     id: 3,
@@ -237,7 +232,6 @@ export const districtData: District[] = [
     name: "Orchard, River Valley",
     region: "Central",
     center: { lat: 1.3046, lng: 103.8318 },
-    avgPrice: 5500,
     boundaries: [
       // ... more coordinates forming the district boundary
     ]
@@ -247,7 +241,6 @@ export const districtData: District[] = [
     name: "Bukit Timah, Holland Road, Tanglin",
     region: "Central",
     center: { lat: 1.3253, lng: 103.8169 },
-    avgPrice: 5100,
     boundaries: [
       // ... more coordinates forming the district boundary
     ]
@@ -294,4 +287,11 @@ export type Region = typeof regions[number];
 // Helper function to get districts by region
 export function getDistrictsByRegion(region: Region) {
   return districtData.filter(district => district.region === region);
-} 
+}
+
+// Add a log to check the boundaries
+console.log('District boundaries check:', districtData.map(d => ({
+  id: d.id,
+  name: d.name,
+  boundaryPoints: d.boundaries.length
+}))) 

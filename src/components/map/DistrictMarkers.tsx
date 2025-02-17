@@ -4,6 +4,27 @@ import { MapPin } from 'lucide-react'
 import { districtData } from '@/data/districts/singapore-districts'
 import type { Property } from '@/types/property'
 import { formatPrice } from '@/lib/utils'
+import { DistrictPopup } from './DistrictPopup'
+
+// Add CSS for the district popup
+const style = document.createElement('style')
+style.textContent = `
+  .district-popup .leaflet-popup-content {
+    margin: 0;
+    min-width: 300px;
+  }
+  .district-popup .leaflet-popup-content-wrapper {
+    padding: 0;
+    border-radius: 8px;
+  }
+  /* Ensure our styles take precedence */
+  .district-popup .text-2xl {
+    font-size: 1.5rem !important;
+    line-height: 2rem !important;
+    color: rgb(239, 68, 68) !important; /* red-500 */
+  }
+`
+document.head.appendChild(style)
 
 // Create a function to generate marker HTML with district number
 const createMarkerHtml = (districtId: number) => `
@@ -45,7 +66,7 @@ export function DistrictMarkers({ properties, selectedDistricts }: DistrictMarke
   return (
     <>
       {districtsToShow.map(district => {
-        const stats = getDistrictStats(district.id)
+        const districtProperties = properties.filter(p => p.district === district.id)
         const isSelected = selectedDistricts.includes(district.id)
         
         // Create district-specific icon
@@ -65,33 +86,10 @@ export function DistrictMarkers({ properties, selectedDistricts }: DistrictMarke
             zIndexOffset={isSelected ? 1000 : 0}
           >
             <Popup className="district-popup">
-              <div className="p-4 min-w-[240px]">
-                <div className="flex items-center gap-2 mb-3">
-                  <span className={`px-2 py-1 rounded text-sm font-medium ${
-                    isSelected ? 'bg-primary text-primary-foreground' : 'bg-primary/10 text-primary'
-                  }`}>
-                    District {district.id}
-                  </span>
-                </div>
-                <h3 className="font-medium text-foreground mb-3">{district.name}</h3>
-                <div className="grid grid-cols-2 gap-3">
-                  <div className="bg-muted/50 p-2 rounded-lg">
-                    <div className="text-xs text-muted-foreground">Properties</div>
-                    <div className="font-medium text-sm">{stats.count}</div>
-                  </div>
-                  <div className="bg-muted/50 p-2 rounded-lg">
-                    <div className="text-xs text-muted-foreground">Avg. Rent</div>
-                    <div className="font-medium text-sm">
-                      ${formatPrice(stats.avgPrice)}/mo
-                    </div>
-                  </div>
-                </div>
-                {stats.count > 0 && (
-                  <div className="mt-3 text-xs text-muted-foreground">
-                    Click to view properties in this district
-                  </div>
-                )}
-              </div>
+              <DistrictPopup 
+                district={district}
+                properties={districtProperties}
+              />
             </Popup>
           </Marker>
         )

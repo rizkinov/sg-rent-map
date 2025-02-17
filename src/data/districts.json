@@ -1,0 +1,50 @@
+{
+  "districts": [
+    {
+      "id": 1,
+      "name": "Raffles Place, Marina, Cecil",
+      "region": "Central",
+      "center": {
+        "lat": 1.2830,
+        "lng": 103.8511
+      },
+      "summary": {
+        "property_count": 156,
+        "avg_price": 5200,
+        "property_types": {
+          "Condo": 89,
+          "HDB": 45,
+          "Landed": 22
+        },
+        "price_range": {
+          "min": 3500,
+          "max": 8900
+        },
+        "avg_size": 950
+      }
+    },
+    {
+      "id": 2,
+      "name": "Tanjong Pagar, Chinatown",
+      "region": "Central",
+      "center": {
+        "lat": 1.2764,
+        "lng": 103.8446
+      },
+      "summary": {
+        "property_count": 142,
+        "avg_price": 4800,
+        "property_types": {
+          "Condo": 95,
+          "HDB": 38,
+          "Landed": 9
+        },
+        "price_range": {
+          "min": 3200,
+          "max": 7800
+        },
+        "avg_size": 880
+      }
+    }
+  ]
+} 
