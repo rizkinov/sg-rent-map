@@ -4,7 +4,6 @@ import './globals.css'
 import 'leaflet/dist/leaflet.css'
 import { Providers } from './providers'
 import { ErrorBoundary } from '@/components/ErrorBoundary'
-import { PropertyProvider } from '@/providers/PropertyProvider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,9 +21,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
         <ErrorBoundary>
-          <PropertyProvider>
-            <Providers>{children}</Providers>
-          </PropertyProvider>
+          <Providers>{children}</Providers>
         </ErrorBoundary>
       </body>
     </html>
