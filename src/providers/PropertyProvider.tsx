@@ -10,6 +10,11 @@ interface PropertyContextType {
   setFilters: (filters: FilterParams) => void
   filteredProperties: Property[]
   loading: boolean
+  loadMore: () => Promise<void>
+  loadingStatus: {
+    loaded: number
+    total: number
+  }
 }
 
 const PropertyContext = createContext<PropertyContextType | undefined>(undefined)
@@ -17,6 +22,9 @@ const PropertyContext = createContext<PropertyContextType | undefined>(undefined
 export function PropertyProvider({ children }: { children: React.ReactNode }) {
   const [properties, setProperties] = useState<Property[]>([])
   const [loading, setLoading] = useState(true)
+  const [currentPage, setCurrentPage] = useState(0)
+  const [hasMore, setHasMore] = useState(true)
+  const [totalProperties, setTotalProperties] = useState(0)
   const [filters, setFilters] = useState<FilterParams>({
     district_ids: [],
     property_type: [],
@@ -25,19 +33,26 @@ export function PropertyProvider({ children }: { children: React.ReactNode }) {
     sqft_max: undefined
   })
 
-  useEffect(() => {
-    async function loadProperties() {
-      try {
-        const data = await getProperties()
-        setProperties(data)
-      } catch (error) {
-        console.error('Error loading properties:', error)
-      } finally {
-        setLoading(false)
-      }
-    }
+  const loadMore = async () => {
+    if (!hasMore || loading) return
 
-    loadProperties()
+    setLoading(true)
+    try {
+      const response = await getProperties(currentPage)
+      setProperties(prev => [...prev, ...response.data])
+      setHasMore(response.hasMore)
+      setTotalProperties(response.total)
+      setCurrentPage(prev => prev + 1)
+    } catch (error) {
+      console.error('Error loading properties:', error)
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  // Initial load
+  useEffect(() => {
+    loadMore()
   }, [])
 
   const filteredProperties = properties.filter(property => {
@@ -60,7 +75,20 @@ export function PropertyProvider({ children }: { children: React.ReactNode }) {
   })
 
   return (
-    <PropertyContext.Provider value={{ properties, filters, setFilters, filteredProperties, loading }}>
+    <PropertyContext.Provider 
+      value={{ 
+        properties, 
+        filters, 
+        setFilters, 
+        filteredProperties, 
+        loading,
+        loadMore,
+        loadingStatus: {
+          loaded: properties.length,
+          total: totalProperties
+        }
+      }}
+    >
       {children}
     </PropertyContext.Provider>
   )
