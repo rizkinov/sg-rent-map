@@ -82,13 +82,13 @@ export default function RentalMapComponent({ properties }: RentalMapComponentPro
                 <div className="flex items-center gap-1.5">
                   <Bed className="h-4 w-4 text-muted-foreground" />
                   <span>
-                    <strong>{property.bedrooms}</strong> Beds
+                    <strong>{property.beds >= 5 ? "5+" : property.beds}</strong> Beds
                   </span>
                 </div>
                 <div className="flex items-center gap-1.5">
                   <Bath className="h-4 w-4 text-muted-foreground" />
                   <span>
-                    <strong>{property.bathrooms}</strong> Baths
+                    <strong>{property.baths ?? '-'}</strong> Baths
                   </span>
                 </div>
                 <div className="flex items-center gap-1.5">
