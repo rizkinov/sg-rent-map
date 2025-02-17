@@ -1,42 +1,35 @@
-import { useEffect } from 'react'
-import { useMap } from 'react-leaflet'
-import L from 'leaflet'
-import { districtBoundaries } from '@/data/districts/district-boundaries'
-import { districtData } from '@/data/districts/singapore-districts'
+'use client'
+
+import { Polygon, Tooltip } from 'react-leaflet'
+import type { LatLngExpression } from 'leaflet'
+import type { District } from '@/types/district'
+import { districtBoundaries } from '@/data/districts/boundaries'
 
 interface DistrictBoundariesProps {
-  selectedDistricts: number[]
+  district: District
+  isSelected: boolean
+  onClick?: () => void
 }
 
-export function DistrictBoundaries({ selectedDistricts }: DistrictBoundariesProps) {
-  const map = useMap()
+export function DistrictBoundaries({ district, isSelected, onClick }: DistrictBoundariesProps) {
+  const boundaries = districtBoundaries[district.id]
+  if (!boundaries) return null
 
-  useEffect(() => {
-    const districtLayer = L.geoJSON(districtBoundaries as any, {
-      style: (feature) => {
-        const isSelected = selectedDistricts.includes(feature?.properties?.district_id || 0)
-        return {
-          fillColor: isSelected ? '#3b82f6' : '#94a3b8',
-          fillOpacity: isSelected ? 0.2 : 0.1,
-          color: isSelected ? '#2563eb' : '#64748b',
-          weight: isSelected ? 2 : 1,
-        }
-      },
-      onEachFeature: (feature, layer) => {
-        const district = districtData.find(d => d.id === feature.properties.district_id)
-        if (district) {
-          layer.bindTooltip(
-            `District ${district.id}: ${district.name}`,
-            { sticky: true }
-          )
-        }
-      }
-    }).addTo(map)
+  const positions: LatLngExpression[] = boundaries.map(([lat, lng]) => [lat, lng])
 
-    return () => {
-      map.removeLayer(districtLayer)
-    }
-  }, [map, selectedDistricts])
-
-  return null
+  return (
+    <Polygon
+      positions={positions}
+      pathOptions={{
+        color: isSelected ? '#2563eb' : '#94a3b8',
+        weight: isSelected ? 2 : 1,
+        fillOpacity: isSelected ? 0.2 : 0.1,
+      }}
+      eventHandlers={{
+        click: onClick,
+      }}
+    >
+      <Tooltip sticky>District {district.id}</Tooltip>
+    </Polygon>
+  )
 } 

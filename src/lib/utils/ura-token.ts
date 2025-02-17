@@ -1,6 +1,14 @@
+import type { Database } from '@/types/database'
+
+interface URAResponse {
+  Result: string
+  Status: string
+  Message: string
+}
+
 const URA_TOKEN_URL = 'https://www.ura.gov.sg/uraDataService/insertNewToken.action'
 
-export async function generateURAToken() {
+export async function generateURAToken(): Promise<string> {
   try {
     const response = await fetch(URA_TOKEN_URL, {
       headers: {
@@ -8,12 +16,8 @@ export async function generateURAToken() {
       },
     })
 
-    if (!response.ok) {
-      throw new Error('Failed to generate URA token')
-    }
+    const data: URAResponse = await response.json()
 
-    const data = await response.json()
-    
     if (data.Status !== 'Success') {
       throw new Error(data.Message || 'Failed to generate URA token')
     }

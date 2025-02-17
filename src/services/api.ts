@@ -1,10 +1,9 @@
 import { createClient } from '@supabase/supabase-js'
-import type { Property, FilterParams, PropertyType } from '@/types/property'
-import districtData from '@/data/districts.json'
-import type { District, DistrictResponse } from '@/types/district'
+import type { Property, FilterParams, PropertyType, District } from '@/types/property'
+import type { Database } from '@/types/database'
 import { districtBoundaries } from '@/data/districts/boundaries'
 
-const supabase = createClient(
+const supabase = createClient<Database>(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 )
@@ -13,52 +12,19 @@ export async function fetchProperties(filters: FilterParams = {
   district_ids: [],
   property_type: [],
   beds: []
-}) {
+}): Promise<Property[]> {
   try {
-    let query = supabase
+    const { data, error } = await supabase
       .from('properties')
       .select('*')
+      .in('property_type', filters.property_type)
+      .in('beds', filters.beds)
+      .gte('sqft', filters.sqft_min || 0)
+      .lte('sqft', filters.sqft_max || Number.MAX_VALUE)
 
-    // Apply filters
-    if (filters.property_type?.length) {
-      query = query.in('property_type', filters.property_type)
-    }
+    if (error) throw error
 
-    if (filters.beds?.length) {
-      query = query.in('beds', filters.beds)
-    }
-
-    if (filters.sqft_min) {
-      query = query.gte('sqft', filters.sqft_min)
-    }
-
-    if (filters.sqft_max) {
-      query = query.lte('sqft', filters.sqft_max)
-    }
-
-    // For district filtering, we'll need to do it post-query since it's based on coordinates
-    const { data, error } = await query
-
-    if (error) {
-      throw error
-    }
-
-    let properties = data as Property[]
-
-    // Filter by district if specified
-    if (filters.district_ids?.length) {
-      properties = properties.filter(property => {
-        return filters.district_ids!.some(id => {
-          const district = districtData.districts.find(d => d.id === id)
-          if (!district) return false
-          const latDiff = Math.abs(district.center.lat - property.latitude)
-          const lngDiff = Math.abs(district.center.lng - property.longitude)
-          return latDiff < 0.02 && lngDiff < 0.02
-        })
-      })
-    }
-
-    return properties
+    return data
   } catch (error) {
     console.error('Error fetching properties:', error)
     throw error
@@ -71,15 +37,13 @@ export async function fetchDistricts(filters: FilterParams = {
   beds: []
 }): Promise<District[]> {
   try {
-    let query = supabase
+    const { data, error } = await supabase
       .from('districts')
       .select('*')
-    
-    const { data, error } = await query
-    
+
     if (error) throw error
-    
-    let districts = data.map(d => ({
+
+    const districts: District[] = data.map(d => ({
       id: d.id,
       name: d.name,
       region: d.region,
@@ -87,7 +51,7 @@ export async function fetchDistricts(filters: FilterParams = {
         lat: d.center_lat,
         lng: d.center_lng
       },
-      boundaries: districtBoundaries[d.id] || [],
+      boundaries: districtBoundaries[d.id as keyof typeof districtBoundaries] || [],
       summary: {
         property_count: d.property_count,
         avg_price: d.avg_price,
@@ -95,7 +59,7 @@ export async function fetchDistricts(filters: FilterParams = {
           Condo: d.condo_count,
           HDB: d.hdb_count,
           Landed: d.landed_count
-        } as Record<PropertyType, number>,
+        },
         price_range: {
           min: d.min_price,
           max: d.max_price
@@ -103,27 +67,6 @@ export async function fetchDistricts(filters: FilterParams = {
         avg_size: d.avg_size
       }
     }))
-
-    // Apply filters
-    if (filters.property_type?.length) {
-      districts = districts.filter(district => 
-        filters.property_type!.some(type => 
-          district.summary.property_types[type as PropertyType] > 0
-        )
-      )
-    }
-
-    if (filters.sqft_min) {
-      districts = districts.filter(district => 
-        district.summary.avg_size >= filters.sqft_min!
-      )
-    }
-
-    if (filters.sqft_max) {
-      districts = districts.filter(district => 
-        district.summary.avg_size <= filters.sqft_max!
-      )
-    }
 
     return districts
   } catch (error) {

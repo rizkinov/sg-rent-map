@@ -1,6 +1,26 @@
-import { supabase } from '@/lib/supabase/server'
+import { createClient } from '@supabase/supabase-js'
+import type { Database } from '@/types/database'
+import type { PropertyRecord } from '@/types/supabase'
 
-const propertiesToFix = [
+const supabase = createClient<Database>(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+)
+
+interface PropertyFix {
+  name: string
+  district: number
+  reason: string
+}
+
+interface DistrictStat {
+  property_name: string
+  district: number | null
+  property_type: string
+}
+
+// Known properties that need fixing
+const propertiesToFix: PropertyFix[] = [
   { name: 'Mandarin Gardens', district: 15, reason: 'Located in East Coast/Marine Parade' },
   { name: 'The Hillier', district: 23, reason: 'Located in Hillview area, Bukit Batok' }
 ]
@@ -8,76 +28,89 @@ const propertiesToFix = [
 async function fixRemainingDistricts() {
   console.log('Starting to fix remaining districts...\n')
 
-  for (const property of propertiesToFix) {
-    console.log(`Fixing ${property.name}:`)
-    console.log(`Reason: ${property.reason}`)
+  let updatedCount = 0
+  let errorCount = 0
 
-    const { data: instances, error: fetchError } = await supabase
-      .from('properties')
-      .select('id, property_name, district')
-      .eq('property_name', property.name)
+  // Update each property
+  for (const fix of propertiesToFix) {
+    try {
+      const { data: properties, error: fetchError } = await supabase
+        .from('properties')
+        .select('id, property_name, district')
+        .ilike('property_name', `%${fix.name}%`)
 
-    if (fetchError) {
-      console.error(`❌ Error fetching ${property.name}:`, fetchError.message)
-      continue
-    }
-
-    if (!instances?.length) {
-      console.log(`⚠️ Property not found: ${property.name}\n`)
-      continue
-    }
-
-    for (const instance of instances) {
-      if (instance.district === property.district) {
-        console.log(`⏭️ Instance already has correct district ${property.district}`)
+      if (fetchError) {
+        console.error(`Error fetching ${fix.name}:`, fetchError.message)
+        errorCount++
         continue
       }
 
-      const { error: updateError } = await supabase
-        .from('properties')
-        .update({ district: property.district })
-        .eq('id', instance.id)
-
-      if (updateError) {
-        console.error(`❌ Failed to update:`, updateError.message)
-      } else {
-        console.log(`✅ Updated from district ${instance.district} to ${property.district}`)
+      if (!properties.length) {
+        console.log(`⚠️  No properties found matching "${fix.name}"`)
+        continue
       }
+
+      for (const property of properties) {
+        if (property.district === fix.district) {
+          console.log(`✓ ${property.property_name} already has correct district ${fix.district}`)
+          continue
+        }
+
+        const { error: updateError } = await supabase
+          .from('properties')
+          .update({ district: fix.district })
+          .eq('id', property.id)
+
+        if (updateError) {
+          console.error(`Error updating ${property.property_name}:`, updateError.message)
+          errorCount++
+          continue
+        }
+
+        console.log(`✅ Updated ${property.property_name} to District ${fix.district}`)
+        console.log(`   Reason: ${fix.reason}\n`)
+        updatedCount++
+      }
+    } catch (error) {
+      console.error(`Error processing ${fix.name}:`, error)
+      errorCount++
     }
-    console.log('')
   }
 
-  // Verify all updates
-  console.log('\n=== Verification of All Districts ===')
-  const { data: properties, error: verifyError } = await supabase
-    .from('properties')
-    .select('property_name, district')
-    .in('property_name', propertiesToFix.map(p => p.name))
+  // Verify the current state
+  try {
+    // Get district statistics
+    const { data: stats, error: statsError } = await supabase
+      .from('properties')
+      .select('property_name, district, property_type')
 
-  if (verifyError) {
-    console.error('Error during verification:', verifyError.message)
-    return
-  }
+    if (statsError) throw statsError
 
-  properties?.forEach(property => {
-    const expected = propertiesToFix.find(p => p.name === property.property_name)
-    const status = property.district === expected?.district ? '✅' : '❌'
-    console.log(`${status} ${property.property_name}: District ${property.district}`)
-  })
-
-  // Show overall district statistics
-  const { data: stats } = await supabase
-    .from('properties')
-    .select('district')
-
-  if (stats) {
     const districts = new Set(stats.map(p => p.district).filter(Boolean))
+    
     console.log('\n=== District Statistics ===')
     console.log(`Total properties: ${stats.length}`)
     console.log(`Properties with districts: ${stats.filter(p => p.district).length}`)
     console.log(`Properties without districts: ${stats.filter(p => !p.district).length}`)
     console.log(`Unique districts: ${districts.size}`)
+
+    // List properties still missing districts
+    const missingDistricts = stats.filter(p => !p.district)
+    if (missingDistricts.length > 0) {
+      console.log('\nProperties still missing districts:')
+      missingDistricts.forEach(p => {
+        console.log(`- ${p.property_name} (${p.property_type})`)
+      })
+    }
+
+  } catch (error) {
+    console.error('Error verifying districts:', error)
   }
+
+  // Print summary
+  console.log('\n=== Update Summary ===')
+  console.log(`✅ Successfully updated: ${updatedCount}`)
+  console.log(`❌ Errors encountered: ${errorCount}`)
 }
 
 console.log('Starting fix and verification process...')
