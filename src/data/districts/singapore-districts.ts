@@ -1,5 +1,8 @@
 import { districtBoundaries } from './boundaries'
 
+// Define the coordinate type
+type Coordinate = [number, number]
+
 export interface District {
   id: number
   name: string
@@ -8,8 +11,17 @@ export interface District {
     lat: number
     lng: number
   }
-  boundaries: [number, number][] // Array of [lat, lng] coordinates forming the polygon
+  boundaries: Coordinate[]  // Array of [lat, lng] tuples
   avgPrice?: number // Make avgPrice optional
+}
+
+// Make sure districtBoundaries is properly typed
+const districtBoundaries: Record<number, Coordinate[]> = {
+  1: [
+    [1.2830, 103.8511],
+    // ... other coordinates
+  ],
+  // ... other districts
 }
 
 export const districtData: District[] = [
