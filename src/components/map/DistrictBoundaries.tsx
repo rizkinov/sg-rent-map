@@ -5,6 +5,9 @@ import type { LatLngExpression } from 'leaflet'
 import type { District } from '@/types/district'
 import { districtBoundaries } from '@/data/districts/boundaries'
 
+// Define the shape of our boundaries data
+type DistrictBoundariesType = Record<number, [number, number][]>
+
 interface DistrictBoundariesProps {
   district: District
   isSelected: boolean
@@ -12,7 +15,8 @@ interface DistrictBoundariesProps {
 }
 
 export function DistrictBoundaries({ district, isSelected, onClick }: DistrictBoundariesProps) {
-  const boundaries = districtBoundaries[district.id]
+  // Type assertion here is safe because we know the structure of our data
+  const boundaries = (districtBoundaries as DistrictBoundariesType)[district.id]
   if (!boundaries) return null
 
   const positions: LatLngExpression[] = boundaries.map(([lat, lng]) => [lat, lng])
