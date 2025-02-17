@@ -11,6 +11,7 @@ import { DistrictFilter } from './DistrictFilter'
 import { BedroomFilter } from './BedroomFilter'
 import { SqftFilter } from './SqftFilter'
 import { FilterSummary } from './FilterSummary'
+import type { PropertyType } from '@/types/property'
 
 interface FilterPanelProps {
   filters: FilterParams
@@ -70,7 +71,7 @@ export function FilterPanel({ filters, onChange, properties }: FilterPanelProps)
             <div className="space-y-4">
               <Label className="text-sm font-medium">Property Type</Label>
               <PropertyTypeFilter
-                selected={filters.property_type || []}
+                selected={filters.property_type as PropertyType[]}
                 onChange={types => onChange({ ...filters, property_type: types })}
                 properties={properties}
               />

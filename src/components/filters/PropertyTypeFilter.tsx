@@ -4,8 +4,8 @@ import { cn } from '@/lib/utils'
 import type { Property, PropertyType } from '@/types/property'
 
 interface PropertyTypeFilterProps {
-  selected: string[]
-  onChange: (types: string[]) => void
+  selected: PropertyType[]
+  onChange: (types: PropertyType[]) => void
   properties: Property[]
 }
 
@@ -46,7 +46,7 @@ export function PropertyTypeFilter({ selected, onChange, properties }: PropertyT
     <div className="grid grid-cols-3 gap-2">
       {propertyTypes.map(type => {
         const Icon = type.icon
-        const isSelected = selected.includes(type.id)
+        const isSelected = selected.includes(type.id as PropertyType)
         const count = propertyCounts[type.id as PropertyType] || 0
 
         return (
@@ -54,9 +54,9 @@ export function PropertyTypeFilter({ selected, onChange, properties }: PropertyT
             key={type.id}
             onClick={() => {
               if (isSelected) {
-                onChange(selected.filter(t => t !== type.id))
+                onChange(selected.filter(t => t !== type.id as PropertyType))
               } else {
-                onChange([...selected, type.id])
+                onChange([...selected, type.id as PropertyType])
               }
             }}
             className={cn(
