@@ -1,7 +1,15 @@
-import { supabase } from '@/lib/supabase/server'
+import { createClient } from '@supabase/supabase-js'
+import type { Database } from '@/types/database'
+import type { PropertyRecord } from '@/types/supabase'
+import type { PropertyType } from '@/types/property'
+
+const supabase = createClient<Database>(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+)
 
 // Group patterns by district number
-const districtPatterns = {
+const districtPatterns: Record<number, string[]> = {
   // Central (D1-8)
   1: ['raffles', 'marina', 'cecil'],
   2: ['tanjong pagar', 'chinatown', 'shenton'],
@@ -56,13 +64,13 @@ const districtPatterns = {
   24: ['lim chu kang', 'tengah', 'kranji', 'sungei kadut']
 }
 
-// Convert to a flat map for lookups
-const patternToDistrict = Object.entries(districtPatterns).reduce((acc, [district, patterns]) => {
-  patterns.forEach(pattern => {
-    acc[pattern] = parseInt(district)
-  })
-  return acc
-}, {} as Record<string, number>)
+interface Suggestion {
+  id: string
+  name: string
+  suggestedDistrict: number
+  confidence: 'high' | 'medium' | 'low'
+  reason: string
+}
 
 async function suggestDistricts() {
   console.log('Fetching properties without districts...\n')
@@ -79,22 +87,25 @@ async function suggestDistricts() {
 
   console.log(`Found ${properties.length} properties without districts\n`)
 
-  const suggestions: { id: number; name: string; suggestedDistrict: number; confidence: string; reason: string }[] = []
+  const suggestions: Suggestion[] = []
 
   for (const property of properties) {
     const name = property.property_name.toLowerCase()
     let suggestedDistrict: number | null = null
-    let confidence = 'low'
+    let confidence: 'high' | 'medium' | 'low' = 'low'
     let reason = ''
 
     // Check against known patterns
-    for (const [pattern, district] of Object.entries(patternToDistrict)) {
-      if (name.includes(pattern.toLowerCase())) {
-        suggestedDistrict = district
-        confidence = 'high'
-        reason = `Contains location keyword "${pattern}"`
-        break
+    for (const [district, patterns] of Object.entries(districtPatterns)) {
+      for (const pattern of patterns) {
+        if (name.includes(pattern.toLowerCase())) {
+          suggestedDistrict = parseInt(district)
+          confidence = 'high'
+          reason = `Contains location keyword "${pattern}"`
+          break
+        }
       }
+      if (suggestedDistrict) break
     }
 
     // Additional logic for specific cases
@@ -135,30 +146,22 @@ async function suggestDistricts() {
     }
   }
 
-  // Sort by confidence
-  suggestions.sort((a, b) => {
-    const confidenceOrder = { high: 3, medium: 2, low: 1 }
-    return confidenceOrder[b.confidence as keyof typeof confidenceOrder] - 
-           confidenceOrder[a.confidence as keyof typeof confidenceOrder]
-  })
-
-  // Print suggestions
+  // Group and display suggestions by confidence level
   console.log('=== District Suggestions ===')
-  suggestions.forEach(s => {
-    console.log(`\n${s.name}:`)
-    console.log(`  Suggested District: ${s.suggestedDistrict}`)
-    console.log(`  Confidence: ${s.confidence}`)
-    console.log(`  Reason: ${s.reason}`)
-  })
+  for (const level of ['high', 'medium', 'low'] as const) {
+    const levelSuggestions = suggestions.filter(s => s.confidence === level)
+    if (levelSuggestions.length > 0) {
+      console.log(`\n${level.toUpperCase()} confidence suggestions:`)
+      levelSuggestions.forEach(s => {
+        console.log(`- ${s.name}:`)
+        console.log(`  District ${s.suggestedDistrict} (${s.reason})`)
+      })
+    }
+  }
 
-  console.log('\n=== Summary ===')
-  console.log(`Total properties without districts: ${properties.length}`)
-  console.log(`Suggestions made: ${suggestions.length}`)
+  console.log(`\nTotal suggestions: ${suggestions.length}`)
   console.log(`High confidence: ${suggestions.filter(s => s.confidence === 'high').length}`)
   console.log(`Medium confidence: ${suggestions.filter(s => s.confidence === 'medium').length}`)
-
-  // Ask if user wants to apply high confidence suggestions
-  console.log('\nWould you like to apply the high confidence suggestions? (Create a new script for this)')
 }
 
 suggestDistricts()

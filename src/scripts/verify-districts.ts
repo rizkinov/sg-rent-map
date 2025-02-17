@@ -1,4 +1,17 @@
-import { supabase } from '@/lib/supabase/server'
+import { createClient } from '@supabase/supabase-js'
+import type { Database } from '@/types/database'
+import type { PropertyRecord, DistrictRecord } from '@/types/supabase'
+
+const supabase = createClient<Database>(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+)
+
+interface PropertyToCheck {
+  name: string
+  expectedDistrict: number
+  location: string
+}
 
 async function verifyDistricts() {
   console.log('Starting district verification...\n')
@@ -11,7 +24,7 @@ async function verifyDistricts() {
   console.log(`Total properties in database: ${totalCount}\n`)
 
   // Check for missing districts with pagination
-  let allMissingDistricts: any[] = []
+  let allMissingDistricts: PropertyRecord[] = []
   let page = 0
   const pageSize = 1000
 
@@ -33,7 +46,7 @@ async function verifyDistricts() {
   }
 
   // Get all stats with pagination
-  let allStats: any[] = []
+  let allStats: (Pick<PropertyRecord, 'district' | 'property_type'>)[] = []
   page = 0
 
   while (true) {
@@ -64,7 +77,7 @@ async function verifyDistricts() {
   }
 
   // Check our recent updates with correct districts
-  const propertiesToCheck = [
+  const propertiesToCheck: PropertyToCheck[] = [
     { name: 'Mandarin Gardens', expectedDistrict: 15, location: 'East Coast/Marine Parade' },
     { name: 'The Hillier', expectedDistrict: 23, location: 'Hillview Avenue, Bukit Batok' },
     { name: 'Costa Rhu', expectedDistrict: 15, location: 'Tanjong Rhu' }

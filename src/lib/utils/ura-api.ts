@@ -1,4 +1,4 @@
-const URA_BASE_URL = 'https://www.ura.gov.sg/uraDataService'
+import type { PropertyType } from '@/types/property'
 
 interface URAResponse<T> {
   Result: T
@@ -6,7 +6,20 @@ interface URAResponse<T> {
   Message: string
 }
 
-export async function fetchRentalData(token: string) {
+interface URARentalRecord {
+  project_name: string
+  street: string
+  postal_district: string
+  property_type: string
+  rental_price: number
+  floor_area: number
+  lease_date: string
+  bedrooms: number
+}
+
+const URA_BASE_URL = 'https://www.ura.gov.sg/uraDataService'
+
+export async function fetchRentalData(token: string): Promise<URARentalRecord[]> {
   try {
     // Sample data representing different areas and property types
     const sampleData = [
@@ -162,16 +175,16 @@ export async function fetchRentalData(token: string) {
   }
 }
 
-function mapPropertyType(uraType: string): 'Condo' | 'HDB' | 'Landed' {
-  // Map URA property types to our simplified categories
-  const typeMap: Record<string, 'Condo' | 'HDB' | 'Landed'> = {
-    'Apartment': 'Condo',
+function mapPropertyType(uraType: string): PropertyType {
+  const typeMap: Record<string, PropertyType> = {
     'Condominium': 'Condo',
-    'Detached House': 'Landed',
-    'Semi-detached House': 'Landed',
-    'Terrace House': 'Landed',
+    'Apartment': 'Condo',
     'HDB': 'HDB',
+    'Terrace House': 'Landed',
+    'Semi-Detached House': 'Landed',
+    'Detached House': 'Landed'
   }
+
   return typeMap[uraType] || 'Condo'
 }
 

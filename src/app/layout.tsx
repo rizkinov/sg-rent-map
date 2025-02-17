@@ -3,6 +3,8 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import 'leaflet/dist/leaflet.css'
 import { Providers } from './providers'
+import { ErrorBoundary } from '@/components/ErrorBoundary'
+import { PropertyProvider } from '@/providers/PropertyProvider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,7 +21,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        <Providers>{children}</Providers>
+        <ErrorBoundary>
+          <PropertyProvider>
+            <Providers>{children}</Providers>
+          </PropertyProvider>
+        </ErrorBoundary>
       </body>
     </html>
   )
