@@ -25,7 +25,7 @@ const propertyTypeColors: Record<string, string> = {
   'Landed': 'bg-orange-500/10 text-orange-600',
 }
 
-export function FilterSummary({ properties, selectedDistricts, selectedTypes, selectedBeds, sqftRange }: FilterSummaryProps) {
+export function FilterSummary({ properties, selectedDistricts, selectedTypes, selectedBeds = [], sqftRange }: FilterSummaryProps) {
   // Get filtered properties based on all filters
   const filteredProperties = useMemo(() => {
     return properties.filter(property => {
@@ -115,7 +115,7 @@ export function FilterSummary({ properties, selectedDistricts, selectedTypes, se
       )}
 
       {/* Selected Bedrooms */}
-      {selectedBeds?.length > 0 && (
+      {selectedBeds.length > 0 && (
         <div className="space-y-1">
           <div className="text-xs font-medium text-muted-foreground">Bedrooms</div>
           <div className="flex flex-wrap gap-1">
