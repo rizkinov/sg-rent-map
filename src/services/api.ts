@@ -8,7 +8,11 @@ const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 )
 
-export async function fetchProperties(filters: FilterParams = {}) {
+export async function fetchProperties(filters: FilterParams = {
+  district_ids: [],
+  property_type: [],
+  beds: []
+}) {
   try {
     let query = supabase
       .from('properties')
