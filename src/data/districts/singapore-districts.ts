@@ -168,7 +168,7 @@ export const districtData: District[] = [
     name: "Yishun, Sembawang",
     region: "North",
     center: { lat: 1.4300, lng: 103.8350 },
-    boundaries: districtBoundaries[27] as Coordinate[],
+    boundaries: createBoundaryBox({ lat: 1.4300, lng: 103.8350 }),
     summary: "Coastal living with upcoming developments"
   },
   {
@@ -176,7 +176,7 @@ export const districtData: District[] = [
     name: "Seletar, Yio Chu Kang",
     region: "North",
     center: { lat: 1.3920, lng: 103.8780 },
-    boundaries: districtBoundaries[28] as Coordinate[],
+    boundaries: createBoundaryBox({ lat: 1.3920, lng: 103.8780 }),
     summary: "Aviation heritage with peaceful residential areas"
   },
 
@@ -186,7 +186,7 @@ export const districtData: District[] = [
     name: "Clementi, Upper Bukit Timah",
     region: "West",
     center: { lat: 1.3330, lng: 103.7760 },
-    boundaries: districtBoundaries[21] as Coordinate[],
+    boundaries: createBoundaryBox({ lat: 1.3330, lng: 103.7760 }),
     summary: "Educational hub with nature reserves nearby"
   },
   {
@@ -194,7 +194,7 @@ export const districtData: District[] = [
     name: "Jurong, Boon Lay",
     region: "West",
     center: { lat: 1.3330, lng: 103.7220 },
-    boundaries: districtBoundaries[22] as Coordinate[],
+    boundaries: createBoundaryBox({ lat: 1.3330, lng: 103.7220 }),
     summary: "Second CBD with lakeside living"
   },
   {
@@ -202,7 +202,7 @@ export const districtData: District[] = [
     name: "Bukit Batok, Choa Chu Kang",
     region: "West",
     center: { lat: 1.3590, lng: 103.7490 },
-    boundaries: districtBoundaries[23] as Coordinate[],
+    boundaries: createBoundaryBox({ lat: 1.3590, lng: 103.7490 }),
     summary: "Family-friendly neighborhoods with nature parks"
   },
   {
@@ -210,7 +210,7 @@ export const districtData: District[] = [
     name: "Lim Chu Kang, Tengah",
     region: "West",
     center: { lat: 1.3940, lng: 103.7220 },
-    boundaries: districtBoundaries[24] as Coordinate[],
+    boundaries: createBoundaryBox({ lat: 1.3940, lng: 103.7220 }),
     summary: "Future forest town with sustainable living"
   },
 
