@@ -21,7 +21,9 @@ export interface District {
     lat: number
     lng: number
   }
-  summary: DistrictSummary
+  boundaries: [number, number][]
+  avgPrice?: number
+  summary: string
 }
 
 export interface DistrictResponse {
