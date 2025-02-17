@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { getSupabaseClient } from '@/lib/supabase/client'
+import { createServerClient } from '@/lib/supabase/server'
 import { generateURAToken } from '@/lib/utils/ura-token'
 import { fetchRentalData } from '@/lib/utils/ura-api'
 
@@ -22,8 +22,8 @@ export async function GET(request: Request) {
       throw new Error('No properties fetched')
     }
 
-    // Update Supabase database using server client
-    const supabase = getSupabaseClient(true) // Pass true for server-side
+    // Use server client instead
+    const supabase = createServerClient()
     
     try {
       // Clear existing data
