@@ -1,3 +1,6 @@
+'use client'
+
+import { useEffect, useRef } from 'react'
 import { Property, FilterParams } from '@/types/property'
 import { Card } from '@/components/ui/card'
 import { Label } from '@/components/ui/label'
@@ -19,7 +22,13 @@ interface FilterPanelProps {
   properties: Property[]
 }
 
-export function FilterPanel({ filters, onChange, properties }: FilterPanelProps) {
+export function FilterPanel({ 
+  filters, 
+  onChange, 
+  properties
+}: FilterPanelProps) {
+  const scrollRef = useRef<HTMLDivElement>(null)
+
   const hasFilters = Object.values(filters).some(value => 
     Array.isArray(value) ? value.length > 0 : value !== undefined
   )
@@ -65,7 +74,7 @@ export function FilterPanel({ filters, onChange, properties }: FilterPanelProps)
           </div>
         </div>
 
-        <ScrollArea className="flex-1 px-4">
+        <ScrollArea className="flex-1 px-4" ref={scrollRef}>
           <div className="space-y-6 pb-8 pt-6">
             {/* Property Type */}
             <div className="space-y-4">
