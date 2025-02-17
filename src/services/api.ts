@@ -64,7 +64,11 @@ export async function fetchProperties(filters: FilterParams = {
   }
 }
 
-export async function fetchDistricts(filters: FilterParams = {}): Promise<District[]> {
+export async function fetchDistricts(filters: FilterParams = {
+  district_ids: [],
+  property_type: [],
+  beds: []
+}): Promise<District[]> {
   try {
     let query = supabase
       .from('districts')
