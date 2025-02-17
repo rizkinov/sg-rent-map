@@ -2,6 +2,7 @@ import { createClient } from '@supabase/supabase-js'
 import type { Property, FilterParams, PropertyType } from '@/types/property'
 import districtData from '@/data/districts.json'
 import type { District, DistrictResponse } from '@/types/district'
+import { districtBoundaries } from '@/data/districts/boundaries'
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -86,6 +87,7 @@ export async function fetchDistricts(filters: FilterParams = {
         lat: d.center_lat,
         lng: d.center_lng
       },
+      boundaries: districtBoundaries[d.id] || [],
       summary: {
         property_count: d.property_count,
         avg_price: d.avg_price,
