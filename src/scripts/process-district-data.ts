@@ -45,17 +45,17 @@ const districtSummaries = districtData.map(district => {
 
   // Get top 3 most common property names with their rental prices
   const propertyNameCounts = districtProperties.reduce((acc, property) => {
-    if (!acc[property.name]) {
-      acc[property.name] = {
+    if (!acc[property.property_name]) {
+      acc[property.property_name] = {
         count: 0,
         minRent: property.rental_price,
         maxRent: property.rental_price,
         type: property.property_type
       }
     }
-    acc[property.name].count++
-    acc[property.name].minRent = Math.min(acc[property.name].minRent, property.rental_price)
-    acc[property.name].maxRent = Math.max(acc[property.name].maxRent, property.rental_price)
+    acc[property.property_name].count++
+    acc[property.property_name].minRent = Math.min(acc[property.property_name].minRent, property.rental_price)
+    acc[property.property_name].maxRent = Math.max(acc[property.property_name].maxRent, property.rental_price)
     return acc
   }, {} as Record<string, { count: number; minRent: number; maxRent: number; type: string }>)
 
