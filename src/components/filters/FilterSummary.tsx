@@ -154,11 +154,11 @@ export function FilterSummary({ properties, selectedDistricts, selectedTypes, se
         <div className="space-y-2">
           <div className="text-xs font-medium text-muted-foreground">Districts</div>
           <div className="space-y-2">
-            {Object.entries(groupedDistricts).map(([region, districts]) => (
+            {Object.entries(groupedDistricts).map(([region, districts]: [Region, number[]]) => (
               <div key={region}>
                 <div className="text-[10px] font-medium text-muted-foreground">{region}</div>
                 <div className="flex flex-wrap gap-1">
-                  {districts.map((id: number) => (
+                  {districts.map(id => (
                     <span
                       key={id}
                       className="inline-flex items-center justify-center px-1.5 py-0.5 rounded-full text-[10px] font-medium bg-primary/10 text-primary"
