@@ -1,5 +1,6 @@
 import fs from 'fs'
 import path from 'path'
+import type { Property } from '@/types/property'
 
 async function cleanDistrictsData() {
   try {
@@ -32,8 +33,8 @@ async function cleanDistrictsData() {
 
     // Remove duplicates and sort
     const uniqueProperties = Array.from(
-      new Map(allProperties.map(item => [item.name, item])).values()
-    ).sort((a, b) => a.name.localeCompare(b.name))
+      new Map<string, Property>(allProperties.map((item: Property) => [item.property_name, item])).values()
+    ).sort((a: Property, b: Property) => a.property_name.localeCompare(b.property_name))
 
     // Write back the cleaned data
     const outputPath = path.join(process.cwd(), 'src/data/cleaned-properties.json')
