@@ -92,7 +92,7 @@ export function PropertyMarkers({ properties }: PropertyMarkersProps) {
                   </span>
                   <span className="flex items-center gap-1">
                     <Bath className="h-4 w-4" />
-                    {property.bathrooms}B
+                    {property.baths ?? '-'}B
                   </span>
                   <span className="flex items-center gap-1">
                     <Move className="h-4 w-4" />
