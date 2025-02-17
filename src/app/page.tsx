@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { FilterPanel } from '@/components/filters/FilterPanel'
 import { Map } from '@/components/map/Map'
 import type { FilterParams } from '@/types/property'
-import { useProperties } from '@/providers/PropertyProvider'
+import { useProperties } from '@/hooks/useProperties'
 import { LoadingStatus } from '@/components/LoadingStatus'
 
 export default function Home() {
@@ -15,21 +15,24 @@ export default function Home() {
   })
 
   const { 
-    properties, 
-    loading, 
-    filteredProperties, 
-    loadingStatus, 
-    loadMore 
-  } = useProperties()
+    properties,
+    isLoading,
+    loadMore,
+    hasMore,
+    isFetchingMore,
+    loadingStatus
+  } = useProperties(filters)
 
   useEffect(() => {
     console.log('Properties count:', properties.length)
   }, [properties])
 
-  // Optional: Implement infinite scroll
+  // Implement infinite scroll
   useEffect(() => {
     const handleScroll = () => {
       if (
+        !isFetchingMore && 
+        hasMore &&
         window.innerHeight + document.documentElement.scrollTop
         === document.documentElement.offsetHeight
       ) {
@@ -39,9 +42,9 @@ export default function Home() {
 
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [loadMore])
+  }, [loadMore, hasMore, isFetchingMore])
 
-  if (loading && properties.length === 0) return null
+  if (isLoading && properties.length === 0) return null
 
   return (
     <main className="relative h-screen">
@@ -50,19 +53,19 @@ export default function Home() {
         <FilterPanel 
           filters={filters}
           onChange={setFilters}
-          properties={filteredProperties}
+          properties={properties}
         />
       </div>
       
       {/* Map with offset */}
       <div className="absolute top-0 right-0 h-full" style={{ left: '380px' }}>
         <Map 
-          properties={filteredProperties}
+          properties={properties}
           selectedDistricts={filters.district_ids || []}
         />
       </div>
 
-      {loading && <LoadingStatus 
+      {(isLoading || isFetchingMore) && <LoadingStatus 
         loaded={loadingStatus.loaded}
         total={loadingStatus.total}
       />}

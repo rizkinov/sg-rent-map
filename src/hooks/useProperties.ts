@@ -1,23 +1,35 @@
-import { useQuery } from '@tanstack/react-query'
+import { useQuery, useInfiniteQuery } from '@tanstack/react-query'
 import { getProperties, PaginatedResponse } from '@/lib/supabase/properties'
 import type { Property, FilterParams } from '@/types/property'
 import { useMemo } from 'react'
 
 export function useProperties(filters: FilterParams) {
-  // Fetch all properties once
-  const { data, isLoading } = useQuery<PaginatedResponse<Property>>({
-    queryKey: ['properties'],
-    queryFn: () => getProperties(),
+  const {
+    data,
+    isLoading,
+    fetchNextPage,
+    hasNextPage,
+    isFetchingNextPage
+  } = useInfiniteQuery({
+    queryKey: ['properties'] as const,
+    queryFn: ({ pageParam }) => getProperties(pageParam as number),
+    initialPageParam: 0,
+    getNextPageParam: (lastPage) => 
+      lastPage.hasMore ? lastPage.currentPage + 1 : undefined,
     staleTime: 1000 * 60 * 5,
     refetchOnWindowFocus: false,
     refetchOnMount: false
   })
 
+  // Combine all pages of properties
+  const allProperties = useMemo(() => {
+    if (!data?.pages) return []
+    return data.pages.flatMap(page => page.data)
+  }, [data?.pages])
+
   // Filter properties
   const filteredProperties = useMemo(() => {
-    const properties = data?.data || []
-    
-    return properties.filter(property => {
+    return allProperties.filter(property => {
       if (filters.district_ids.length && !filters.district_ids.includes(property.district || 0)) {
         return false
       }
@@ -35,14 +47,20 @@ export function useProperties(filters: FilterParams) {
       }
       return true
     })
-  }, [data?.data, filters])
+  }, [allProperties, filters])
+
+  const total = data?.pages[0]?.total || 0
 
   return {
-    data: filteredProperties,
+    properties: filteredProperties,
     isLoading,
-    isFiltering: isLoading || !data?.data.length,
-    total: data?.total || 0,
-    hasMore: data?.hasMore || false,
-    currentPage: data?.currentPage || 0
+    isFiltering: isLoading || allProperties.length === 0,
+    loadMore: fetchNextPage,
+    hasMore: hasNextPage,
+    isFetchingMore: isFetchingNextPage,
+    loadingStatus: {
+      loaded: allProperties.length,
+      total
+    }
   }
 } 
