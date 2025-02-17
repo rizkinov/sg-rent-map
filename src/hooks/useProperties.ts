@@ -16,14 +16,20 @@ export function useProperties(filters: FilterParams) {
   // Filter properties client-side
   const filteredProperties = useMemo(() => {
     return allProperties.filter(property => {
+      // Filter by district - handle null case
+      if (filters.district_ids?.length > 0) {
+        // If property has no district, filter it out when districts are selected
+        if (!property.district) return false
+        // Now TypeScript knows property.district is a number
+        if (!filters.district_ids.includes(property.district)) {
+          return false
+        }
+      }
+
       if (filters.property_type?.length > 0 && !filters.property_type.includes(property.property_type)) {
         return false
       }
       
-      if (filters.district_ids?.length > 0 && !filters.district_ids.includes(property.district)) {
-        return false
-      }
-
       if (filters.beds?.length > 0) {
         if (!property.beds) return false
         
