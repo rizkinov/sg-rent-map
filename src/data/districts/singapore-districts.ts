@@ -7,6 +7,18 @@ export type { District } from '@/types/district'
 // Define the coordinate type
 type Coordinate = [number, number]
 
+// For districts without boundaries data, we'll create a simple boundary box
+function createBoundaryBox(center: { lat: number, lng: number }, size: number = 0.01): Coordinate[] {
+  const { lat, lng } = center
+  return [
+    [lat - size, lng - size],
+    [lat - size, lng + size],
+    [lat + size, lng + size],
+    [lat + size, lng - size],
+    [lat - size, lng - size], // Close the polygon
+  ]
+}
+
 export const districtData: District[] = [
   // Central Region
   {
@@ -140,7 +152,7 @@ export const districtData: District[] = [
     name: "Kranji, Woodlands",
     region: "North",
     center: { lat: 1.4380, lng: 103.7890 },
-    boundaries: districtBoundaries[25] as Coordinate[],
+    boundaries: createBoundaryBox({ lat: 1.4380, lng: 103.7890 }),
     summary: "Gateway to Malaysia with waterfront developments"
   },
   {
@@ -148,7 +160,7 @@ export const districtData: District[] = [
     name: "Upper Thomson, Mandai",
     region: "North",
     center: { lat: 1.4180, lng: 103.8120 },
-    boundaries: districtBoundaries[26] as Coordinate[],
+    boundaries: createBoundaryBox({ lat: 1.4180, lng: 103.8120 }),
     summary: "Nature reserves and wildlife attractions"
   },
   {
