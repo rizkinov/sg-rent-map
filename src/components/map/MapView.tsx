@@ -11,7 +11,7 @@ interface MapViewProps {
 
 export function MapView({ properties, selectedDistricts }: MapViewProps) {
   return (
-    <div className="absolute inset-0">
+    <div className="absolute inset-0 z-0">
       <MapContainer
         center={[1.3521, 103.8198]}
         zoom={11}
