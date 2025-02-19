@@ -12,6 +12,27 @@ interface DistrictLayerPopupProps {
 }
 
 export function DistrictLayerPopup({ district, properties }: DistrictLayerPopupProps) {
+  console.log(`DistrictLayerPopup render for D${district.id}:`, {
+    totalProperties: properties.length,
+    propertiesSnapshot: properties.map(p => ({
+      id: p.id,
+      price: p.rental_price,
+      sqft: p.sqft
+    }))
+  });
+
+  const topProperties = [...properties]
+    .sort((a, b) => b.rental_price - a.rental_price)
+    .slice(0, 3);
+
+  console.log(`Top properties for D${district.id}:`, {
+    count: topProperties.length,
+    properties: topProperties.map(p => ({
+      id: p.id,
+      price: p.rental_price
+    }))
+  });
+
   // Calculate stats
   const stats = {
     avgPrice: properties.length
@@ -33,9 +54,7 @@ export function DistrictLayerPopup({ district, properties }: DistrictLayerPopupP
       }
       return acc
     }, {} as Record<string, number>),
-    topProperties: [...properties]
-      .sort((a, b) => b.rental_price - a.rental_price)
-      .slice(0, 3)
+    topProperties: topProperties
       .map(property => ({
         id: property.id,
         property_name: property.property_name,
