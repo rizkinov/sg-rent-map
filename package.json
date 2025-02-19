@@ -8,7 +8,15 @@
     "start": "next start",
     "lint": "next lint",
     "verify-deployment": "ts-node --project tsconfig.scripts.json src/scripts/verify-deployment.ts",
-    "verify-deployment-v2": "ts-node --project tsconfig.scripts.json src/scripts/verify-deployment-v2.ts"
+    "verify-deployment-v2": "ts-node --project tsconfig.scripts.json src/scripts/verify-deployment-v2.ts",
+    "migrate": "npx supabase migration up",
+    "import-data": "ts-node --project tsconfig.scripts.json src/scripts/import-properties.ts",
+    "verify-data": "ts-node --project tsconfig.scripts.json src/scripts/verify-data.ts",
+    "deploy-data": "npm run import-data && npm run verify-data",
+    "fix-data": "ts-node --project tsconfig.scripts.json src/scripts/fix-property-data.ts",
+    "analyze-data": "ts-node --project tsconfig.scripts.json src/scripts/analyze-data.ts",
+    "cleanup-files": "ts-node --project tsconfig.scripts.json src/scripts/cleanup-data-files.ts",
+    "fix-typescript": "tsc --noEmit --pretty"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.0",
@@ -22,7 +30,7 @@
     "@radix-ui/react-slider": "^1.2.3",
     "@radix-ui/react-slot": "^1.1.2",
     "@supabase/ssr": "latest",
-    "@supabase/supabase-js": "latest",
+    "@supabase/supabase-js": "^2.48.1",
     "@tanstack/react-query": "^5.66.3",
     "@tanstack/react-query-devtools": "^5.66.3",
     "class-variance-authority": "^0.7.1",
@@ -38,6 +46,7 @@
     "react-leaflet": "^4.2.1",
     "tailwind-merge": "^2.6.0",
     "tailwindcss-animate": "^1.0.7",
+    "uuid": "^11.0.5",
     "zod": "^3.24.2"
   },
   "devDependencies": {
@@ -46,6 +55,7 @@
     "@types/node": "^20.17.19",
     "@types/react": "^18.2.47",
     "@types/react-dom": "^18.2.21",
+    "@types/uuid": "^10.0.0",
     "autoprefixer": "^10.4.18",
     "dotenv": "^16.4.7",
     "eslint": "^8.57.0",
