@@ -2,6 +2,7 @@
 
 import dynamic from 'next/dynamic'
 import type { Property } from '@/types/property'
+import { LoadingStatus } from '@/components/LoadingStatus'
 
 // Dynamically import MapView with no SSR
 const MapView = dynamic(
@@ -19,15 +20,31 @@ const MapView = dynamic(
 interface MapProps {
   properties: Property[]
   selectedDistricts: number[]
+  loading?: boolean
+  loadingStatus?: {
+    loaded: number
+    total: number
+  }
 }
 
-export function Map({ properties, selectedDistricts }: MapProps) {
+export function Map({ 
+  properties, 
+  selectedDistricts,
+  loading,
+  loadingStatus 
+}: MapProps) {
   return (
-    <div className="h-full w-full">
+    <div className="relative h-full w-full">
       <MapView 
         properties={properties}
         selectedDistricts={selectedDistricts}
       />
+      {loading && loadingStatus && (
+        <LoadingStatus 
+          loaded={loadingStatus.loaded} 
+          total={loadingStatus.total} 
+        />
+      )}
     </div>
   )
 } 
