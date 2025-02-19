@@ -21,48 +21,40 @@ export function DistrictLayerPopup({ district, properties }: DistrictLayerPopupP
     }))
   });
 
-  const topProperties = [...properties]
-    .sort((a, b) => b.rental_price - a.rental_price)
-    .slice(0, 3);
+  // Get unique properties by ID, keeping only the most recent one
+  const uniqueProperties = Array.from(
+    properties.reduce((map, property) => {
+      if (!map.has(property.id) || 
+          new Date(property.created_at) > new Date(map.get(property.id)!.created_at)) {
+        map.set(property.id, property)
+      }
+      return map
+    }, new Map<string, Property>())
+  ).map(([_, property]) => property)
 
-  console.log(`Top properties for D${district.id}:`, {
-    count: topProperties.length,
-    properties: topProperties.map(p => ({
-      id: p.id,
-      price: p.rental_price
-    }))
-  });
-
-  // Calculate stats
+  // Calculate statistics using unique properties
   const stats = {
-    avgPrice: properties.length
-      ? Math.round(properties.reduce((sum, p) => sum + p.rental_price, 0) / properties.length)
+    avgPrice: uniqueProperties.length
+      ? Math.round(uniqueProperties.reduce((sum, p) => sum + p.rental_price, 0) / uniqueProperties.length)
       : 0,
-    minPrice: properties.length ? Math.min(...properties.map(p => p.rental_price)) : 0,
-    maxPrice: properties.length ? Math.max(...properties.map(p => p.rental_price)) : 0,
-    avgSize: properties.length
-      ? Math.round(properties.reduce((sum, p) => sum + p.sqft, 0) / properties.length)
-      : 0,
-    typeCounts: properties.reduce((acc, p) => {
+    propertyTypes: uniqueProperties.reduce((acc, p) => {
       acc[p.property_type] = (acc[p.property_type] || 0) + 1
       return acc
     }, {} as Record<string, number>),
-    bedCounts: properties.reduce((acc, p) => {
-      if (p.beds) {
-        const bedKey = p.beds >= 5 ? '5+' : p.beds.toString()
-        acc[bedKey] = (acc[bedKey] || 0) + 1
-      }
+    priceRange: {
+      min: Math.min(...uniqueProperties.map(p => p.rental_price)),
+      max: Math.max(...uniqueProperties.map(p => p.rental_price))
+    },
+    avgSize: Math.round(
+      uniqueProperties.reduce((sum, p) => sum + p.sqft, 0) / uniqueProperties.length
+    ),
+    bedroomCounts: uniqueProperties.reduce((acc, p) => {
+      acc[p.beds] = (acc[p.beds] || 0) + 1
       return acc
-    }, {} as Record<string, number>),
-    topProperties: topProperties
-      .map(property => ({
-        id: property.id,
-        property_name: property.property_name,
-        property_type: property.property_type,
-        rental_price: property.rental_price,
-        beds: property.beds,
-        sqft: property.sqft
-      }))
+    }, {} as Record<number, number>),
+    topProperties: uniqueProperties
+      .sort((a, b) => b.rental_price - a.rental_price)
+      .slice(0, 3)
   }
 
   // Define property type order
@@ -86,11 +78,11 @@ export function DistrictLayerPopup({ district, properties }: DistrictLayerPopupP
             <div className="text-[10px] text-muted-foreground">Average</div>
           </div>
           <div>
-            <div className="font-bold text-primary">${formatPrice(stats.minPrice)}</div>
+            <div className="font-bold text-primary">${formatPrice(stats.priceRange.min)}</div>
             <div className="text-[10px] text-muted-foreground">Min</div>
           </div>
           <div>
-            <div className="font-bold text-primary">${formatPrice(stats.maxPrice)}</div>
+            <div className="font-bold text-primary">${formatPrice(stats.priceRange.max)}</div>
             <div className="text-[10px] text-muted-foreground">Max</div>
           </div>
         </div>
@@ -102,7 +94,7 @@ export function DistrictLayerPopup({ district, properties }: DistrictLayerPopupP
           <div className="text-[10px] font-medium text-muted-foreground">Property Types</div>
           <div className="flex flex-wrap gap-1">
             {propertyTypeOrder.map((type, index) => (
-              stats.typeCounts[type] > 0 && (
+              stats.propertyTypes[type] > 0 && (
                 <span
                   key={type}
                   className={cn("text-[10px]",
@@ -111,7 +103,7 @@ export function DistrictLayerPopup({ district, properties }: DistrictLayerPopupP
                     "text-orange-600"
                   )}
                 >
-                  {index > 0 && '· '}{type}: {stats.typeCounts[type]}
+                  {index > 0 && '· '}{type}: {stats.propertyTypes[type]}
                 </span>
               )
             ))}
@@ -122,12 +114,8 @@ export function DistrictLayerPopup({ district, properties }: DistrictLayerPopupP
         <div className="space-y-1">
           <div className="text-[10px] font-medium text-muted-foreground">Bedrooms</div>
           <div className="flex flex-wrap gap-1">
-            {Object.entries(stats.bedCounts)
-              .sort(([a], [b]) => {
-                if (a === '5+') return 1
-                if (b === '5+') return -1
-                return Number(a) - Number(b)
-              })
+            {Object.entries(stats.bedroomCounts)
+              .sort(([a], [b]) => Number(a) - Number(b))
               .map(([beds, count], index) => (
                 <span key={beds} className="text-[10px]">
                   {index > 0 && '· '}{beds}BR: {count}
