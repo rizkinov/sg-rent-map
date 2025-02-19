@@ -33,9 +33,9 @@ export function DistrictLayerPopup({ district, properties }: DistrictLayerPopupP
       }
       return acc
     }, {} as Record<string, number>),
-    topProperties: properties
+    topProperties: [...properties]
       .sort((a, b) => b.rental_price - a.rental_price)
-      .slice(0, 3)  // Limit to exactly 3 properties
+      .slice(0, 3)
       .map(property => ({
         id: property.id,
         property_name: property.property_name,
