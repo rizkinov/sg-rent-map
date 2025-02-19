@@ -33,10 +33,17 @@ export function DistrictLayerPopup({ district, properties }: DistrictLayerPopupP
       }
       return acc
     }, {} as Record<string, number>),
-    // Ensure only top 3 properties are selected
-    topProperties: [...properties]
+    topProperties: properties
       .sort((a, b) => b.rental_price - a.rental_price)
-      .slice(0, 3) // Explicitly limit to top 3
+      .slice(0, 3)  // Limit to exactly 3 properties
+      .map(property => ({
+        id: property.id,
+        property_name: property.property_name,
+        property_type: property.property_type,
+        rental_price: property.rental_price,
+        beds: property.beds,
+        sqft: property.sqft
+      }))
   }
 
   // Define property type order
