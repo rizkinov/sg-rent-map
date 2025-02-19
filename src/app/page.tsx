@@ -37,6 +37,8 @@ export default function Home() {
         <Map 
           properties={properties}
           selectedDistricts={filters.district_ids || []}
+          loading={isLoading}
+          loadingStatus={loadingStatus}
         />
       </div>
 
