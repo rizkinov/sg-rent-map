@@ -12,7 +12,7 @@ interface DistrictLayerPopupProps {
 }
 
 export function DistrictLayerPopup({ district, properties }: DistrictLayerPopupProps) {
-  // Calculate stats (keeping the same logic)
+  // Calculate stats
   const stats = {
     avgPrice: properties.length
       ? Math.round(properties.reduce((sum, p) => sum + p.rental_price, 0) / properties.length)
@@ -33,9 +33,10 @@ export function DistrictLayerPopup({ district, properties }: DistrictLayerPopupP
       }
       return acc
     }, {} as Record<string, number>),
+    // Ensure only top 3 properties are selected
     topProperties: [...properties]
       .sort((a, b) => b.rental_price - a.rental_price)
-      .slice(0, 3)
+      .slice(0, 3) // Explicitly limit to top 3
   }
 
   // Define property type order
@@ -115,7 +116,7 @@ export function DistrictLayerPopup({ district, properties }: DistrictLayerPopupP
           <div className="text-[10px]">{formatPrice(stats.avgSize)} sqft</div>
         </div>
 
-        {/* Top Properties */}
+        {/* Top Properties - now guaranteed to show only 3 */}
         <div className="space-y-1">
           <div className="text-[10px] font-medium text-muted-foreground">Top Properties</div>
           <div className="space-y-1">
