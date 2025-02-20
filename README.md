@@ -93,101 +93,104 @@ The Singapore Rental Dashboard enables users to:
 
 ```sql
 CREATE TABLE properties (
-  id UUID PRIMARY KEY,
-  property_name TEXT,
-  property_type ENUM ('Condo', 'HDB', 'Landed'),
-  district INTEGER,
-  rental_price INTEGER,
-  beds INTEGER,
-  baths INTEGER,
-  sqft NUMERIC,
-  mrt TEXT,
-  latitude NUMERIC,
-  longitude NUMERIC,
-  completion_year INTEGER,
-  url TEXT,
-  street_name TEXT,
-  lease_date TEXT,
-  created_at TIMESTAMPTZ,
-  updated_at TIMESTAMPTZ
+    id UUID PRIMARY KEY,
+    property_name TEXT,
+    property_type ENUM ('Condo', 'HDB', 'Landed'),
+    district INTEGER,
+    rental_price INTEGER,
+    beds INTEGER,
+    baths INTEGER,
+    sqft NUMERIC,
+    mrt TEXT,
+    latitude NUMERIC,
+    longitude NUMERIC,
+    completion_year INTEGER,
+    url TEXT,
+    street_name TEXT,
+    lease_date TEXT,
+    created_at TIMESTAMPTZ,
+    updated_at TIMESTAMPTZ
 );
+```
 
-## Districts Table
+### Districts Table
 
+```sql
 CREATE TABLE districts (
-  id INTEGER PRIMARY KEY,
-  name TEXT,
-  region TEXT,
-  center_lat NUMERIC,
-  center_lng NUMERIC,
-  property_count INTEGER,
-  avg_price NUMERIC,
-  min_rent NUMERIC,
-  max_rent NUMERIC,
-  condo_count INTEGER,
-  hdb_count INTEGER,
-  landed_count INTEGER,
-  avg_size NUMERIC,
-  top_properties JSONB[],
-  created_at TIMESTAMPTZ,
-  updated_at TIMESTAMPTZ
+    id INTEGER PRIMARY KEY,
+    name TEXT,
+    region TEXT,
+    center_lat NUMERIC,
+    center_lng NUMERIC,
+    property_count INTEGER,
+    avg_price NUMERIC,
+    min_rent NUMERIC,
+    max_rent NUMERIC,
+    condo_count INTEGER,
+    hdb_count INTEGER,
+    landed_count INTEGER,
+    avg_size NUMERIC,
+    top_properties JSONB[],
+    created_at TIMESTAMPTZ,
+    updated_at TIMESTAMPTZ
 );
+```
 
-### Folder Structure
+---
+
+## Folder Structure
+```
 src/
 ├── app/                   # Next.js app router and API routes
 ├── components/            # React components (filters, map, UI)
 ├── data/                  # Static data (e.g., district info)
 ├── lib/                   # Utility functions and Supabase clients
-├── scripts/               # Data processing and cleaning scripts
-├── types/                 # TypeScript type definitions
-└── hooks/                 # Custom React hooks
+├── scripts/              # Data processing and cleaning scripts
+├── types/                # TypeScript type definitions
+└── hooks/                # Custom React hooks
+```
 
-###Key Algorithms
-##District Assignment:
+## Key Algorithms
+
+### District Assignment
 - Utilizes a ray casting algorithm for point-in-polygon testing.
 - Maps properties to districts based on geographic coordinates.
 - Implements fuzzy matching for property names to enhance accuracy.
 
-##Data Processing:
+### Data Processing
 - Classifies property types and estimates bedroom counts (especially for landed properties).
 - Calculates district boundaries and normalizes price ranges.
 
-##Data Sources
+## Data Sources
 - Singapore Urban Redevelopment Authority (URA) for property data
 - Google Maps API for geocoding and map rendering
 - OpenStreetMap for district boundaries and geographic data
 
-##Development Workflow
+## Development Workflow
 1. Clone the repository
 2. Install dependencies
 3. Configure environment variables
 4. Run the development server
 5. Make changes and commit
 6. Push to the main branch
-7. Create a pull request  
+7. Create a pull request
 
-##Security
+## Security
 - Supabase handles authentication and database security.
 - API routes are protected and rate limited.
 - Data validation is implemented using Zod.
 
-
-##Contributing
+## Contributing
 - Fork the repository
 - Create a new branch
 - Make your changes and commit
 - Push to the branch
-- Create a pull request   
+- Create a pull request
 
-##Maintenance
+## Maintenance
 - Regularly update dependencies
 - Monitor performance and user feedback
 - Address issues and feature requests
 
-
-
-##License
-This project is licensed under the MIT License. See the LICENSE file for details.   
-
-
+## License
+This project is licensed under the MIT License. See the LICENSE file for details.
