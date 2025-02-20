@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "rm -rf .next && next build",
     "start": "next start",
     "lint": "next lint",
     "verify-deployment": "ts-node --project tsconfig.scripts.json src/scripts/verify-deployment.ts",
@@ -16,7 +16,9 @@
     "fix-data": "ts-node --project tsconfig.scripts.json src/scripts/fix-property-data.ts",
     "analyze-data": "ts-node --project tsconfig.scripts.json src/scripts/analyze-data.ts",
     "cleanup-files": "ts-node --project tsconfig.scripts.json src/scripts/cleanup-data-files.ts",
-    "fix-typescript": "tsc --noEmit --pretty"
+    "fix-typescript": "tsc --noEmit --pretty",
+    "vercel-build": "npm run build",
+    "deploy": "vercel --prod"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.0",
