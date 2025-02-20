@@ -2,14 +2,12 @@ export function verifyEnvironment() {
   const requiredEnvVars = [
     'NEXT_PUBLIC_SUPABASE_URL',
     'NEXT_PUBLIC_SUPABASE_ANON_KEY',
-    'SUPABASE_SERVICE_ROLE_KEY',
-    'URA_ACCESS_KEY',
-    'CRON_SECRET'
-  ];
+    'SUPABASE_SERVICE_ROLE_KEY'
+  ]
 
-  const missing = requiredEnvVars.filter(key => !process.env[key]);
-
-  if (missing.length > 0) {
-    throw new Error(`Missing required environment variables: ${missing.join(', ')}`);
+  for (const envVar of requiredEnvVars) {
+    if (!process.env[envVar]) {
+      throw new Error(`Missing required environment variable: ${envVar}`)
+    }
   }
 } 

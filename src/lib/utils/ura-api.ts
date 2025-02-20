@@ -15,15 +15,11 @@ export async function fetchRentalData(): Promise<URARentalRecord[]> {
     const sampleData: URARentalRecord[] = [
       {
         project_name: "Sample Condo",
-        street: "Sample Street",
-        postal_district: "10",
         property_type: "Condo",
-        floor_area: 1200,
         sqft: 1200,
         bedrooms: 3,
         bathrooms: 2,
         rental_price: 4500,
-        lease_date: "2024-02",
         latitude: 1.3521,
         longitude: 103.8198,
         created_at: new Date().toISOString()
@@ -31,7 +27,6 @@ export async function fetchRentalData(): Promise<URARentalRecord[]> {
     ];
 
     console.log('Sample data:', JSON.stringify(sampleData, null, 2));
-
     return sampleData;
 
     /* Commented out URA API call for now
