@@ -115,17 +115,17 @@ export function FilterSummary({ properties, selectedDistricts, selectedTypes, se
       )}
 
       {/* Selected Bedrooms */}
-      {selectedBeds.length > 0 && (
+      {selectedBeds && selectedBeds.length > 0 && (
         <div className="space-y-1">
           <div className="text-xs font-medium text-muted-foreground">Bedrooms</div>
           <div className="flex flex-wrap gap-1">
             {selectedBeds.map(beds => (
               <span
                 key={beds}
-                className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-medium bg-violet-500/10 text-violet-600"
+                className="inline-flex items-center justify-center px-1.5 py-0.5 rounded-full text-[10px] font-medium bg-primary/10 text-primary"
               >
-                <Bed className="h-3 w-3" />
-                {beds} {beds === 1 ? 'bed' : 'beds'}
+                <Bed className="w-3 h-3 mr-1" />
+                {beds === 5 ? '5+ beds' : `${beds} beds`}
               </span>
             ))}
           </div>

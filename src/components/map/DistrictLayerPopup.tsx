@@ -49,9 +49,14 @@ export function DistrictLayerPopup({ district, properties }: DistrictLayerPopupP
       uniqueProperties.reduce((sum, p) => sum + p.sqft, 0) / uniqueProperties.length
     ),
     bedroomCounts: uniqueProperties.reduce((acc, p) => {
-      acc[p.beds] = (acc[p.beds] || 0) + 1
-      return acc
-    }, {} as Record<number, number>),
+      const beds = p.beds;
+      if (beds !== null && beds !== undefined) {
+        // Group all 5+ bedrooms together
+        const bedKey = beds >= 5 ? '5+' : beds.toString();
+        acc[bedKey] = (acc[bedKey] || 0) + 1;
+      }
+      return acc;
+    }, {} as Record<string, number>),
     topProperties: uniqueProperties
       .sort((a, b) => b.rental_price - a.rental_price)
       .slice(0, 3)
@@ -115,7 +120,12 @@ export function DistrictLayerPopup({ district, properties }: DistrictLayerPopupP
           <div className="text-[10px] font-medium text-muted-foreground">Bedrooms</div>
           <div className="flex flex-wrap gap-1">
             {Object.entries(stats.bedroomCounts)
-              .sort(([a], [b]) => Number(a) - Number(b))
+              .sort(([a], [b]) => {
+                // Custom sort to handle "5+" properly
+                const aNum = a === '5+' ? 5 : parseInt(a);
+                const bNum = b === '5+' ? 5 : parseInt(b);
+                return aNum - bNum;
+              })
               .map(([beds, count], index) => (
                 <span key={beds} className="text-[10px]">
                   {index > 0 && '· '}{beds}BR: {count}
