@@ -4,8 +4,12 @@ import './globals.css'
 import 'leaflet/dist/leaflet.css'
 import { Providers } from './providers'
 import { ErrorBoundary } from '@/components/ErrorBoundary'
+import { verifyEnvironment } from '@/lib/verify-env'
 
 const inter = Inter({ subsets: ['latin'] })
+
+// Verify environment variables during build
+verifyEnvironment()
 
 export const metadata: Metadata = {
   title: 'Singapore Rental Dashboard',
