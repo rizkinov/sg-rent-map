@@ -5,8 +5,9 @@ import path from 'path'
 import dotenv from 'dotenv'
 import type { Database } from '@/types/database'
 
-// Load environment variables from .env.local
+// Load environment variables from .env.local, falling back to .env
 dotenv.config({ path: path.resolve(process.cwd(), '.env.local') })
+dotenv.config({ path: path.resolve(process.cwd(), '.env') })
 
 const BATCH_SIZE = 1000
 
