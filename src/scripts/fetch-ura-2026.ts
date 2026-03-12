@@ -368,10 +368,43 @@ async function sleep(ms: number) {
   return new Promise(resolve => setTimeout(resolve, ms))
 }
 
+let geocodeAvailable: boolean | null = null
+
+async function checkGeocodeAvailability(): Promise<boolean> {
+  if (geocodeAvailable !== null) return geocodeAvailable
+  console.log('  Testing OneMap API connectivity...')
+  try {
+    const controller = new AbortController()
+    const timeout = setTimeout(() => controller.abort(), 3000)
+    const res = await fetch(
+      'https://www.onemap.gov.sg/api/common/elastic/search?searchVal=Singapore&returnGeom=Y&getAddrDetails=Y&pageNum=1',
+      { signal: controller.signal }
+    )
+    clearTimeout(timeout)
+    geocodeAvailable = res.ok
+    if (geocodeAvailable) console.log('  OneMap API is reachable!\n')
+  } catch {
+    geocodeAvailable = false
+  }
+  if (!geocodeAvailable) {
+    console.log('  OneMap API is unreachable — skipping geocoding.')
+    console.log('  Lat/lng will be 0,0; run again when network is available.\n')
+  }
+  return geocodeAvailable
+}
+
 async function geocodeAddress(
   streetName: string,
   projectName: string
 ): Promise<{ lat: number; lng: number }> {
+  // Quick bail if API is known to be unreachable
+  if (geocodeAvailable === false) return { lat: 0, lng: 0 }
+
+  // First call: check connectivity
+  if (geocodeAvailable === null) {
+    if (!(await checkGeocodeAvailability())) return { lat: 0, lng: 0 }
+  }
+
   // Build search query: try street name first, then project name
   const queries = [
     `${streetName} Singapore`,
@@ -387,8 +420,11 @@ async function geocodeAddress(
     }
 
     try {
+      const controller = new AbortController()
+      const timeout = setTimeout(() => controller.abort(), 5000)
       const url = `https://www.onemap.gov.sg/api/common/elastic/search?searchVal=${encodeURIComponent(query)}&returnGeom=Y&getAddrDetails=Y&pageNum=1`
-      const res = await fetch(url)
+      const res = await fetch(url, { signal: controller.signal })
+      clearTimeout(timeout)
 
       if (!res.ok) {
         await sleep(GEOCODE_DELAY_MS * 2)
@@ -466,7 +502,10 @@ async function fetchDataset(): Promise<string> {
 
   for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
     try {
-      const initRes = await fetch(initUrl, { method: 'GET' })
+      const controller = new AbortController()
+      const timeout = setTimeout(() => controller.abort(), 15000)
+      const initRes = await fetch(initUrl, { method: 'GET', signal: controller.signal })
+      clearTimeout(timeout)
       if (!initRes.ok) throw new Error(`HTTP ${initRes.status}`)
 
       const initData = await initRes.json()
@@ -475,7 +514,10 @@ async function fetchDataset(): Promise<string> {
       if (!downloadUrl) {
         // Try poll endpoint
         const pollUrl = `https://api-production.data.gov.sg/v2/public/api/datasets/${DATASET_ID}/poll-download`
-        const pollRes = await fetch(pollUrl, { method: 'GET' })
+        const ctrl2 = new AbortController()
+        const t2 = setTimeout(() => ctrl2.abort(), 15000)
+        const pollRes = await fetch(pollUrl, { method: 'GET', signal: ctrl2.signal })
+        clearTimeout(t2)
         if (pollRes.ok) {
           const pollData = await pollRes.json()
           downloadUrl = pollData.data?.url
@@ -578,20 +620,32 @@ async function main() {
   let geocodeFailed = 0
   const addressCoords = new Map<string, { lat: number; lng: number }>()
 
-  for (const [key, addr] of uniqueAddresses) {
-    const coords = await geocodeAddress(addr.streetName, addr.projectName)
-    addressCoords.set(key, coords)
+  // Pre-check connectivity before iterating
+  const canGeocode = await checkGeocodeAvailability()
 
-    geocoded++
-    if (coords.lat === 0 && coords.lng === 0) {
-      geocodeFailed++
+  if (canGeocode) {
+    for (const [key, addr] of uniqueAddresses) {
+      const coords = await geocodeAddress(addr.streetName, addr.projectName)
+      addressCoords.set(key, coords)
+
+      geocoded++
+      if (coords.lat === 0 && coords.lng === 0) {
+        geocodeFailed++
+      }
+
+      if (geocoded % GEOCODE_BATCH_SIZE === 0) {
+        console.log(`  Geocoded ${geocoded}/${uniqueAddresses.size} (${geocodeFailed} failed)`)
+      }
+
+      await sleep(GEOCODE_DELAY_MS)
     }
-
-    if (geocoded % GEOCODE_BATCH_SIZE === 0) {
-      console.log(`  Geocoded ${geocoded}/${uniqueAddresses.size} (${geocodeFailed} failed)`)
+  } else {
+    // Skip geocoding entirely — set all to 0,0
+    for (const [key] of uniqueAddresses) {
+      addressCoords.set(key, { lat: 0, lng: 0 })
     }
-
-    await sleep(GEOCODE_DELAY_MS)
+    geocoded = uniqueAddresses.size
+    geocodeFailed = uniqueAddresses.size
   }
 
   console.log(`\nGeocoding complete: ${geocoded - geocodeFailed} success, ${geocodeFailed} failed`)
@@ -642,7 +696,62 @@ async function main() {
     })
   }
 
-  console.log(`Processed ${properties.length} valid properties\n`)
+  console.log(`Processed ${properties.length} valid URA (Condo/Landed) properties`)
+
+  // Step 4b: Merge HDB data from properties_rows_corrected.csv
+  const hdbSourcePath = path.join(DATA_DIR, 'properties_rows_corrected.csv')
+  if (fs.existsSync(hdbSourcePath)) {
+    console.log('\nMerging HDB data from properties_rows_corrected.csv...')
+    const hdbContent = fs.readFileSync(hdbSourcePath, 'utf-8')
+    const hdbLines = hdbContent.trim().split('\n')
+    const hdbHeaders = parseCSVLine(hdbLines[0])
+
+    const hIdx = (name: string) => hdbHeaders.indexOf(name)
+    let hdbCount = 0
+
+    for (let i = 1; i < hdbLines.length; i++) {
+      const fields = parseCSVLine(hdbLines[i])
+      if (fields.length !== hdbHeaders.length) continue
+
+      const propType = fields[hIdx('property_type')]
+      if (propType !== 'HDB') continue
+
+      const rent = parseInt(fields[hIdx('rental_price')]) || 0
+      const sqft = parseInt(fields[hIdx('sqft')]) || 0
+      if (rent <= 0 || sqft <= 0) continue
+
+      const district = parseInt(fields[hIdx('district')]) || null
+      const beds = parseInt(fields[hIdx('beds')]) || null
+      const baths = parseInt(fields[hIdx('baths')]) || null
+      const lat = parseFloat(fields[hIdx('latitude')]) || 0
+      const lng = parseFloat(fields[hIdx('longitude')]) || 0
+
+      properties.push({
+        id: fields[hIdx('id')] || randomUUID(),
+        property_name: fields[hIdx('property_name')],
+        property_type: 'HDB',
+        district,
+        rental_price: rent,
+        beds,
+        baths: baths || estimateBaths(beds, 'HDB'),
+        sqft,
+        mrt: fields[hIdx('mrt')] || findNearestMRT(lat, lng) || '',
+        latitude: lat,
+        longitude: lng,
+        completion_year: fields[hIdx('completion_year')] || '',
+        url: fields[hIdx('url')] || '',
+        created_at: fields[hIdx('created_at')] || now,
+        updated_at: now,
+        street_name: fields[hIdx('street_name')] || '',
+        lease_date: fields[hIdx('lease_date')] || '',
+      })
+      hdbCount++
+    }
+
+    console.log(`Added ${hdbCount} HDB records`)
+  }
+
+  console.log(`\nTotal: ${properties.length} properties\n`)
 
   // Step 5: Write properties_fixed.csv (exact format for import-properties.ts)
   const csvHeaders = [
