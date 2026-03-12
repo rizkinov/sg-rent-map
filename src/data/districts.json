@@ -9,16 +9,16 @@
         "lng": 103.8511
       },
       "summary": {
-        "property_count": 156,
-        "avg_price": 5200,
+        "property_count": 162,
+        "avg_price": 5500,
         "property_types": {
-          "Condo": 89,
-          "HDB": 45,
+          "Condo": 93,
+          "HDB": 47,
           "Landed": 22
         },
         "price_range": {
-          "min": 3500,
-          "max": 8900
+          "min": 3700,
+          "max": 9500
         },
         "avg_size": 950
       }
@@ -32,19 +32,19 @@
         "lng": 103.8446
       },
       "summary": {
-        "property_count": 142,
-        "avg_price": 4800,
+        "property_count": 148,
+        "avg_price": 5100,
         "property_types": {
-          "Condo": 95,
-          "HDB": 38,
+          "Condo": 99,
+          "HDB": 40,
           "Landed": 9
         },
         "price_range": {
-          "min": 3200,
-          "max": 7800
+          "min": 3400,
+          "max": 8200
         },
         "avg_size": 880
       }
     }
   ]
-} 
+}
