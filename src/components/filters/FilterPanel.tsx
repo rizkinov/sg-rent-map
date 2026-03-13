@@ -125,7 +125,7 @@ export function FilterPanel({
 
             {/* Disclaimer */}
             <div className="text-[11px] text-muted-foreground space-y-1">
-              <p>Note: This data is sourced from the 2024 Urban Redevelopment Authority dataset.</p>
+              <p>Note: This data is based on the Q1 2026 Urban Redevelopment Authority dataset.</p>
               <p>
                 For more details, visit{' '}
                 <a 
