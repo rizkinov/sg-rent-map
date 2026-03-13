@@ -5,6 +5,7 @@ import type { District } from '@/data/districts/singapore-districts'
 import type { Property } from '@/types/property'
 import { formatPrice } from '@/lib/utils'
 import { cn } from '@/lib/utils'
+import { calcMedian } from '@/lib/utils/district-utils'
 
 interface DistrictLayerPopupProps {
   district: District
@@ -37,6 +38,7 @@ export function DistrictLayerPopup({ district, properties }: DistrictLayerPopupP
     avgPrice: uniqueProperties.length
       ? Math.round(uniqueProperties.reduce((sum, p) => sum + p.rental_price, 0) / uniqueProperties.length)
       : 0,
+    medianPrice: calcMedian(uniqueProperties.map(p => p.rental_price)),
     propertyTypes: uniqueProperties.reduce((acc, p) => {
       acc[p.property_type] = (acc[p.property_type] || 0) + 1
       return acc
@@ -77,10 +79,14 @@ export function DistrictLayerPopup({ district, properties }: DistrictLayerPopupP
         </div>
 
         {/* Price Stats */}
-        <div className="grid grid-cols-3 gap-2">
+        <div className="grid grid-cols-2 gap-2">
           <div>
             <div className="font-bold text-primary">${formatPrice(stats.avgPrice)}</div>
             <div className="text-[10px] text-muted-foreground">Average</div>
+          </div>
+          <div>
+            <div className="font-bold text-primary">${formatPrice(stats.medianPrice)}</div>
+            <div className="text-[10px] text-muted-foreground">Median</div>
           </div>
           <div>
             <div className="font-bold text-primary">${formatPrice(stats.priceRange.min)}</div>

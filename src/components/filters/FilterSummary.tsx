@@ -1,6 +1,7 @@
 import { useMemo } from 'react'
 import type { Property } from '@/types/property'
 import { formatPrice } from '@/lib/utils'
+import { calcMedian } from '@/lib/utils/district-utils'
 import { districtData, regions, type Region } from '@/data/districts/singapore-districts'
 import { Building2, Home, Building, Bed, Square } from 'lucide-react'
 import { cn } from '@/lib/utils'
@@ -48,6 +49,7 @@ export function FilterSummary({ properties, selectedDistricts, selectedTypes, se
     const prices = filteredProperties.map(p => p.rental_price)
     return {
       avg: Math.round(prices.reduce((a, b) => a + b, 0) / prices.length),
+      median: calcMedian(prices),
       min: Math.min(...prices),
       max: Math.max(...prices),
     }
@@ -75,10 +77,14 @@ export function FilterSummary({ properties, selectedDistricts, selectedTypes, se
   return (
     <div className="space-y-3">
       {/* Price Stats */}
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-2 gap-4">
         <div>
           <div className="text-sm font-medium text-muted-foreground">Average</div>
           <div className="text-lg font-semibold">${formatPrice(stats.avg)}</div>
+        </div>
+        <div>
+          <div className="text-sm font-medium text-muted-foreground">Median</div>
+          <div className="text-lg font-semibold">${formatPrice(stats.median)}</div>
         </div>
         <div>
           <div className="text-sm font-medium text-muted-foreground">Min</div>

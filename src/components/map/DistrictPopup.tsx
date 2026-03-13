@@ -2,6 +2,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Building2, Home, Building } from "lucide-react"
 import { formatPrice } from "@/lib/utils"
 import { cn } from "@/lib/utils"
+import { calcMedian } from "@/lib/utils/district-utils"
 import type { District } from "@/types/district"
 import type { Property } from "@/types/property"
 
@@ -28,6 +29,7 @@ export function DistrictPopup({ district, properties }: DistrictPopupProps) {
     avgPrice: properties.length
       ? Math.round(properties.reduce((sum, p) => sum + p.rental_price, 0) / properties.length)
       : 0,
+    medianPrice: calcMedian(properties.map(p => p.rental_price)),
     propertyTypes: properties.reduce((acc, p) => {
       acc[p.property_type] = (acc[p.property_type] || 0) + 1
       return acc
@@ -73,6 +75,7 @@ export function DistrictPopup({ district, properties }: DistrictPopupProps) {
           <div className="text-sm font-medium">Rental Prices</div>
           <div className="text-sm">
             <div>Average: ${formatPrice(stats.avgPrice)}</div>
+            <div>Median: ${formatPrice(stats.medianPrice)}</div>
             <div className="text-muted-foreground">
               Range: ${formatPrice(stats.priceRange.min)} - ${formatPrice(stats.priceRange.max)}
             </div>

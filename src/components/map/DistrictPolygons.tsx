@@ -4,6 +4,7 @@ import L from 'leaflet'
 import { districtData } from '@/data/districts/singapore-districts'
 import type { Property } from '@/types/property'
 import { formatPrice } from '@/lib/utils'
+import { calcMedian } from '@/lib/utils/district-utils'
 
 interface DistrictPolygonsProps {
   properties: Property[]
@@ -27,6 +28,7 @@ export function DistrictPolygons({ properties, selectedDistricts }: DistrictPoly
       const avgPrice = districtProperties.length
         ? Math.round(districtProperties.reduce((sum, p) => sum + p.rental_price, 0) / districtProperties.length)
         : 0
+      const medianPrice = calcMedian(districtProperties.map(p => p.rental_price))
 
       // Create polygon for the district
       const polygon = L.polygon(district.boundaries, {
@@ -49,6 +51,10 @@ export function DistrictPolygons({ properties, selectedDistricts }: DistrictPoly
             <div>
               <div class="text-xs text-muted-foreground">Avg. Price</div>
               <div class="font-medium">$${formatPrice(avgPrice)}/mo</div>
+            </div>
+            <div>
+              <div class="text-xs text-muted-foreground">Median Price</div>
+              <div class="font-medium">$${formatPrice(medianPrice)}/mo</div>
             </div>
           </div>
         </div>
