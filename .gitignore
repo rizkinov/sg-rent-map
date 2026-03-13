@@ -17,6 +17,10 @@
 .DS_Store
 *.pem
 
+# data pipeline caches
+src/data/.geocode-cache.json
+src/data/ura-rental-*-raw.csv
+
 # debug
 npm-debug.log*
 yarn-debug.log*
