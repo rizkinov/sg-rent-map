@@ -163,7 +163,7 @@ src/
 
 ## Data Sources
 - HDB rental approvals: data.gov.sg "Renting Out of Flats from Jan 2021" dataset (currently loaded: Jul 2025 – Jun 2026)
-- Private residential (Condo/Landed) rental contracts: URA Property Market Information e-service export (currently loaded: 2024)
+- Private residential (Condo/Landed) rental contracts: URA Property Market Information e-service export (currently loaded: Jul 2025 – May 2026; raw export in `src/data/ura-private-rental-jul2025-may2026.csv`)
 - OneMap API (Singapore Land Authority) for geocoding
 - Leaflet with OpenStreetMap/CARTO tiles for map rendering
 
