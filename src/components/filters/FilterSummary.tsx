@@ -131,7 +131,7 @@ export function FilterSummary({ properties, selectedDistricts, selectedTypes, se
                 className="inline-flex items-center justify-center px-1.5 py-0.5 rounded-full text-[10px] font-medium bg-primary/10 text-primary"
               >
                 <Bed className="w-3 h-3 mr-1" />
-                {beds === 5 ? '5+ beds' : `${beds} beds`}
+                {beds === 0 ? 'Beds N/A' : beds === 5 ? '5+ beds' : `${beds} beds`}
               </span>
             ))}
           </div>

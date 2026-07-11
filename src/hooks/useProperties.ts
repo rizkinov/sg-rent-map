@@ -46,15 +46,14 @@ export function useProperties(filters: FilterParams) {
       }
 
       if (filters.beds.length) {
-        // Special handling for 5+ beds
-        if (filters.beds.includes(5)) {
-          // If beds is 5 or more, include it when 5 is selected
-          if (property.beds >= 5) return true
-          // Otherwise check other selected bed counts
-          if (!filters.beds.includes(property.beds)) return false
-        } else {
-          // Normal bed filtering for 1-4 beds
-          if (!filters.beds.includes(property.beds)) return false
+        if (property.beds === null || property.beds === undefined) {
+          // URA doesn't publish bedroom counts for landed homes and some
+          // condo rentals; 0 is the explicit "N/A" filter option
+          if (!filters.beds.includes(0)) return false
+        } else if (filters.beds.includes(5) && property.beds >= 5) {
+          // 5+ groups everything from 5 bedrooms up
+        } else if (!filters.beds.includes(property.beds)) {
+          return false
         }
       }
 
