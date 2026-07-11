@@ -26,7 +26,7 @@ The **Singapore Rental Dashboard** is a full-stack web application designed to v
 
 The Singapore Rental Dashboard enables users to:
 - **Search and filter** properties by district, type (Condo, HDB, Landed), number of bedrooms, and square footage.
-- **Interact with a map** that displays property markers, district boundaries, and real-time statistics.
+- **Interact with a map** that displays district boundaries with district-level rental statistics.
 - **Analyze data** through visualizations and statistics at both the property and district levels.
 
 ---
@@ -162,9 +162,10 @@ src/
 - Calculates district boundaries and normalizes price ranges.
 
 ## Data Sources
-- Singapore Urban Redevelopment Authority (URA) for property data
-- Google Maps API for geocoding and map rendering
-- OpenStreetMap for district boundaries and geographic data
+- HDB rental approvals: data.gov.sg "Renting Out of Flats from Jan 2021" dataset (currently loaded: Jul 2025 – Jun 2026)
+- Private residential (Condo/Landed) rental contracts: URA Property Market Information e-service export (currently loaded: 2024)
+- OneMap API (Singapore Land Authority) for geocoding
+- Leaflet with OpenStreetMap/CARTO tiles for map rendering
 
 ## Development Workflow
 1. Clone the repository

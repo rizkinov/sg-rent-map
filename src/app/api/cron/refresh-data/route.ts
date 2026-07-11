@@ -17,12 +17,30 @@ export async function GET(request: Request) {
       )
     }
 
+    // fetchRentalData() is currently a stub that returns sample data.
+    // Running this cron would wipe the real dataset and replace it with the stub,
+    // so it stays disabled until the live URA fetch is implemented and this flag is set.
+    // Data refreshes are done offline via src/scripts/fetch-ura-2026.ts instead.
+    if (process.env.ENABLE_URA_CRON !== 'true') {
+      return NextResponse.json(
+        {
+          success: false,
+          error: 'Cron refresh is disabled: live URA fetch is not implemented. Use src/scripts/fetch-ura-2026.ts for offline refreshes.',
+        },
+        { status: 503 }
+      )
+    }
+
     // Fetch new data
     const properties = await fetchRentalData()  // Removed token parameter
     console.log('Fetched properties count:', properties.length)
 
-    if (!properties || properties.length === 0) {
-      throw new Error('No properties returned from URA API')
+    // Refuse to wipe the dataset for an implausibly small fetch result
+    const MIN_EXPECTED_PROPERTIES = 100
+    if (!properties || properties.length < MIN_EXPECTED_PROPERTIES) {
+      throw new Error(
+        `Refusing to replace dataset: URA API returned ${properties?.length ?? 0} properties (expected at least ${MIN_EXPECTED_PROPERTIES})`
+      )
     }
 
     // Use server client instead

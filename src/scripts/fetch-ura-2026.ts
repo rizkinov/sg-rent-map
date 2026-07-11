@@ -24,7 +24,10 @@ import { randomUUID } from 'crypto'
 
 const DATA_DIR = path.join(process.cwd(), 'src/data')
 
-// data.gov.sg dataset ID for private residential rental contracts (URA)
+// data.gov.sg dataset ID — NOTE: this is HDB "Renting Out of Flats from Jan 2021"
+// (per-contract HDB rental approvals, updated monthly), NOT URA private rentals.
+// Private residential (Condo/Landed) per-contract data comes from the URA PMI
+// e-service CSV export: https://eservice.ura.gov.sg/property-market-information/pmiResidentialRentalSearch
 const DATASET_ID = 'd_c9f57187485a850908655db0e8cfe651'
 
 // Rate limiting for OneMap API

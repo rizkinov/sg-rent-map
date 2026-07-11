@@ -46,8 +46,19 @@ export function FilterPanel({
       <div className="flex flex-col h-full">
         <div className="sticky top-0 z-10 bg-background shadow-[0_4px_10px_-4px_rgba(0,0,0,0.1)]">
           <div className="p-4 space-y-4">
+            <div>
+              <a
+                href="https://www.lifekit.sg"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-mono text-[10px] tracking-widest uppercase text-muted-foreground hover:text-[#b5484d] transition-colors"
+              >
+                lifekit.sg / housing
+              </a>
+              <h1 className="text-lg font-semibold tracking-tight mt-1">Singapore Rent Map</h1>
+            </div>
             <div className="flex items-center justify-between">
-              <h2 className="text-lg font-semibold">Filters</h2>
+              <h2 className="text-sm font-medium text-muted-foreground">Filters</h2>
               {hasFilters && (
                 <Button 
                   variant="ghost" 
@@ -125,10 +136,13 @@ export function FilterPanel({
 
             {/* Disclaimer */}
             <div className="text-[11px] text-muted-foreground space-y-1">
-              <p>Note: This data is based on the Q1 2026 Urban Redevelopment Authority dataset.</p>
+              <p>
+                HDB data: rental approvals from Jul 2025 to Jun 2026 (data.gov.sg, HDB).
+                Condo/Landed data: URA rental contracts from 2024.
+              </p>
               <p>
                 For more details, visit{' '}
-                <a 
+                <a
                   href="https://eservice.ura.gov.sg/property-market-information/pmiResidentialRentalSearch"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -136,6 +150,18 @@ export function FilterPanel({
                 >
                   URA Property Market Information
                 </a>
+              </p>
+              <p className="pt-1">
+                Part of{' '}
+                <a
+                  href="https://www.lifekit.sg"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline underline-offset-2 hover:text-[#b5484d] transition-colors"
+                >
+                  lifekit.sg
+                </a>{' '}
+                — free tools for living in Singapore.
               </p>
             </div>
           </div>
