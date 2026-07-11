@@ -154,7 +154,7 @@ export function DistrictLayerPopup({ district, properties }: DistrictLayerPopupP
               })
               .map(([beds, count], index) => (
                 <span key={beds} className="text-[10px]">
-                  {index > 0 && '· '}{beds}BR: {count}
+                  {index > 0 && '· '}{beds === 'N/A' ? 'N/A' : `${beds}BR`}: {count}
                 </span>
               ))}
           </div>
