@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import type { Property } from '@/types/property'
 import { formatPrice } from '@/lib/utils'
-import { calcMedian } from '@/lib/utils/district-utils'
+import { calcMedian, calcTypicalRange } from '@/lib/utils/district-utils'
 import { districtData, regions, type Region } from '@/data/districts/singapore-districts'
 import { Building2, Home, Building, Bed, Square } from 'lucide-react'
 import { cn } from '@/lib/utils'
@@ -26,6 +26,37 @@ const propertyTypeColors: Record<string, string> = {
   'Landed': 'bg-orange-500/10 text-orange-600',
 }
 
+// URA withholds some project names behind these; the street says more
+const PLACEHOLDER_NAMES = new Set(['LANDED HOUSING DEVELOPMENT', 'NON-LANDED HOUSING DEVELOPMENT'])
+
+/** "MARINA BAY RESIDENCES" -> "Marina Bay Residences", "KING GEORGE'S AVE" -> "King George's Ave" */
+function titleCase(text: string): string {
+  return text
+    .toLowerCase()
+    .replace(/(^|[\s@/(-])([a-z])/g, (_, before: string, letter: string) => before + letter.toUpperCase())
+}
+
+/**
+ * A short description of one rental from its own fields, skipping any that
+ * are missing: "HDB 2-room" or "Marina Bay Residences, 5 bed, 11,050 sqft".
+ */
+function describeRental(property: Property): string {
+  if (property.property_type === 'HDB') {
+    // HDB rows hold the flat type (2-room, 3-room...) in beds, and their sqft
+    // is a fixed estimate for that flat type, so the type says it all
+    return property.beds ? `HDB ${property.beds}-room` : 'HDB'
+  }
+  const name = property.property_name && !PLACEHOLDER_NAMES.has(property.property_name.toUpperCase())
+    ? property.property_name
+    : property.street_name
+  return [
+    name ? titleCase(name) : null,
+    property.property_type === 'Landed' ? 'landed' : null,
+    property.beds ? `${property.beds} bed` : null,
+    property.sqft ? `${formatPrice(property.sqft)} sqft` : null,
+  ].filter(Boolean).join(', ')
+}
+
 export function FilterSummary({ properties, selectedDistricts, selectedTypes, selectedBeds = [], sqftRange }: FilterSummaryProps) {
   // Get filtered properties based on all filters
   const filteredProperties = useMemo(() => {
@@ -47,11 +78,21 @@ export function FilterSummary({ properties, selectedDistricts, selectedTypes, se
     if (!filteredProperties.length) return null
 
     const prices = filteredProperties.map(p => p.rental_price)
+    // The true extremes, kept for the note under the headline figures
+    let lowest = filteredProperties[0]
+    let highest = filteredProperties[0]
+    for (const property of filteredProperties) {
+      if (property.rental_price < lowest.rental_price) lowest = property
+      if (property.rental_price > highest.rental_price) highest = property
+    }
     return {
       avg: Math.round(prices.reduce((a, b) => a + b, 0) / prices.length),
       median: calcMedian(prices),
-      min: prices.reduce((a, b) => Math.min(a, b), Infinity),
-      max: prices.reduce((a, b) => Math.max(a, b), -Infinity),
+      // 1st to 99th percentile: the raw min and max are single contracts
+      // that read like errors
+      range: calcTypicalRange(prices),
+      lowest,
+      highest,
     }
   }, [filteredProperties])
 
@@ -77,23 +118,35 @@ export function FilterSummary({ properties, selectedDistricts, selectedTypes, se
   return (
     <div className="space-y-3">
       {/* Price Stats */}
-      <div className="grid grid-cols-2 gap-4">
-        <div>
-          <div className="text-sm font-medium text-muted-foreground">Average</div>
-          <div className="text-lg font-semibold">${formatPrice(stats.avg)}</div>
+      <div className="space-y-2">
+        <div className="grid grid-cols-2 gap-4">
+          <div>
+            <div className="text-sm font-medium text-muted-foreground">Average</div>
+            <div className="text-lg font-semibold">${formatPrice(stats.avg)}</div>
+          </div>
+          <div>
+            <div className="text-sm font-medium text-muted-foreground">Median</div>
+            <div className="text-lg font-semibold">${formatPrice(stats.median)}</div>
+          </div>
+          <div className="col-span-2">
+            <div className="text-sm font-medium text-muted-foreground">Typical range</div>
+            <div className="text-lg font-semibold">
+              ${formatPrice(stats.range.low)} to ${formatPrice(stats.range.high)}
+            </div>
+            <div className="text-[11px] leading-tight text-muted-foreground">middle 98% of rents</div>
+          </div>
         </div>
-        <div>
-          <div className="text-sm font-medium text-muted-foreground">Median</div>
-          <div className="text-lg font-semibold">${formatPrice(stats.median)}</div>
-        </div>
-        <div>
-          <div className="text-sm font-medium text-muted-foreground">Min</div>
-          <div className="text-lg font-semibold">${formatPrice(stats.min)}</div>
-        </div>
-        <div>
-          <div className="text-sm font-medium text-muted-foreground">Max</div>
-          <div className="text-lg font-semibold">${formatPrice(stats.max)}</div>
-        </div>
+
+        <p className="text-xs leading-snug text-muted-foreground">
+          {stats.lowest === stats.highest ? (
+            <>One rent in view: ${formatPrice(stats.lowest.rental_price)} ({describeRental(stats.lowest)})</>
+          ) : (
+            <>
+              Lowest ${formatPrice(stats.lowest.rental_price)} ({describeRental(stats.lowest)}) and
+              highest ${formatPrice(stats.highest.rental_price)} ({describeRental(stats.highest)})
+            </>
+          )}
+        </p>
       </div>
 
       {/* Selected Property Types */}
