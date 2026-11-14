@@ -1,7 +1,9 @@
-import { MapContainer, TileLayer } from 'react-leaflet'
+import { MapContainer } from 'react-leaflet'
 import { PropertyMarkers } from './PropertyMarkers'
 import { DistrictMarkers } from './DistrictMarkers'
 import type { Property } from '@/types/property'
+import { Basemap } from './Basemap'
+import { MAP_MAX_ZOOM } from '@/lib/basemap'
 
 interface MapComponentProps {
   properties: Property[]
@@ -13,12 +15,10 @@ export default function MapComponent({ properties, selectedDistricts }: MapCompo
     <MapContainer
       center={[1.3521, 103.8198]}
       zoom={12}
+      maxZoom={MAP_MAX_ZOOM}
       className="h-full w-full"
     >
-      <TileLayer
-        attribution='&copy; <a href="https://carto.com/">CartoDB</a>'
-        url="https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png"
-      />
+      <Basemap />
       <DistrictMarkers 
         properties={properties} 
         selectedDistricts={selectedDistricts}

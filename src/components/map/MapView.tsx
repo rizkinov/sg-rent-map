@@ -1,8 +1,10 @@
 'use client'
 
-import { MapContainer, TileLayer } from 'react-leaflet'
+import { MapContainer } from 'react-leaflet'
 import type { Property } from '@/types/property'
 import { DistrictLayers } from './DistrictLayers'
+import { Basemap } from './Basemap'
+import { MAP_MAX_ZOOM } from '@/lib/basemap'
 
 interface MapViewProps {
   properties: Property[]
@@ -15,13 +17,11 @@ export function MapView({ properties, selectedDistricts }: MapViewProps) {
       <MapContainer
         center={[1.3521, 103.8198]}
         zoom={11}
+        maxZoom={MAP_MAX_ZOOM}
         className="h-full w-full"
         zoomControl={false}
       >
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/attributions">CARTO</a>'
-          url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
-        />
+        <Basemap />
         <DistrictLayers 
           properties={properties}
           selectedDistricts={selectedDistricts}
