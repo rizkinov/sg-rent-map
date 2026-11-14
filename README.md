@@ -162,10 +162,11 @@ src/
 - Calculates district boundaries and normalizes price ranges.
 
 ## Data Sources
-- HDB rental approvals: data.gov.sg "Renting Out of Flats from Jan 2021" dataset (currently loaded: Jul 2025 – Jun 2026)
-- Private residential (Condo/Landed) rental contracts: URA Property Market Information e-service export (currently loaded: Jul 2025 – May 2026; raw export in `src/data/ura-private-rental-jul2025-may2026.csv`)
+- HDB rental approvals: data.gov.sg "Renting Out of Flats from Jan 2021" dataset (currently loaded: Nov 2025 – Oct 2026; districts from each street's postal sector, `src/data/hdb-street-districts.json`)
+- Private residential (Condo/Landed) rental contracts: URA Property Market Information e-service export (currently loaded: Oct 2025 – Sep 2026; raw export in `src/data/ura-private-rental-oct2025-sep2026.csv`)
 - OneMap API (Singapore Land Authority) for geocoding
-- Leaflet with OpenStreetMap/CARTO tiles for map rendering
+- Leaflet with OpenFreeMap vector tiles (MapLibre GL), OneMap Grey as the fallback
+- Refreshing the data: `src/scripts/data-refresh/README.md`
 
 ## Development Workflow
 1. Clone the repository

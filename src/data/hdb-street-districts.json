@@ -1,0 +1,3632 @@
+{
+"ADMIRALTY DR": {
+"block": "468D",
+"postal": "754468",
+"district": 27,
+"address": "468D ADMIRALTY DRIVE BLUE RIVERVIEW SINGAPORE 754468"
+},
+"ADMIRALTY LINK": {
+"block": "493",
+"postal": "750493",
+"district": 27,
+"address": "493 ADMIRALTY LINK SEMBAWANG GREEN SINGAPORE 750493"
+},
+"AH HOOD RD": {
+"block": "101",
+"postal": "320101",
+"district": 12,
+"address": "101 AH HOOD ROAD AH HOOD GARDENS SINGAPORE 320101"
+},
+"ALJUNIED AVE 2": {
+"block": "119",
+"postal": "380119",
+"district": 14,
+"address": "119 ALJUNIED AVENUE 2 SINGAPORE 380119"
+},
+"ALJUNIED CRES": {
+"block": "106",
+"postal": "380106",
+"district": 14,
+"address": "106 ALJUNIED CRESCENT SINGAPORE 380106"
+},
+"ALJUNIED RD": {
+"block": "125",
+"postal": "380125",
+"district": 14,
+"address": "125 ALJUNIED ROAD SINGAPORE 380125"
+},
+"ALKAFF CRES": {
+"block": "118A",
+"postal": "341118",
+"district": 13,
+"address": "118A ALKAFF CRESCENT ALKAFF LAKEVIEW SINGAPORE 341118"
+},
+"ANCHORVALE CRES": {
+"block": "334C",
+"postal": "543334",
+"district": 19,
+"address": "334C ANCHORVALE CRESCENT ANCHORVALE COVE SINGAPORE 543334"
+},
+"ANCHORVALE DR": {
+"block": "322B",
+"postal": "542322",
+"district": 19,
+"address": "322B ANCHORVALE DRIVE ANCHORVALE GROVE SINGAPORE 542322"
+},
+"ANCHORVALE LANE": {
+"block": "312A",
+"postal": "541312",
+"district": 19,
+"address": "312A ANCHORVALE LANE ANCHORVALE VISTA SINGAPORE 541312"
+},
+"ANCHORVALE LINK": {
+"block": "304B",
+"postal": "542304",
+"district": 19,
+"address": "304B ANCHORVALE LINK ANCHORVALE COURT SINGAPORE 542304"
+},
+"ANCHORVALE RD": {
+"block": "317C",
+"postal": "543317",
+"district": 19,
+"address": "317C ANCHORVALE ROAD SINGAPORE 543317"
+},
+"ANCHORVALE ST": {
+"block": "331C",
+"postal": "543331",
+"district": 19,
+"address": "331C ANCHORVALE STREET ANCHORVALE HARVEST SINGAPORE 543331"
+},
+"ANG MO KIO AVE 1": {
+"block": "218",
+"postal": "560218",
+"district": 20,
+"address": "218 ANG MO KIO AVENUE 1 ANG MO KIO GROVE SINGAPORE 560218"
+},
+"ANG MO KIO AVE 10": {
+"block": "560",
+"postal": "560560",
+"district": 20,
+"address": "560 ANG MO KIO AVENUE 10 SINGAPORE 560560"
+},
+"ANG MO KIO AVE 2": {
+"block": "259",
+"postal": "560259",
+"district": 20,
+"address": "259 ANG MO KIO AVENUE 2 THE CLOVER @ KEBUN BARU SINGAPORE 560259"
+},
+"ANG MO KIO AVE 3": {
+"block": "211",
+"postal": "560211",
+"district": 20,
+"address": "211 ANG MO KIO AVENUE 3 SINGAPORE 560211"
+},
+"ANG MO KIO AVE 4": {
+"block": "155",
+"postal": "560155",
+"district": 20,
+"address": "155 ANG MO KIO AVENUE 4 YIO CHU KANG GROVE SINGAPORE 560155"
+},
+"ANG MO KIO AVE 5": {
+"block": "503",
+"postal": "560503",
+"district": 20,
+"address": "503 ANG MO KIO AVENUE 5 CHENG SAN CREST SINGAPORE 560503"
+},
+"ANG MO KIO AVE 6": {
+"block": "646",
+"postal": "560646",
+"district": 20,
+"address": "646 ANG MO KIO AVENUE 6 ANG MO KIO 61 SINGAPORE 560646"
+},
+"ANG MO KIO AVE 8": {
+"block": "513",
+"postal": "560513",
+"district": 20,
+"address": "513 ANG MO KIO AVENUE 8 CHENG SAN CREST SINGAPORE 560513"
+},
+"ANG MO KIO AVE 9": {
+"block": "623",
+"postal": "560623",
+"district": 20,
+"address": "623 ANG MO KIO AVENUE 9 YIO CHU KANG HEIGHTS SINGAPORE 560623"
+},
+"ANG MO KIO ST 11": {
+"block": "104B",
+"postal": "561104",
+"district": 20,
+"address": "104B ANG MO KIO STREET 11 KEBUN BARU HEIGHTS SINGAPORE 561104"
+},
+"ANG MO KIO ST 21": {
+"block": "253",
+"postal": "560253",
+"district": 20,
+"address": "253 ANG MO KIO STREET 21 SINGAPORE 560253"
+},
+"ANG MO KIO ST 23": {
+"block": "228B",
+"postal": "562228",
+"district": 20,
+"address": "228B ANG MO KIO STREET 23 ANG MO KIO COURT SINGAPORE 562228"
+},
+"ANG MO KIO ST 31": {
+"block": "315A",
+"postal": "562315",
+"district": 20,
+"address": "315A ANG MO KIO STREET 31 TECK GHEE VISTA SINGAPORE 562315"
+},
+"ANG MO KIO ST 32": {
+"block": "350",
+"postal": "560350",
+"district": 20,
+"address": "350 ANG MO KIO STREET 32 AMK HEIGHTS SINGAPORE 560350"
+},
+"ANG MO KIO ST 44": {
+"block": "455B",
+"postal": "562455",
+"district": 20,
+"address": "455B ANG MO KIO STREET 44 TECK GHEE PARKVIEW SINGAPORE 562455"
+},
+"ANG MO KIO ST 51": {
+"block": "591A",
+"postal": "561591",
+"district": 20,
+"address": "591A ANG MO KIO STREET 51 CHENG SAN COURT SINGAPORE 561591"
+},
+"ANG MO KIO ST 52": {
+"block": "588A",
+"postal": "561588",
+"district": 20,
+"address": "588A ANG MO KIO STREET 52 PARK CENTRAL @ AMK SINGAPORE 561588"
+},
+"ANG MO KIO ST 61": {
+"block": "650",
+"postal": "560650",
+"district": 20,
+"address": "650 ANG MO KIO STREET 61 YIO CHU KANG VISTA SINGAPORE 560650"
+},
+"BAIN ST": {
+"block": "233",
+"postal": "180233",
+"district": 7,
+"address": "233 BAIN STREET BRAS BASAH COMPLEX SINGAPORE 180233"
+},
+"BALAM RD": {
+"block": "20",
+"postal": "370020",
+"district": 13,
+"address": "20 BALAM ROAD BALAM GARDENS SINGAPORE 370020"
+},
+"BANGKIT RD": {
+"block": "250",
+"postal": "670250",
+"district": 23,
+"address": "250 BANGKIT ROAD SINGAPORE 670250"
+},
+"BARTLEY WALK": {
+"block": "227C",
+"postal": "363227",
+"district": 13,
+"address": "227C BARTLEY WALK PARKEDGE @ BIDADARI SINGAPORE 363227"
+},
+"BEACH RD": {
+"block": "1",
+"postal": "190001",
+"district": 7,
+"address": "1 BEACH ROAD BEACH ROAD GARDENS SINGAPORE 190001"
+},
+"BEDOK CTRL": {
+"block": "220B",
+"postal": "462220",
+"district": 16,
+"address": "220B BEDOK CENTRAL LINEAR GREEN @ BEDOK SINGAPORE 462220"
+},
+"BEDOK NTH AVE 1": {
+"block": "550",
+"postal": "460550",
+"district": 16,
+"address": "550 BEDOK NORTH AVENUE 1 SINGAPORE 460550"
+},
+"BEDOK NTH AVE 2": {
+"block": "418",
+"postal": "460418",
+"district": 16,
+"address": "418 BEDOK NORTH AVENUE 2 GARDEN HILL SINGAPORE 460418"
+},
+"BEDOK NTH AVE 3": {
+"block": "133",
+"postal": "460133",
+"district": 16,
+"address": "133 BEDOK NORTH AVENUE 3 SINGAPORE 460133"
+},
+"BEDOK NTH AVE 4": {
+"block": "100",
+"postal": "460100",
+"district": 16,
+"address": "100 BEDOK NORTH AVENUE 4 BEDOK POND 1 SINGAPORE 460100"
+},
+"BEDOK NTH DR": {
+"block": "222A",
+"postal": "461222",
+"district": 16,
+"address": "222A BEDOK NORTH DRIVE BEDOK BEACON SINGAPORE 461222"
+},
+"BEDOK NTH RD": {
+"block": "75",
+"postal": "460075",
+"district": 16,
+"address": "75 BEDOK NORTH ROAD SINGAPORE 460075"
+},
+"BEDOK NTH ST 1": {
+"block": "420",
+"postal": "460420",
+"district": 16,
+"address": "420 BEDOK NORTH STREET 1 GARDEN HILL SINGAPORE 460420"
+},
+"BEDOK NTH ST 2": {
+"block": "138",
+"postal": "460138",
+"district": 16,
+"address": "138 BEDOK NORTH STREET 2 SINGAPORE 460138"
+},
+"BEDOK NTH ST 3": {
+"block": "530",
+"postal": "460530",
+"district": 16,
+"address": "530 BEDOK NORTH STREET 3 SINGAPORE 460530"
+},
+"BEDOK NTH ST 4": {
+"block": "90",
+"postal": "460090",
+"district": 16,
+"address": "90 BEDOK NORTH STREET 4 SINGAPORE 460090"
+},
+"BEDOK RESERVOIR CRES": {
+"block": "748A",
+"postal": "471748",
+"district": 16,
+"address": "748A BEDOK RESERVOIR CRESCENT BELVIA SINGAPORE 471748"
+},
+"BEDOK RESERVOIR RD": {
+"block": "606",
+"postal": "470606",
+"district": 16,
+"address": "606 BEDOK RESERVOIR ROAD EUNOS RAINBOW SINGAPORE 470606"
+},
+"BEDOK RESERVOIR VIEW": {
+"block": "772",
+"postal": "470772",
+"district": 16,
+"address": "772 BEDOK RESERVOIR VIEW LONGVALE SINGAPORE 470772"
+},
+"BEDOK STH AVE 1": {
+"block": "1",
+"postal": "460001",
+"district": 16,
+"address": "1 BEDOK SOUTH AVENUE 1 SINGAPORE 460001"
+},
+"BEDOK STH AVE 2": {
+"block": "33",
+"postal": "460033",
+"district": 16,
+"address": "33 BEDOK SOUTH AVENUE 2 SINGAPORE 460033"
+},
+"BEDOK STH AVE 3": {
+"block": "69",
+"postal": "460069",
+"district": 16,
+"address": "69 BEDOK SOUTH AVENUE 3 SIGLAP LUCKY VALLEY SINGAPORE 460069"
+},
+"BEDOK STH RD": {
+"block": "18",
+"postal": "460018",
+"district": 16,
+"address": "18 BEDOK SOUTH ROAD SINGAPORE 460018"
+},
+"BENDEMEER RD": {
+"block": "44",
+"postal": "330044",
+"district": 12,
+"address": "44 BENDEMEER ROAD SINGAPORE 330044"
+},
+"BEO CRES": {
+"block": "24",
+"postal": "160024",
+"district": 3,
+"address": "24 BEO CRESCENT SINGAPORE 160024"
+},
+"BIDADARI PK DR": {
+"block": "101A",
+"postal": "341101",
+"district": 13,
+"address": "101A BIDADARI PARK DRIVE ALKAFF COURTVIEW SINGAPORE 341101"
+},
+"BISHAN ST 11": {
+"block": "148",
+"postal": "570148",
+"district": 20,
+"address": "148 BISHAN STREET 11 BISHAN GREEN SINGAPORE 570148"
+},
+"BISHAN ST 12": {
+"block": "116",
+"postal": "570116",
+"district": 20,
+"address": "116 BISHAN STREET 12 BISHAN VIEW SINGAPORE 570116"
+},
+"BISHAN ST 13": {
+"block": "176",
+"postal": "570176",
+"district": 20,
+"address": "176 BISHAN STREET 13 SINGAPORE 570176"
+},
+"BISHAN ST 22": {
+"block": "292",
+"postal": "570292",
+"district": 20,
+"address": "292 BISHAN STREET 22 BISHAN HEIGHTS SINGAPORE 570292"
+},
+"BISHAN ST 23": {
+"block": "229",
+"postal": "570229",
+"district": 20,
+"address": "229 BISHAN STREET 23 SINGAPORE 570229"
+},
+"BISHAN ST 24": {
+"block": "289",
+"postal": "570289",
+"district": 20,
+"address": "289 BISHAN STREET 24 BISHAN HEIGHTS SINGAPORE 570289"
+},
+"BOON KENG RD": {
+"block": "8",
+"postal": "330008",
+"district": 12,
+"address": "8 BOON KENG ROAD CITY VIEW @ BOON KENG SINGAPORE 330008"
+},
+"BOON LAY AVE": {
+"block": "185",
+"postal": "640185",
+"district": 22,
+"address": "185 BOON LAY AVENUE BOON LAY VISTA SINGAPORE 640185"
+},
+"BOON LAY DR": {
+"block": "180B",
+"postal": "642180",
+"district": 22,
+"address": "180B BOON LAY DRIVE BOON LAY MEADOW SINGAPORE 642180"
+},
+"BOON LAY PL": {
+"block": "210",
+"postal": "640210",
+"district": 22,
+"address": "210 BOON LAY PLACE BOON LAY PLACE SINGAPORE 640210"
+},
+"BOON TIONG RD": {
+"block": "6A",
+"postal": "164006",
+"district": 3,
+"address": "6A BOON TIONG ROAD BOON TIONG ARCADIA SINGAPORE 164006"
+},
+"BRIGHT HILL DR": {
+"block": "448",
+"postal": "570448",
+"district": 20,
+"address": "448 BRIGHT HILL DRIVE SIN MING COURT SINGAPORE 570448"
+},
+"BT BATOK CTRL": {
+"block": "227",
+"postal": "650227",
+"district": 23,
+"address": "227 BUKIT BATOK CENTRAL SINGAPORE 650227"
+},
+"BT BATOK EAST AVE 3": {
+"block": "230",
+"postal": "650230",
+"district": 23,
+"address": "230 BUKIT BATOK EAST AVENUE 3 SINGAPORE 650230"
+},
+"BT BATOK EAST AVE 4": {
+"block": "269",
+"postal": "650269",
+"district": 23,
+"address": "269 BUKIT BATOK EAST AVENUE 4 SINGAPORE 650269"
+},
+"BT BATOK EAST AVE 5": {
+"block": "238",
+"postal": "650238",
+"district": 23,
+"address": "238 BUKIT BATOK EAST AVENUE 5 GOMBAK GARDENS SINGAPORE 650238"
+},
+"BT BATOK EAST AVE 6": {
+"block": "292A",
+"postal": "651292",
+"district": 23,
+"address": "292A BUKIT BATOK EAST AVENUE 6 SKYPEAK @ BUKIT BATOK SINGAPORE 651292"
+},
+"BT BATOK ST 11": {
+"block": "160",
+"postal": "650160",
+"district": 23,
+"address": "160 BUKIT BATOK STREET 11 SINGAPORE 650160"
+},
+"BT BATOK ST 21": {
+"block": "212",
+"postal": "650212",
+"district": 23,
+"address": "212 BUKIT BATOK STREET 21 SINGAPORE 650212"
+},
+"BT BATOK ST 22": {
+"block": "296A",
+"postal": "651296",
+"district": 23,
+"address": "296A BUKIT BATOK STREET 22 SKYLINE II @ BUKIT BATOK SINGAPORE 651296"
+},
+"BT BATOK ST 24": {
+"block": "290G",
+"postal": "656290",
+"district": 23,
+"address": "290G BUKIT BATOK STREET 24 SPRING VIEW SINGAPORE 656290"
+},
+"BT BATOK ST 25": {
+"block": "288D",
+"postal": "653288",
+"district": 23,
+"address": "288D BUKIT BATOK STREET 25 NATURE VIEW SINGAPORE 653288"
+},
+"BT BATOK ST 31": {
+"block": "360",
+"postal": "650360",
+"district": 23,
+"address": "360 BUKIT BATOK STREET 31 SINGAPORE 650360"
+},
+"BT BATOK ST 32": {
+"block": "312",
+"postal": "650312",
+"district": 23,
+"address": "312 BUKIT BATOK STREET 32 SINGAPORE 650312"
+},
+"BT BATOK ST 33": {
+"block": "319",
+"postal": "650319",
+"district": 23,
+"address": "319 BUKIT BATOK STREET 33 SINGAPORE 650319"
+},
+"BT BATOK ST 34": {
+"block": "340",
+"postal": "650340",
+"district": 23,
+"address": "340 BUKIT BATOK STREET 34 SINGAPORE 650340"
+},
+"BT BATOK ST 41": {
+"block": "463B",
+"postal": "652463",
+"district": 23,
+"address": "463B BUKIT BATOK STREET 41 WEST PLAINS @ BUKIT BATOK SINGAPORE 652463"
+},
+"BT BATOK ST 51": {
+"block": "534",
+"postal": "650534",
+"district": 23,
+"address": "534 BUKIT BATOK STREET 51 SINGAPORE 650534"
+},
+"BT BATOK ST 52": {
+"block": "537",
+"postal": "650537",
+"district": 23,
+"address": "537 BUKIT BATOK STREET 52 GUILIN BREEZE SINGAPORE 650537"
+},
+"BT BATOK WEST AVE 2": {
+"block": "421",
+"postal": "650421",
+"district": 23,
+"address": "421 BUKIT BATOK WEST AVENUE 2 SINGAPORE 650421"
+},
+"BT BATOK WEST AVE 4": {
+"block": "409",
+"postal": "650409",
+"district": 23,
+"address": "409 BUKIT BATOK WEST AVENUE 4 SINGAPORE 650409"
+},
+"BT BATOK WEST AVE 5": {
+"block": "395",
+"postal": "650395",
+"district": 23,
+"address": "395 BUKIT BATOK WEST AVENUE 5 GOODVIEW GARDENS SINGAPORE 650395"
+},
+"BT BATOK WEST AVE 6": {
+"block": "450D",
+"postal": "654450",
+"district": 23,
+"address": "450D BUKIT BATOK WEST AVENUE 6 WEST TERRA @ BUKIT BATOK SINGAPORE 654450"
+},
+"BT BATOK WEST AVE 7": {
+"block": "406",
+"postal": "650406",
+"district": 23,
+"address": "406 BUKIT BATOK WEST AVENUE 7 SINGAPORE 650406"
+},
+"BT BATOK WEST AVE 8": {
+"block": "438C",
+"postal": "653438",
+"district": 23,
+"address": "438C BUKIT BATOK WEST AVENUE 8 WEST EDGE @ BUKIT BATOK SINGAPORE 653438"
+},
+"BT BATOK WEST AVE 9": {
+"block": "448A",
+"postal": "651448",
+"district": 23,
+"address": "448A BUKIT BATOK WEST AVENUE 9 WEST VALLEY @ BUKIT BATOK SINGAPORE 651448"
+},
+"BT MERAH CTRL": {
+"block": "117",
+"postal": "150117",
+"district": 3,
+"address": "117 BUKIT MERAH CENTRAL MERAH HEIGHTS SINGAPORE 150117"
+},
+"BT MERAH LANE 1": {
+"block": "127",
+"postal": "150127",
+"district": 3,
+"address": "127 BUKIT MERAH LANE 1 SINGAPORE 150127"
+},
+"BT MERAH VIEW": {
+"block": "128",
+"postal": "150128",
+"district": 3,
+"address": "128 BUKIT MERAH VIEW BUKIT MERAH VIEW SINGAPORE 150128"
+},
+"BT PANJANG RING RD": {
+"block": "611",
+"postal": "670611",
+"district": 23,
+"address": "611 BUKIT PANJANG RING ROAD SINGAPORE 670611"
+},
+"BT PURMEI RD": {
+"block": "108",
+"postal": "090108",
+"district": 4,
+"address": "108 BUKIT PURMEI ROAD BUKIT PURMEI VILLE SINGAPORE 090108"
+},
+"BUANGKOK CRES": {
+"block": "995A",
+"postal": "531995",
+"district": 19,
+"address": "995A BUANGKOK CRESCENT BUANGKOK TROPICA SINGAPORE 531995"
+},
+"BUANGKOK GREEN": {
+"block": "987C",
+"postal": "533987",
+"district": 19,
+"address": "987C BUANGKOK GREEN BUANGKOK VALE SINGAPORE 533987"
+},
+"BUANGKOK LINK": {
+"block": "991B",
+"postal": "532991",
+"district": 19,
+"address": "991B BUANGKOK LINK BUANGKOK SQUARE SINGAPORE 532991"
+},
+"BUFFALO RD": {
+"block": "662",
+"postal": "210662",
+"district": 8,
+"address": "662 BUFFALO ROAD ZHUJIAO CENTRE (TEKKA MARKET) SINGAPORE 210662"
+},
+"C'WEALTH AVE": {
+"block": "7A",
+"postal": "141007",
+"district": 3,
+"address": "7A COMMONWEALTH AVENUE SINGAPORE 141007"
+},
+"C'WEALTH AVE WEST": {
+"block": "414",
+"postal": "120414",
+"district": 5,
+"address": "414 COMMONWEALTH AVENUE WEST SINGAPORE 120414"
+},
+"C'WEALTH CL": {
+"block": "81",
+"postal": "140081",
+"district": 3,
+"address": "81 COMMONWEALTH CLOSE COMMONWEALTH HEIGHTS SINGAPORE 140081"
+},
+"C'WEALTH CRES": {
+"block": "102",
+"postal": "140102",
+"district": 3,
+"address": "102 COMMONWEALTH CRESCENT CRESCENT VIEW SINGAPORE 140102"
+},
+"C'WEALTH DR": {
+"block": "50",
+"postal": "142050",
+"district": 3,
+"address": "50 COMMONWEALTH DRIVE COMMONWEALTH 10 SINGAPORE 142050"
+},
+"CAMBRIDGE RD": {
+"block": "42",
+"postal": "210042",
+"district": 8,
+"address": "42 CAMBRIDGE ROAD SINGAPORE 210042"
+},
+"CANBERRA CRES": {
+"block": "131A",
+"postal": "751131",
+"district": 27,
+"address": "131A CANBERRA CRESCENT EASTLINK I @ CANBERRA SINGAPORE 751131"
+},
+"CANBERRA DR": {
+"block": "379B",
+"postal": "762379",
+"district": 27,
+"address": "379B CANBERRA DRIVE CANBERRA VISTA SINGAPORE 762379"
+},
+"CANBERRA LINK": {
+"block": "504C",
+"postal": "753504",
+"district": 27,
+"address": "504C CANBERRA LINK MONTREAL SPRING SINGAPORE 753504"
+},
+"CANBERRA RD": {
+"block": "306",
+"postal": "750306",
+"district": 27,
+"address": "306 CANBERRA ROAD SINGAPORE 750306"
+},
+"CANBERRA ST": {
+"block": "103B",
+"postal": "752103",
+"district": 27,
+"address": "103B CANBERRA STREET EASTCREEK @ CANBERRA SINGAPORE 752103"
+},
+"CANBERRA VIEW": {
+"block": "132B",
+"postal": "752132",
+"district": 27,
+"address": "132B CANBERRA VIEW EASTLINK I @ CANBERRA SINGAPORE 752132"
+},
+"CANBERRA WALK": {
+"block": "115B",
+"postal": "752115",
+"district": 27,
+"address": "115B CANBERRA WALK EASTLACE @ CANBERRA SINGAPORE 752115"
+},
+"CANTONMENT CL": {
+"block": "16",
+"postal": "080016",
+"district": 2,
+"address": "16 CANTONMENT CLOSE CANTONMENT TOWERS SINGAPORE 080016"
+},
+"CANTONMENT RD": {
+"block": "1C",
+"postal": "085301",
+"district": 2,
+"address": "1C CANTONMENT ROAD THE PINNACLE@DUXTON SINGAPORE 085301"
+},
+"CASHEW RD": {
+"block": "132",
+"postal": "670132",
+"district": 23,
+"address": "132 CASHEW ROAD SINGAPORE 670132"
+},
+"CASSIA CRES": {
+"block": "32",
+"postal": "390032",
+"district": 14,
+"address": "32 CASSIA CRESCENT SINGAPORE 390032"
+},
+"CHAI CHEE AVE": {
+"block": "32",
+"postal": "461032",
+"district": 16,
+"address": "32 CHAI CHEE AVENUE ANSAR GARDEN SINGAPORE 461032"
+},
+"CHAI CHEE DR": {
+"block": "55",
+"postal": "460055",
+"district": 16,
+"address": "55 CHAI CHEE DRIVE PING-AN GARDENS SINGAPORE 460055"
+},
+"CHAI CHEE RD": {
+"block": "21",
+"postal": "461021",
+"district": 16,
+"address": "21 CHAI CHEE ROAD PING-AN GARDENS SINGAPORE 461021"
+},
+"CHAI CHEE ST": {
+"block": "50",
+"postal": "461050",
+"district": 16,
+"address": "50 CHAI CHEE STREET CHAI CHEE GARDENS SINGAPORE 461050"
+},
+"CHAMPIONS WAY": {
+"block": "567C",
+"postal": "733567",
+"district": 25,
+"address": "567C CHAMPIONS WAY CHAMPIONS GREEN SINGAPORE 733567"
+},
+"CHANDER RD": {
+"block": "668",
+"postal": "210668",
+"district": 8,
+"address": "668 CHANDER ROAD SINGAPORE 210668"
+},
+"CHANGI VILLAGE RD": {
+"block": "1",
+"postal": "500001",
+"district": 17,
+"address": "1 CHANGI VILLAGE ROAD SINGAPORE 500001"
+},
+"CHIN SWEE RD": {
+"block": "53",
+"postal": "160053",
+"district": 3,
+"address": "53 CHIN SWEE ROAD SINGAPORE 160053"
+},
+"CHOA CHU KANG AVE 1": {
+"block": "807A",
+"postal": "681807",
+"district": 23,
+"address": "807A CHOA CHU KANG AVENUE 1 KEAT HONG AXIS SINGAPORE 681807"
+},
+"CHOA CHU KANG AVE 2": {
+"block": "276",
+"postal": "680276",
+"district": 23,
+"address": "276 CHOA CHU KANG AVENUE 2 KEAT HONG TEMBUSU SINGAPORE 680276"
+},
+"CHOA CHU KANG AVE 3": {
+"block": "284",
+"postal": "680284",
+"district": 23,
+"address": "284 CHOA CHU KANG AVENUE 3 HDB PUBLIC SHELTERS SINGAPORE 680284"
+},
+"CHOA CHU KANG AVE 4": {
+"block": "461",
+"postal": "680461",
+"district": 23,
+"address": "461 CHOA CHU KANG AVENUE 4 SINGAPORE 680461"
+},
+"CHOA CHU KANG AVE 5": {
+"block": "476B",
+"postal": "682476",
+"district": 23,
+"address": "476B CHOA CHU KANG AVENUE 5 SUNSHINE COURT SINGAPORE 682476"
+},
+"CHOA CHU KANG AVE 7": {
+"block": "812C",
+"postal": "683812",
+"district": 23,
+"address": "812C CHOA CHU KANG AVENUE 7 KEAT HONG COLOURS SINGAPORE 683812"
+},
+"CHOA CHU KANG CRES": {
+"block": "691A",
+"postal": "681691",
+"district": 23,
+"address": "691A CHOA CHU KANG CRESCENT SINGAPORE 681691"
+},
+"CHOA CHU KANG CTRL": {
+"block": "223",
+"postal": "680223",
+"district": 23,
+"address": "223 CHOA CHU KANG CENTRAL SINGAPORE 680223"
+},
+"CHOA CHU KANG DR": {
+"block": "687D",
+"postal": "684687",
+"district": 23,
+"address": "687D CHOA CHU KANG DRIVE SINGAPORE 684687"
+},
+"CHOA CHU KANG LOOP": {
+"block": "340",
+"postal": "680340",
+"district": 23,
+"address": "340 CHOA CHU KANG LOOP SINGAPORE 680340"
+},
+"CHOA CHU KANG NTH 5": {
+"block": "763",
+"postal": "680763",
+"district": 23,
+"address": "763 CHOA CHU KANG NORTH 5 SINGAPORE 680763"
+},
+"CHOA CHU KANG NTH 6": {
+"block": "634",
+"postal": "680634",
+"district": 23,
+"address": "634 CHOA CHU KANG NORTH 6 SINGAPORE 680634"
+},
+"CHOA CHU KANG NTH 7": {
+"block": "619",
+"postal": "680619",
+"district": 23,
+"address": "619 CHOA CHU KANG NORTH 7 SINGAPORE 680619"
+},
+"CHOA CHU KANG ST 51": {
+"block": "505",
+"postal": "680505",
+"district": 23,
+"address": "505 CHOA CHU KANG STREET 51 SINGAPORE 680505"
+},
+"CHOA CHU KANG ST 52": {
+"block": "567",
+"postal": "680567",
+"district": 23,
+"address": "567 CHOA CHU KANG STREET 52 SINGAPORE 680567"
+},
+"CHOA CHU KANG ST 53": {
+"block": "701",
+"postal": "680701",
+"district": 23,
+"address": "701 CHOA CHU KANG STREET 53 SINGAPORE 680701"
+},
+"CHOA CHU KANG ST 54": {
+"block": "767",
+"postal": "680767",
+"district": 23,
+"address": "767 CHOA CHU KANG STREET 54 SINGAPORE 680767"
+},
+"CHOA CHU KANG ST 62": {
+"block": "627",
+"postal": "680627",
+"district": 23,
+"address": "627 CHOA CHU KANG STREET 62 SINGAPORE 680627"
+},
+"CHOA CHU KANG ST 64": {
+"block": "640",
+"postal": "680640",
+"district": 23,
+"address": "640 CHOA CHU KANG STREET 64 SINGAPORE 680640"
+},
+"CIRCUIT RD": {
+"block": "48",
+"postal": "370048",
+"district": 13,
+"address": "48 CIRCUIT ROAD MACPHERSON GARDEN SINGAPORE 370048"
+},
+"CLARENCE LANE": {
+"block": "129",
+"postal": "140129",
+"district": 3,
+"address": "129 CLARENCE LANE CLARENCE VILLE SINGAPORE 140129"
+},
+"CLEMENTI AVE 1": {
+"block": "420",
+"postal": "120420",
+"district": 5,
+"address": "420 CLEMENTI AVENUE 1 CASA CLEMENTI SINGAPORE 120420"
+},
+"CLEMENTI AVE 2": {
+"block": "351",
+"postal": "120351",
+"district": 5,
+"address": "351 CLEMENTI AVENUE 2 SINGAPORE 120351"
+},
+"CLEMENTI AVE 3": {
+"block": "428",
+"postal": "120428",
+"district": 5,
+"address": "428 CLEMENTI AVENUE 3 SINGAPORE 120428"
+},
+"CLEMENTI AVE 4": {
+"block": "320",
+"postal": "120320",
+"district": 5,
+"address": "320 CLEMENTI AVENUE 4 CLEMENTI MEADOWS SINGAPORE 120320"
+},
+"CLEMENTI AVE 5": {
+"block": "339",
+"postal": "120339",
+"district": 5,
+"address": "339 CLEMENTI AVENUE 5 SINGAPORE 120339"
+},
+"CLEMENTI AVE 6": {
+"block": "208B",
+"postal": "122208",
+"district": 5,
+"address": "208B CLEMENTI AVENUE 6 CLEMENTI GATEWAY SINGAPORE 122208"
+},
+"CLEMENTI ST 11": {
+"block": "109",
+"postal": "120109",
+"district": 5,
+"address": "109 CLEMENTI STREET 11 SUNSET WAY RESIDENCE SINGAPORE 120109"
+},
+"CLEMENTI ST 12": {
+"block": "105",
+"postal": "120105",
+"district": 5,
+"address": "105 CLEMENTI STREET 12 MOUNT PLEASANT ANIMAL MEDICAL CENTRE SINGAPORE 120105"
+},
+"CLEMENTI ST 13": {
+"block": "113",
+"postal": "120113",
+"district": 5,
+"address": "113 CLEMENTI STREET 13 SUNSET WAY RESIDENCE SINGAPORE 120113"
+},
+"CLEMENTI ST 14": {
+"block": "101",
+"postal": "120101",
+"district": 5,
+"address": "101 CLEMENTI STREET 14 SUNSET WAY RESIDENCE SINGAPORE 120101"
+},
+"CLEMENTI WEST ST 1": {
+"block": "602",
+"postal": "120602",
+"district": 5,
+"address": "602 CLEMENTI WEST STREET 1 SAINT LUKE'S ELDERCARE CLEMENTI CENTRE SINGAPORE 120602"
+},
+"CLEMENTI WEST ST 2": {
+"block": "715",
+"postal": "120715",
+"district": 5,
+"address": "715 CLEMENTI WEST STREET 2 VISTA 18 SINGAPORE 120715"
+},
+"COMPASSVALE BOW": {
+"block": "264E",
+"postal": "548264",
+"district": 19,
+"address": "264E COMPASSVALE BOW THE CORIS SINGAPORE 548264"
+},
+"COMPASSVALE CRES": {
+"block": "290C",
+"postal": "543290",
+"district": 19,
+"address": "290C COMPASSVALE CRESCENT COMPASSVALE LODGE SINGAPORE 543290"
+},
+"COMPASSVALE DR": {
+"block": "201A",
+"postal": "541201",
+"district": 19,
+"address": "201A COMPASSVALE DRIVE COMPASSVALE SOUTH GATE SINGAPORE 541201"
+},
+"COMPASSVALE LANE": {
+"block": "206B",
+"postal": "542206",
+"district": 19,
+"address": "206B COMPASSVALE LANE COMPASSVALE PLACE SINGAPORE 542206"
+},
+"COMPASSVALE LINK": {
+"block": "269B",
+"postal": "542269",
+"district": 19,
+"address": "269B COMPASSVALE LINK COMPASSVALE ARCADIA SINGAPORE 542269"
+},
+"COMPASSVALE RD": {
+"block": "259A",
+"postal": "541259",
+"district": 19,
+"address": "259A COMPASSVALE ROAD COMPASSVALE GARDENS SINGAPORE 541259"
+},
+"COMPASSVALE ST": {
+"block": "292B",
+"postal": "542292",
+"district": 19,
+"address": "292B COMPASSVALE STREET COMPASSVALE LODGE SINGAPORE 542292"
+},
+"COMPASSVALE WALK": {
+"block": "231",
+"postal": "540231",
+"district": 19,
+"address": "231 COMPASSVALE WALK COMPASSVALE PLAINS SINGAPORE 540231"
+},
+"CORPORATION DR": {
+"block": "150A",
+"postal": "611150",
+"district": 22,
+"address": "150A CORPORATION DRIVE YUNG HO SPRING II SINGAPORE 611150"
+},
+"CRAWFORD LANE": {
+"block": "462",
+"postal": "190462",
+"district": 7,
+"address": "462 CRAWFORD LANE CRAWFORD COURT SINGAPORE 190462"
+},
+"DAKOTA CRES": {
+"block": "58",
+"postal": "390058",
+"district": 14,
+"address": "58 DAKOTA CRESCENT SINGAPORE 390058"
+},
+"DAWSON RD": {
+"block": "86",
+"postal": "141086",
+"district": 3,
+"address": "86 DAWSON ROAD SKYVILLE @ DAWSON SINGAPORE 141086"
+},
+"DELTA AVE": {
+"block": "4",
+"postal": "161004",
+"district": 3,
+"address": "4 DELTA AVENUE SINGAPORE 161004"
+},
+"DEPOT RD": {
+"block": "114",
+"postal": "100114",
+"district": 4,
+"address": "114 DEPOT ROAD DEPOT HEIGHTS SINGAPORE 100114"
+},
+"DORSET RD": {
+"block": "50",
+"postal": "210050",
+"district": 8,
+"address": "50 DORSET ROAD FARRER PARK GARDENS SINGAPORE 210050"
+},
+"DOVER CL EAST": {
+"block": "12",
+"postal": "130012",
+"district": 5,
+"address": "12 DOVER CLOSE EAST DOVER HEIGHTS SINGAPORE 130012"
+},
+"DOVER CRES": {
+"block": "28C",
+"postal": "133028",
+"district": 5,
+"address": "28C DOVER CRESCENT DOVER GARDENS SINGAPORE 133028"
+},
+"DOVER RD": {
+"block": "2",
+"postal": "130002",
+"district": 5,
+"address": "2 DOVER ROAD DOVER COURT SINGAPORE 130002"
+},
+"EDGEDALE PLAINS": {
+"block": "126A",
+"postal": "821126",
+"district": 19,
+"address": "126A EDGEDALE PLAINS SINGAPORE 821126"
+},
+"EDGEFIELD PLAINS": {
+"block": "184",
+"postal": "820184",
+"district": 19,
+"address": "184 EDGEFIELD PLAINS SINGAPORE 820184"
+},
+"ELIAS RD": {
+"block": "615",
+"postal": "510615",
+"district": 18,
+"address": "615 ELIAS ROAD SINGAPORE 510615"
+},
+"EMPRESS RD": {
+"block": "8",
+"postal": "260008",
+"district": 10,
+"address": "8 EMPRESS ROAD FARRER GARDENS SINGAPORE 260008"
+},
+"EUNOS CRES": {
+"block": "18",
+"postal": "400018",
+"district": 14,
+"address": "18 EUNOS CRESCENT SINGAPORE 400018"
+},
+"EUNOS RD 2": {
+"block": "37A",
+"postal": "401037",
+"district": 14,
+"address": "37A EUNOS ROAD 2 EUNOS COURT SINGAPORE 401037"
+},
+"EUNOS RD 5": {
+"block": "415",
+"postal": "400415",
+"district": 14,
+"address": "415 EUNOS ROAD 5 SINGAPORE 400415"
+},
+"EVERTON PK": {
+"block": "2",
+"postal": "081002",
+"district": 2,
+"address": "2 EVERTON PARK EVERTON PARK SINGAPORE 081002"
+},
+"FAJAR RD": {
+"block": "406",
+"postal": "670406",
+"district": 23,
+"address": "406 FAJAR ROAD SINGAPORE 670406"
+},
+"FARRER PK RD": {
+"block": "15",
+"postal": "210015",
+"district": 8,
+"address": "15 FARRER PARK ROAD FARRER PARK VIEW SINGAPORE 210015"
+},
+"FARRER RD": {
+"block": "6",
+"postal": "260006",
+"district": 10,
+"address": "6 FARRER ROAD SINGAPORE 260006"
+},
+"FERNVALE LANE": {
+"block": "403D",
+"postal": "794403",
+"district": 28,
+"address": "403D FERNVALE LANE FERN SPRING SINGAPORE 794403"
+},
+"FERNVALE LINK": {
+"block": "418B",
+"postal": "792418",
+"district": 28,
+"address": "418B FERNVALE LINK FERNVALE RIVERWALK SINGAPORE 792418"
+},
+"FERNVALE RD": {
+"block": "406C",
+"postal": "793406",
+"district": 28,
+"address": "406C FERNVALE ROAD FERN VIEW SINGAPORE 793406"
+},
+"FERNVALE ST": {
+"block": "472A",
+"postal": "791472",
+"district": 28,
+"address": "472A FERNVALE STREET FERNVALE RIVERGROVE SINGAPORE 791472"
+},
+"FRENCH RD": {
+"block": "801",
+"postal": "200801",
+"district": 8,
+"address": "801 FRENCH ROAD SINGAPORE 200801"
+},
+"GANGSA RD": {
+"block": "166",
+"postal": "670166",
+"district": 23,
+"address": "166 GANGSA ROAD SINGAPORE 670166"
+},
+"GEYLANG BAHRU": {
+"block": "72",
+"postal": "330072",
+"district": 12,
+"address": "72 GEYLANG BAHRU SINGAPORE 330072"
+},
+"GEYLANG EAST AVE 1": {
+"block": "128",
+"postal": "380128",
+"district": 14,
+"address": "128 GEYLANG EAST AVENUE 1 GEYLANG EAST GROVE SINGAPORE 380128"
+},
+"GEYLANG EAST AVE 2": {
+"block": "129",
+"postal": "380129",
+"district": 14,
+"address": "129 GEYLANG EAST AVENUE 2 GEYLANG EAST GROVE SINGAPORE 380129"
+},
+"GEYLANG EAST CTRL": {
+"block": "120",
+"postal": "380120",
+"district": 14,
+"address": "120 GEYLANG EAST CENTRAL SINGAPORE 380120"
+},
+"GEYLANG SERAI": {
+"block": "2B",
+"postal": "404002",
+"district": 14,
+"address": "2B GEYLANG SERAI SRI GEYLANG SERAI SINGAPORE 404002"
+},
+"GHIM MOH LINK": {
+"block": "26",
+"postal": "270026",
+"district": 10,
+"address": "26 GHIM MOH LINK GHIM MOH VALLEY SINGAPORE 270026"
+},
+"GHIM MOH RD": {
+"block": "6",
+"postal": "270006",
+"district": 10,
+"address": "6 GHIM MOH ROAD GHIM MOH GREEN SINGAPORE 270006"
+},
+"GLOUCESTER RD": {
+"block": "10",
+"postal": "210010",
+"district": 8,
+"address": "10 GLOUCESTER ROAD FARRER PARK GARDENS SINGAPORE 210010"
+},
+"HAIG RD": {
+"block": "1",
+"postal": "430001",
+"district": 15,
+"address": "1 HAIG ROAD HAIG VIEW SINGAPORE 430001"
+},
+"HAVELOCK RD": {
+"block": "22",
+"postal": "160022",
+"district": 3,
+"address": "22 HAVELOCK ROAD SINGAPORE 160022"
+},
+"HENDERSON CRES": {
+"block": "105",
+"postal": "150105",
+"district": 3,
+"address": "105 HENDERSON CRESCENT HENDERSONVILLE SINGAPORE 150105"
+},
+"HENDERSON RD": {
+"block": "95C",
+"postal": "153095",
+"district": 3,
+"address": "95C HENDERSON ROAD CITY VUE @HENDERSON SINGAPORE 153095"
+},
+"HO CHING RD": {
+"block": "119",
+"postal": "610119",
+"district": 22,
+"address": "119 HO CHING ROAD SINGAPORE 610119"
+},
+"HOLLAND AVE": {
+"block": "12",
+"postal": "272012",
+"district": 10,
+"address": "12 HOLLAND AVENUE HOLLAND VISTA SINGAPORE 272012"
+},
+"HOLLAND CL": {
+"block": "4",
+"postal": "271004",
+"district": 10,
+"address": "4 HOLLAND CLOSE SINGAPORE 271004"
+},
+"HOLLAND DR": {
+"block": "11",
+"postal": "278859",
+"district": 10,
+"address": "11 HOLLAND GROVE DRIVE SINGAPORE 278859"
+},
+"HOUGANG AVE 1": {
+"block": "109",
+"postal": "530109",
+"district": 19,
+"address": "109 HOUGANG AVENUE 1 SINGAPORE 530109"
+},
+"HOUGANG AVE 10": {
+"block": "401",
+"postal": "530401",
+"district": 19,
+"address": "401 HOUGANG AVENUE 10 HARMONY VIEW @ HOUGANG SINGAPORE 530401"
+},
+"HOUGANG AVE 2": {
+"block": "704",
+"postal": "530704",
+"district": 19,
+"address": "704 HOUGANG AVENUE 2 SINGAPORE 530704"
+},
+"HOUGANG AVE 3": {
+"block": "2",
+"postal": "530002",
+"district": 19,
+"address": "2 HOUGANG AVENUE 3 SINGAPORE 530002"
+},
+"HOUGANG AVE 4": {
+"block": "665",
+"postal": "530665",
+"district": 19,
+"address": "665 HOUGANG AVENUE 4 SINGAPORE 530665"
+},
+"HOUGANG AVE 5": {
+"block": "304",
+"postal": "530304",
+"district": 19,
+"address": "304 HOUGANG AVENUE 5 SINGAPORE 530304"
+},
+"HOUGANG AVE 6": {
+"block": "527",
+"postal": "530527",
+"district": 19,
+"address": "527 HOUGANG AVENUE 6 SINGAPORE 530527"
+},
+"HOUGANG AVE 7": {
+"block": "317",
+"postal": "530317",
+"district": 19,
+"address": "317 HOUGANG AVENUE 7 SINGAPORE 530317"
+},
+"HOUGANG AVE 8": {
+"block": "617",
+"postal": "530617",
+"district": 19,
+"address": "617 HOUGANG AVENUE 8 SINGAPORE 530617"
+},
+"HOUGANG AVE 9": {
+"block": "955",
+"postal": "530955",
+"district": 19,
+"address": "955 HOUGANG AVENUE 9 SINGAPORE 530955"
+},
+"HOUGANG CTRL": {
+"block": "838",
+"postal": "530838",
+"district": 19,
+"address": "838 HOUGANG CENTRAL SINGAPORE 530838"
+},
+"HOUGANG ST 11": {
+"block": "161",
+"postal": "530161",
+"district": 19,
+"address": "161 HOUGANG STREET 11 SINGAPORE 530161"
+},
+"HOUGANG ST 13": {
+"block": "176A",
+"postal": "531176",
+"district": 19,
+"address": "176A HOUGANG STREET 13 HOUGANG OLIVE SINGAPORE 531176"
+},
+"HOUGANG ST 21": {
+"block": "220",
+"postal": "530220",
+"district": 19,
+"address": "220 HOUGANG STREET 21 KOVAN GREEN SINGAPORE 530220"
+},
+"HOUGANG ST 22": {
+"block": "242",
+"postal": "530242",
+"district": 19,
+"address": "242 HOUGANG STREET 22 HOUGANG HEIGHTS SINGAPORE 530242"
+},
+"HOUGANG ST 31": {
+"block": "373",
+"postal": "530373",
+"district": 19,
+"address": "373 HOUGANG STREET 31 SINGAPORE 530373"
+},
+"HOUGANG ST 32": {
+"block": "376C",
+"postal": "533376",
+"district": 19,
+"address": "376C HOUGANG STREET 32 HOUGANG DEWCOURT SINGAPORE 533376"
+},
+"HOUGANG ST 51": {
+"block": "569",
+"postal": "530569",
+"district": 19,
+"address": "569 HOUGANG STREET 51 SINGAPORE 530569"
+},
+"HOUGANG ST 52": {
+"block": "534",
+"postal": "530534",
+"district": 19,
+"address": "534 HOUGANG STREET 52 SINGAPORE 530534"
+},
+"HOUGANG ST 61": {
+"block": "689",
+"postal": "530689",
+"district": 19,
+"address": "689 HOUGANG STREET 61 HOUGANG SPRING SINGAPORE 530689"
+},
+"HOUGANG ST 91": {
+"block": "909",
+"postal": "530909",
+"district": 19,
+"address": "909 HOUGANG STREET 91 SINGAPORE 530909"
+},
+"HOUGANG ST 92": {
+"block": "937",
+"postal": "530937",
+"district": 19,
+"address": "937 HOUGANG STREET 92 SINGAPORE 530937"
+},
+"HOY FATT RD": {
+"block": "28",
+"postal": "151028",
+"district": 3,
+"address": "28 HOY FATT ROAD BRICKWORKS ESTATE SINGAPORE 151028"
+},
+"INDUS RD": {
+"block": "77",
+"postal": "160077",
+"district": 3,
+"address": "77 INDUS ROAD INDUS GARDEN SINGAPORE 160077"
+},
+"JELAPANG RD": {
+"block": "505",
+"postal": "670505",
+"district": 23,
+"address": "505 JELAPANG ROAD HDB PUBLIC SHELTERS SINGAPORE 670505"
+},
+"JELEBU RD": {
+"block": "183",
+"postal": "670183",
+"district": 23,
+"address": "183 JELEBU ROAD SINGAPORE 670183"
+},
+"JELLICOE RD": {
+"block": "815",
+"postal": "200815",
+"district": 8,
+"address": "815 JELLICOE ROAD LAVENDER GARDENS SINGAPORE 200815"
+},
+"JLN BAHAGIA": {
+"block": "30",
+"postal": "320030",
+"district": 12,
+"address": "30 JALAN BAHAGIA WHAMPOA VISTA SINGAPORE 320030"
+},
+"JLN BATU": {
+"block": "2",
+"postal": "431002",
+"district": 15,
+"address": "2 JALAN BATU DI TANJONG RHU SINGAPORE 431002"
+},
+"JLN BERSEH": {
+"block": "26",
+"postal": "200026",
+"district": 8,
+"address": "26 JALAN BERSEH KELANTAN COURT SINGAPORE 200026"
+},
+"JLN BT HO SWEE": {
+"block": "2",
+"postal": "162002",
+"district": 3,
+"address": "2 JALAN BUKIT HO SWEE BUKIT HO SWEE VIEW SINGAPORE 162002"
+},
+"JLN BT MERAH": {
+"block": "1",
+"postal": "150001",
+"district": 3,
+"address": "1 JALAN BUKIT MERAH BRICKWORKS ESTATE SINGAPORE 150001"
+},
+"JLN DAMAI": {
+"block": "665",
+"postal": "410665",
+"district": 14,
+"address": "665 JALAN DAMAI EUNOS DAMAI VILLE SINGAPORE 410665"
+},
+"JLN DUA": {
+"block": "97",
+"postal": "390097",
+"district": 14,
+"address": "97 JALAN DUA SINGAPORE 390097"
+},
+"JLN DUSUN": {
+"block": "106",
+"postal": "320106",
+"district": 12,
+"address": "106 JALAN DUSUN AH HOOD GARDENS SINGAPORE 320106"
+},
+"JLN KAYU": {
+"block": "447A",
+"postal": "791447",
+"district": 28,
+"address": "447A JALAN KAYU FERNVALE LODGE SINGAPORE 791447"
+},
+"JLN KLINIK": {
+"block": "30",
+"postal": "160030",
+"district": 3,
+"address": "30 JALAN KLINIK SINGAPORE 160030"
+},
+"JLN KUKOH": {
+"block": "9",
+"postal": "160009",
+"district": 3,
+"address": "9 JALAN KUKOH CHIN SWEE VIEW SINGAPORE 160009"
+},
+"JLN MEMBINA": {
+"block": "25B",
+"postal": "164025",
+"district": 3,
+"address": "25B JALAN MEMBINA MEMBINA COURT SINGAPORE 164025"
+},
+"JLN RAJAH": {
+"block": "102",
+"postal": "321102",
+"district": 12,
+"address": "102 JALAN RAJAH RAJAH COURT SINGAPORE 321102"
+},
+"JLN RUMAH TINGGI": {
+"block": "37",
+"postal": "150037",
+"district": 3,
+"address": "37 JALAN RUMAH TINGGI RUMAH TINGGI VIEW SINGAPORE 150037"
+},
+"JLN SATU": {
+"block": "88B",
+"postal": "392088",
+"district": 14,
+"address": "88B JALAN SATU DAKOTA ONE SINGAPORE 392088"
+},
+"JLN TECK WHYE": {
+"block": "160",
+"postal": "680160",
+"district": 23,
+"address": "160 JALAN TECK WHYE SINGAPORE 680160"
+},
+"JLN TENAGA": {
+"block": "645",
+"postal": "410645",
+"district": 14,
+"address": "645 JALAN TENAGA SINGAPORE 410645"
+},
+"JLN TENTERAM": {
+"block": "16",
+"postal": "321016",
+"district": 12,
+"address": "16 JALAN TENTERAM SINGAPORE 321016"
+},
+"JLN TIGA": {
+"block": "47",
+"postal": "390047",
+"district": 14,
+"address": "47 JALAN TIGA PINE GREEN SINGAPORE 390047"
+},
+"JOO CHIAT RD": {
+"block": "4",
+"postal": "420004",
+"district": 15,
+"address": "4 JOO CHIAT ROAD SINGAPORE 420004"
+},
+"JOO SENG RD": {
+"block": "8",
+"postal": "360008",
+"district": 13,
+"address": "8 JOO SENG ROAD JOO SENG GREEN SINGAPORE 360008"
+},
+"JURONG EAST AVE 1": {
+"block": "331",
+"postal": "600331",
+"district": 22,
+"address": "331 JURONG EAST AVENUE 1 SINGAPORE 600331"
+},
+"JURONG EAST ST 13": {
+"block": "102",
+"postal": "600102",
+"district": 22,
+"address": "102 JURONG EAST STREET 13 JURONG EAST VILLE SINGAPORE 600102"
+},
+"JURONG EAST ST 21": {
+"block": "210",
+"postal": "600210",
+"district": 22,
+"address": "210 JURONG EAST STREET 21 SINGAPORE 600210"
+},
+"JURONG EAST ST 24": {
+"block": "244",
+"postal": "600244",
+"district": 22,
+"address": "244 JURONG EAST STREET 24 SINGAPORE 600244"
+},
+"JURONG EAST ST 31": {
+"block": "321",
+"postal": "600321",
+"district": 22,
+"address": "321 JURONG EAST STREET 31 SINGAPORE 600321"
+},
+"JURONG EAST ST 32": {
+"block": "301",
+"postal": "600301",
+"district": 22,
+"address": "301 JURONG EAST STREET 32 HONG KAH EAST GARDEN SINGAPORE 600301"
+},
+"JURONG WEST AVE 1": {
+"block": "484",
+"postal": "640484",
+"district": 22,
+"address": "484 JURONG WEST AVENUE 1 JURONGVILLE @ AVENUE 1 SINGAPORE 640484"
+},
+"JURONG WEST AVE 3": {
+"block": "273B",
+"postal": "642273",
+"district": 22,
+"address": "273B JURONG WEST AVENUE 3 WENYA SINGAPORE 642273"
+},
+"JURONG WEST AVE 5": {
+"block": "729",
+"postal": "640729",
+"district": 22,
+"address": "729 JURONG WEST AVENUE 5 DSTAR EDUCENTRE SINGAPORE 640729"
+},
+"JURONG WEST CTRL 1": {
+"block": "680C",
+"postal": "643680",
+"district": 22,
+"address": "680C JURONG WEST CENTRAL 1 SINGAPORE 643680"
+},
+"JURONG WEST CTRL 3": {
+"block": "697B",
+"postal": "642697",
+"district": 22,
+"address": "697B JURONG WEST CENTRAL 3 JURONG WEST BLOSSOM SINGAPORE 642697"
+},
+"JURONG WEST ST 24": {
+"block": "272A",
+"postal": "641272",
+"district": 22,
+"address": "272A JURONG WEST STREET 24 SINGAPORE 641272"
+},
+"JURONG WEST ST 25": {
+"block": "276A",
+"postal": "641276",
+"district": 22,
+"address": "276A JURONG WEST STREET 25 WENYA SINGAPORE 641276"
+},
+"JURONG WEST ST 41": {
+"block": "481",
+"postal": "640481",
+"district": 22,
+"address": "481 JURONG WEST STREET 41 JURONGVILLE @ STREET 41 SINGAPORE 640481"
+},
+"JURONG WEST ST 42": {
+"block": "412",
+"postal": "640412",
+"district": 22,
+"address": "412 JURONG WEST STREET 42 SINGAPORE 640412"
+},
+"JURONG WEST ST 51": {
+"block": "501",
+"postal": "640501",
+"district": 22,
+"address": "501 JURONG WEST STREET 51 HONG KAH POINT SINGAPORE 640501"
+},
+"JURONG WEST ST 52": {
+"block": "511",
+"postal": "640511",
+"district": 22,
+"address": "511 JURONG WEST STREET 52 ST ANDREW'S CATHEDRAL CHILD DEVELOPMENT CENTRE SINGAPORE 640511"
+},
+"JURONG WEST ST 61": {
+"block": "649A",
+"postal": "641649",
+"district": 22,
+"address": "649A JURONG WEST STREET 61 SINGAPORE 641649"
+},
+"JURONG WEST ST 62": {
+"block": "613",
+"postal": "640613",
+"district": 22,
+"address": "613 JURONG WEST STREET 62 SINGAPORE 640613"
+},
+"JURONG WEST ST 64": {
+"block": "664A",
+"postal": "641664",
+"district": 22,
+"address": "664A JURONG WEST STREET 64 SINGAPORE 641664"
+},
+"JURONG WEST ST 65": {
+"block": "667C",
+"postal": "643667",
+"district": 22,
+"address": "667C JURONG WEST STREET 65 SINGAPORE 643667"
+},
+"JURONG WEST ST 71": {
+"block": "718",
+"postal": "640718",
+"district": 22,
+"address": "718 JURONG WEST STREET 71 ENRICHMENT 718 PTE LTD SINGAPORE 640718"
+},
+"JURONG WEST ST 72": {
+"block": "724",
+"postal": "640724",
+"district": 22,
+"address": "724 JURONG WEST STREET 72 HDB PUBLIC SHELTERS SINGAPORE 640724"
+},
+"JURONG WEST ST 73": {
+"block": "749",
+"postal": "640749",
+"district": 22,
+"address": "749 JURONG WEST STREET 73 GEK POH VILLE SINGAPORE 640749"
+},
+"JURONG WEST ST 74": {
+"block": "766",
+"postal": "640766",
+"district": 22,
+"address": "766 JURONG WEST STREET 74 SINGAPORE 640766"
+},
+"JURONG WEST ST 75": {
+"block": "735",
+"postal": "640735",
+"district": 22,
+"address": "735 JURONG WEST STREET 75 SINGAPORE 640735"
+},
+"JURONG WEST ST 81": {
+"block": "856",
+"postal": "640856",
+"district": 22,
+"address": "856 JURONG WEST STREET 81 SINGAPORE 640856"
+},
+"JURONG WEST ST 91": {
+"block": "915",
+"postal": "640915",
+"district": 22,
+"address": "915 JURONG WEST STREET 91 NANYANG EMERALD SINGAPORE 640915"
+},
+"JURONG WEST ST 92": {
+"block": "925",
+"postal": "640925",
+"district": 22,
+"address": "925 JURONG WEST STREET 92 NANYANG EMERALD SINGAPORE 640925"
+},
+"JURONG WEST ST 93": {
+"block": "989C",
+"postal": "643989",
+"district": 22,
+"address": "989C JURONG WEST STREET 93 SINGAPORE 643989"
+},
+"KALLANG BAHRU": {
+"block": "64",
+"postal": "330064",
+"district": 12,
+"address": "64 KALLANG BAHRU SINGAPORE 330064"
+},
+"KANG CHING RD": {
+"block": "345",
+"postal": "610345",
+"district": 22,
+"address": "345 KANG CHING ROAD SINGAPORE 610345"
+},
+"KEAT HONG CL": {
+"block": "802C",
+"postal": "683802",
+"district": 23,
+"address": "802C KEAT HONG CLOSE KEAT HONG CREST SINGAPORE 683802"
+},
+"KEAT HONG LINK": {
+"block": "817C",
+"postal": "683817",
+"district": 23,
+"address": "817C KEAT HONG LINK KEAT HONG MIRAGE SINGAPORE 683817"
+},
+"KELANTAN RD": {
+"block": "29",
+"postal": "200029",
+"district": 8,
+"address": "29 KELANTAN ROAD KELANTAN COURT SINGAPORE 200029"
+},
+"KEMPAS RD": {
+"block": "1B",
+"postal": "332001",
+"district": 12,
+"address": "1B KEMPAS ROAD KEMPAS RESIDENCES SINGAPORE 332001"
+},
+"KENT RD": {
+"block": "52",
+"postal": "210052",
+"district": 8,
+"address": "52 KENT ROAD KENT VILLE SINGAPORE 210052"
+},
+"KG ARANG RD": {
+"block": "12",
+"postal": "431012",
+"district": 15,
+"address": "12 KAMPONG ARANG ROAD SINGAPORE 431012"
+},
+"KG KAYU RD": {
+"block": "1",
+"postal": "431001",
+"district": 15,
+"address": "1 KAMPONG KAYU ROAD DI TANJONG RHU SINGAPORE 431001"
+},
+"KIM CHENG ST": {
+"block": "41",
+"postal": "160041",
+"district": 3,
+"address": "41 KIM CHENG STREET SINGAPORE 160041"
+},
+"KIM KEAT AVE": {
+"block": "195",
+"postal": "310195",
+"district": 12,
+"address": "195 KIM KEAT AVENUE ADVENTIST HOME FOR THE ELDERS SINGAPORE 310195"
+},
+"KIM KEAT LINK": {
+"block": "242",
+"postal": "310242",
+"district": 12,
+"address": "242 KIM KEAT LINK SINGAPORE 310242"
+},
+"KIM PONG RD": {
+"block": "38",
+"postal": "161038",
+"district": 3,
+"address": "38 KIM PONG ROAD SINGAPORE 161038"
+},
+"KIM TIAN PL": {
+"block": "120",
+"postal": "160120",
+"district": 3,
+"address": "120 KIM TIAN PLACE KIM TIAN TOWERS SINGAPORE 160120"
+},
+"KIM TIAN RD": {
+"block": "127C",
+"postal": "163127",
+"district": 3,
+"address": "127C KIM TIAN ROAD KIM TIAN GREEN SINGAPORE 163127"
+},
+"KING GEORGE'S AVE": {
+"block": "806",
+"postal": "200806",
+"district": 8,
+"address": "806 KING GEORGE'S AVENUE SINGAPORE 200806"
+},
+"KLANG LANE": {
+"block": "672B",
+"postal": "212672",
+"district": 8,
+"address": "672B KLANG LANE SINGAPORE 212672"
+},
+"KRETA AYER RD": {
+"block": "334",
+"postal": "080334",
+"district": 2,
+"address": "334 KRETA AYER ROAD SINGAPORE 080334"
+},
+"LENGKOK BAHRU": {
+"block": "51",
+"postal": "150051",
+"district": 3,
+"address": "51 LENGKOK BAHRU SINGAPORE 150051"
+},
+"LENGKONG TIGA": {
+"block": "112",
+"postal": "410112",
+"district": 14,
+"address": "112 LENGKONG TIGA SINGAPORE 410112"
+},
+"LIM LIAK ST": {
+"block": "25",
+"postal": "161025",
+"district": 3,
+"address": "25 LIM LIAK STREET SINGAPORE 161025"
+},
+"LOMPANG RD": {
+"block": "179",
+"postal": "670179",
+"district": 23,
+"address": "179 LOMPANG ROAD SINGAPORE 670179"
+},
+"LOR 1 TOA PAYOH": {
+"block": "157",
+"postal": "310157",
+"district": 12,
+"address": "157 LORONG 1 TOA PAYOH SINGAPORE 310157"
+},
+"LOR 1A TOA PAYOH": {
+"block": "139A",
+"postal": "311139",
+"district": 12,
+"address": "139A LORONG 1A TOA PAYOH THE PEAK @ TOA PAYOH SINGAPORE 311139"
+},
+"LOR 2 TOA PAYOH": {
+"block": "116",
+"postal": "310116",
+"district": 12,
+"address": "116 LORONG 2 TOA PAYOH TOA PAYOH VIEW SINGAPORE 310116"
+},
+"LOR 3 GEYLANG": {
+"block": "113",
+"postal": "381113",
+"district": 14,
+"address": "113 LORONG 3 GEYLANG SINGAPORE 381113"
+},
+"LOR 3 TOA PAYOH": {
+"block": "91",
+"postal": "310091",
+"district": 12,
+"address": "91 LORONG 3 TOA PAYOH TOA PAYOH PALM SPRING SINGAPORE 310091"
+},
+"LOR 4 TOA PAYOH": {
+"block": "66",
+"postal": "310066",
+"district": 12,
+"address": "66 LORONG 4 TOA PAYOH TOA PAYOH VISTA SINGAPORE 310066"
+},
+"LOR 5 TOA PAYOH": {
+"block": "38",
+"postal": "310038",
+"district": 12,
+"address": "38 LORONG 5 TOA PAYOH EAST PAYOH SPRING SINGAPORE 310038"
+},
+"LOR 6 TOA PAYOH": {
+"block": "51",
+"postal": "310051",
+"district": 12,
+"address": "51 LORONG 6 TOA PAYOH EAST PAYOH PALM SINGAPORE 310051"
+},
+"LOR 7 TOA PAYOH": {
+"block": "17",
+"postal": "310017",
+"district": 12,
+"address": "17 LORONG 7 TOA PAYOH SINGAPORE 310017"
+},
+"LOR 8 TOA PAYOH": {
+"block": "231",
+"postal": "310231",
+"district": 12,
+"address": "231 LORONG 8 TOA PAYOH NEIGHBOURHOOD POLICE POST KIM KEAT SINGAPORE 310231"
+},
+"LOR AH SOO": {
+"block": "129",
+"postal": "530129",
+"district": 19,
+"address": "129 LORONG AH SOO SINGAPORE 530129"
+},
+"LOR LEW LIAN": {
+"block": "2",
+"postal": "531002",
+"district": 19,
+"address": "2 LORONG LEW LIAN LEW LIAN GARDENS SINGAPORE 531002"
+},
+"LOR LIMAU": {
+"block": "76",
+"postal": "320076",
+"district": 12,
+"address": "76 LORONG LIMAU WHAMPOA SPRING SINGAPORE 320076"
+},
+"LOWER DELTA RD": {
+"block": "48",
+"postal": "160048",
+"district": 3,
+"address": "48 LOWER DELTA ROAD THE BEO CRESCENT SINGAPORE 160048"
+},
+"MARGARET DR": {
+"block": "40A",
+"postal": "141040",
+"district": 3,
+"address": "40A MARGARET DRIVE SKYOASIS @ DAWSON SINGAPORE 141040"
+},
+"MARINE CRES": {
+"block": "33",
+"postal": "440033",
+"district": 15,
+"address": "33 MARINE CRESCENT MARINE CRESCENT VILLE SINGAPORE 440033"
+},
+"MARINE DR": {
+"block": "67",
+"postal": "440067",
+"district": 15,
+"address": "67 MARINE DRIVE MARINE DRIVE GARDENS SINGAPORE 440067"
+},
+"MARINE PARADE CTRL": {
+"block": "80",
+"postal": "440080",
+"district": 15,
+"address": "80 MARINE PARADE CENTRAL MARINE PARADE PROMENADE SINGAPORE 440080"
+},
+"MARINE TER": {
+"block": "6",
+"postal": "440006",
+"district": 15,
+"address": "6 MARINE TERRACE MARINE TERRACE WALK SINGAPORE 440006"
+},
+"MARSILING CRES": {
+"block": "213",
+"postal": "730213",
+"district": 25,
+"address": "213 MARSILING CRESCENT SINGAPORE 730213"
+},
+"MARSILING DR": {
+"block": "22",
+"postal": "730022",
+"district": 25,
+"address": "22 MARSILING DRIVE MARSILING GREEN SINGAPORE 730022"
+},
+"MARSILING LANE": {
+"block": "17",
+"postal": "730017",
+"district": 25,
+"address": "17 MARSILING LANE MARSILING GARDENS SINGAPORE 730017"
+},
+"MARSILING RD": {
+"block": "141",
+"postal": "730141",
+"district": 25,
+"address": "141 MARSILING ROAD SINGAPORE 730141"
+},
+"MARSILING RISE": {
+"block": "130",
+"postal": "730130",
+"district": 25,
+"address": "130 MARSILING RISE SINGAPORE 730130"
+},
+"MCNAIR RD": {
+"block": "108C",
+"postal": "324108",
+"district": 12,
+"address": "108C MCNAIR ROAD TOWNER HEIGHTS SINGAPORE 324108"
+},
+"MEI LING ST": {
+"block": "160",
+"postal": "140160",
+"district": 3,
+"address": "160 MEI LING STREET MEI LING VISTA SINGAPORE 140160"
+},
+"MOH GUAN TER": {
+"block": "47",
+"postal": "160047",
+"district": 3,
+"address": "47 MOH GUAN TERRACE SINGAPORE 160047"
+},
+"MONTREAL DR": {
+"block": "588C",
+"postal": "753588",
+"district": 27,
+"address": "588C MONTREAL DRIVE MONTREAL SPRING SINGAPORE 753588"
+},
+"MONTREAL LINK": {
+"block": "593B",
+"postal": "752593",
+"district": 27,
+"address": "593B MONTREAL LINK MONTREAL VILLE SINGAPORE 752593"
+},
+"MOULMEIN RD": {
+"block": "69",
+"postal": "300069",
+"district": 11,
+"address": "69 MOULMEIN ROAD MOULMEIN VIEW SINGAPORE 300069"
+},
+"MOUNT VERNON RD": {
+"block": "224A",
+"postal": "361224",
+"district": 13,
+"address": "224A MOUNT VERNON ROAD BARTLEY BEACON SINGAPORE 361224"
+},
+"NEW MKT RD": {
+"block": "32",
+"postal": "050032",
+"district": 1,
+"address": "32 NEW MARKET ROAD SINGAPORE 050032"
+},
+"NEW UPP CHANGI RD": {
+"block": "27",
+"postal": "462027",
+"district": 16,
+"address": "27 NEW UPPER CHANGI ROAD SINGAPORE 462027"
+},
+"NORTHSHORE CRES": {
+"block": "425A",
+"postal": "821425",
+"district": 19,
+"address": "425A NORTHSHORE CRESCENT NORTHSHORE COVE SINGAPORE 821425"
+},
+"NORTHSHORE DR": {
+"block": "408C",
+"postal": "823408",
+"district": 19,
+"address": "408C NORTHSHORE DRIVE NORTHSHORE RESIDENCES II SINGAPORE 823408"
+},
+"NTH BRIDGE RD": {
+"block": "468",
+"postal": "190468",
+"district": 7,
+"address": "468 NORTH BRIDGE ROAD CRAWFORD COURT SINGAPORE 190468"
+},
+"NTH WOODLANDS WAY": {
+"block": "909B",
+"postal": "732909",
+"district": 25,
+"address": "909B NORTH WOODLANDS WAY URBANVILLE @ WOODLANDS SINGAPORE 732909"
+},
+"OLD AIRPORT RD": {
+"block": "95",
+"postal": "390095",
+"district": 14,
+"address": "95 OLD AIRPORT ROAD SINGAPORE 390095"
+},
+"OWEN RD": {
+"block": "44",
+"postal": "210044",
+"district": 8,
+"address": "44 OWEN ROAD SINGAPORE 210044"
+},
+"PANDAN GDNS": {
+"block": "410",
+"postal": "600410",
+"district": 22,
+"address": "410 PANDAN GARDENS SINGAPORE 600410"
+},
+"PASIR RIS DR 1": {
+"block": "640",
+"postal": "510640",
+"district": 18,
+"address": "640 PASIR RIS DRIVE 1 SINGAPORE 510640"
+},
+"PASIR RIS DR 10": {
+"block": "739",
+"postal": "510739",
+"district": 18,
+"address": "739 PASIR RIS DRIVE 10 SINGAPORE 510739"
+},
+"PASIR RIS DR 3": {
+"block": "627",
+"postal": "510627",
+"district": 18,
+"address": "627 PASIR RIS DRIVE 3 SINGAPORE 510627"
+},
+"PASIR RIS DR 4": {
+"block": "483",
+"postal": "510483",
+"district": 18,
+"address": "483 PASIR RIS DRIVE 4 SINGAPORE 510483"
+},
+"PASIR RIS DR 6": {
+"block": "473",
+"postal": "510473",
+"district": 18,
+"address": "473 PASIR RIS DRIVE 6 SINGAPORE 510473"
+},
+"PASIR RIS ST 11": {
+"block": "124",
+"postal": "510124",
+"district": 18,
+"address": "124 PASIR RIS STREET 11 SINGAPORE 510124"
+},
+"PASIR RIS ST 12": {
+"block": "105",
+"postal": "510105",
+"district": 18,
+"address": "105 PASIR RIS STREET 12 SINGAPORE 510105"
+},
+"PASIR RIS ST 13": {
+"block": "149",
+"postal": "510149",
+"district": 18,
+"address": "149 PASIR RIS STREET 13 SINGAPORE 510149"
+},
+"PASIR RIS ST 21": {
+"block": "226",
+"postal": "510226",
+"district": 18,
+"address": "226 PASIR RIS STREET 21 SINGAPORE 510226"
+},
+"PASIR RIS ST 41": {
+"block": "464",
+"postal": "510464",
+"district": 18,
+"address": "464 PASIR RIS STREET 41 SINGAPORE 510464"
+},
+"PASIR RIS ST 51": {
+"block": "569",
+"postal": "510569",
+"district": 18,
+"address": "569 PASIR RIS STREET 51 SINGAPORE 510569"
+},
+"PASIR RIS ST 52": {
+"block": "516",
+"postal": "510516",
+"district": 18,
+"address": "516 PASIR RIS STREET 52 ELIAS PARKS ESTATE SINGAPORE 510516"
+},
+"PASIR RIS ST 53": {
+"block": "572",
+"postal": "510572",
+"district": 18,
+"address": "572 PASIR RIS STREET 53 SINGAPORE 510572"
+},
+"PASIR RIS ST 71": {
+"block": "777",
+"postal": "510777",
+"district": 18,
+"address": "777 PASIR RIS STREET 71 SINGAPORE 510777"
+},
+"PASIR RIS ST 72": {
+"block": "712",
+"postal": "510712",
+"district": 18,
+"address": "712 PASIR RIS STREET 72 SINGAPORE 510712"
+},
+"PAYA LEBAR WAY": {
+"block": "121",
+"postal": "381121",
+"district": 14,
+"address": "121 PAYA LEBAR WAY SINGAPORE 381121"
+},
+"PENDING RD": {
+"block": "118",
+"postal": "670118",
+"district": 23,
+"address": "118 PENDING ROAD SINGAPORE 670118"
+},
+"PETIR RD": {
+"block": "219",
+"postal": "670219",
+"district": 23,
+"address": "219 PETIR ROAD SINGAPORE 670219"
+},
+"PINE CL": {
+"block": "11",
+"postal": "391011",
+"district": 14,
+"address": "11 PINE CLOSE SINGAPORE 391011"
+},
+"PINE LANE": {
+"block": "38A",
+"postal": "391038",
+"district": 14,
+"address": "38A PINE LANE PINE VISTA SINGAPORE 391038"
+},
+"PIPIT RD": {
+"block": "54",
+"postal": "370054",
+"district": 13,
+"address": "54 PIPIT ROAD SINGAPORE 370054"
+},
+"PLANTATION CRES": {
+"block": "111C",
+"postal": "693111",
+"district": 24,
+"address": "111C PLANTATION CRESCENT PLANTATION ACRES SINGAPORE 693111"
+},
+"POTONG PASIR AVE 1": {
+"block": "105",
+"postal": "350105",
+"district": 13,
+"address": "105 POTONG PASIR AVENUE 1 SINGAPORE 350105"
+},
+"POTONG PASIR AVE 2": {
+"block": "145",
+"postal": "350145",
+"district": 13,
+"address": "145 POTONG PASIR AVENUE 2 SINGAPORE 350145"
+},
+"POTONG PASIR AVE 3": {
+"block": "142",
+"postal": "350142",
+"district": 13,
+"address": "142 POTONG PASIR AVENUE 3 SINGAPORE 350142"
+},
+"PUNGGOL CTRL": {
+"block": "652",
+"postal": "820652",
+"district": 19,
+"address": "652 PUNGGOL CENTRAL EASTDALE SINGAPORE 820652"
+},
+"PUNGGOL DR": {
+"block": "638A",
+"postal": "821638",
+"district": 19,
+"address": "638A PUNGGOL DRIVE THE MEADOWS SINGAPORE 821638"
+},
+"PUNGGOL EAST": {
+"block": "167B",
+"postal": "822167",
+"district": 19,
+"address": "167B PUNGGOL EAST THE SUNDIAL SINGAPORE 822167"
+},
+"PUNGGOL FIELD": {
+"block": "106A",
+"postal": "821106",
+"district": 19,
+"address": "106A PUNGGOL FIELD SINGAPORE 821106"
+},
+"PUNGGOL FIELD WALK": {
+"block": "128A",
+"postal": "821128",
+"district": 19,
+"address": "128A PUNGGOL FIELD WALK SINGAPORE 821128"
+},
+"PUNGGOL PL": {
+"block": "306B",
+"postal": "822306",
+"district": 19,
+"address": "306B PUNGGOL PLACE TREELODGE@PUNGGOL SINGAPORE 822306"
+},
+"PUNGGOL RD": {
+"block": "305B",
+"postal": "822305",
+"district": 19,
+"address": "305B PUNGGOL ROAD TREELODGE@PUNGGOL SINGAPORE 822305"
+},
+"PUNGGOL WALK": {
+"block": "308A",
+"postal": "821308",
+"district": 19,
+"address": "308A PUNGGOL WALK GREENLAND CHILDCARE @ PUNGGOL PTE LTD SINGAPORE 821308"
+},
+"PUNGGOL WAY": {
+"block": "261A",
+"postal": "821261",
+"district": 19,
+"address": "261A PUNGGOL WAY PUNGGOL TOPAZ SINGAPORE 821261"
+},
+"QUEEN ST": {
+"block": "271",
+"postal": "180271",
+"district": 7,
+"address": "271 QUEEN STREET SINGAPORE 180271"
+},
+"QUEEN'S CL": {
+"block": "23A",
+"postal": "140023",
+"district": 3,
+"address": "23A QUEEN'S CLOSE QUEEN'S VIEW SINGAPORE 140023"
+},
+"QUEEN'S RD": {
+"block": "4",
+"postal": "260004",
+"district": 10,
+"address": "4 QUEEN'S ROAD FARRER GARDENS SINGAPORE 260004"
+},
+"QUEENSWAY": {
+"block": "168A",
+"postal": "140168",
+"district": 3,
+"address": "168A QUEENSWAY SINGAPORE 140168"
+},
+"RACE COURSE RD": {
+"block": "685",
+"postal": "210685",
+"district": 8,
+"address": "685 RACE COURSE ROAD SINGAPORE 210685"
+},
+"REDHILL CL": {
+"block": "86",
+"postal": "150086",
+"district": 3,
+"address": "86 REDHILL CLOSE SINGAPORE 150086"
+},
+"REDHILL LANE": {
+"block": "82",
+"postal": "150082",
+"district": 3,
+"address": "82 REDHILL LANE SINGAPORE 150082"
+},
+"REDHILL RD": {
+"block": "76A",
+"postal": "151076",
+"district": 3,
+"address": "76A REDHILL ROAD SINGAPORE 151076"
+},
+"RIVERVALE CRES": {
+"block": "180D",
+"postal": "544180",
+"district": 19,
+"address": "180D RIVERVALE CRESCENT RIVERVALE ARC SINGAPORE 544180"
+},
+"RIVERVALE DR": {
+"block": "122D",
+"postal": "544122",
+"district": 19,
+"address": "122D RIVERVALE DRIVE RIVERVALE BANK SINGAPORE 544122"
+},
+"RIVERVALE ST": {
+"block": "132",
+"postal": "540132",
+"district": 19,
+"address": "132 RIVERVALE STREET RIVERVALE PLAINS SINGAPORE 540132"
+},
+"RIVERVALE WALK": {
+"block": "109",
+"postal": "540109",
+"district": 19,
+"address": "109 RIVERVALE WALK RIVERVALE COURT SINGAPORE 540109"
+},
+"ROWELL RD": {
+"block": "640",
+"postal": "200640",
+"district": 8,
+"address": "640 ROWELL ROAD SINGAPORE 200640"
+},
+"SAGO LANE": {
+"block": "4",
+"postal": "050004",
+"district": 1,
+"address": "4 SAGO LANE SINGAPORE 050004"
+},
+"SAUJANA RD": {
+"block": "415",
+"postal": "670415",
+"district": 23,
+"address": "415 SAUJANA ROAD SINGAPORE 670415"
+},
+"SEGAR RD": {
+"block": "469",
+"postal": "670469",
+"district": 23,
+"address": "469 SEGAR ROAD SEGAR GARDENS SINGAPORE 670469"
+},
+"SELEGIE RD": {
+"block": "9",
+"postal": "180009",
+"district": 7,
+"address": "9 SELEGIE ROAD SELEGIE HOUSE SINGAPORE 180009"
+},
+"SEMBAWANG AVE": {
+"block": "371B",
+"postal": "752371",
+"district": 27,
+"address": "371B SEMBAWANG AVENUE SUN SAILS SINGAPORE 752371"
+},
+"SEMBAWANG CL": {
+"block": "331",
+"postal": "750331",
+"district": 27,
+"address": "331 SEMBAWANG CLOSE SINGAPORE 750331"
+},
+"SEMBAWANG CRES": {
+"block": "363B",
+"postal": "752363",
+"district": 27,
+"address": "363B SEMBAWANG CRESCENT SUN NATURA SINGAPORE 752363"
+},
+"SEMBAWANG DR": {
+"block": "463A",
+"postal": "751463",
+"district": 27,
+"address": "463A SEMBAWANG DRIVE SEMBAWANG RIVERLODGE SINGAPORE 751463"
+},
+"SEMBAWANG VISTA": {
+"block": "317",
+"postal": "750317",
+"district": 27,
+"address": "317 SEMBAWANG VISTA SINGAPORE 750317"
+},
+"SEMBAWANG WAY": {
+"block": "355A",
+"postal": "751355",
+"district": 27,
+"address": "355A SEMBAWANG WAY SINGAPORE 751355"
+},
+"SENG POH RD": {
+"block": "17",
+"postal": "161017",
+"district": 3,
+"address": "17 SENG POH ROAD SINGAPORE 161017"
+},
+"SENGKANG CTRL": {
+"block": "272D",
+"postal": "544272",
+"district": 19,
+"address": "272D SENGKANG CENTRAL ATRINA SINGAPORE 544272"
+},
+"SENGKANG EAST AVE": {
+"block": "279C",
+"postal": "543279",
+"district": 19,
+"address": "279C SENGKANG EAST AVENUE COMPASSVALE ANCILLA SINGAPORE 543279"
+},
+"SENGKANG EAST DR": {
+"block": "172A",
+"postal": "541172",
+"district": 19,
+"address": "172A SENGKANG EAST DRIVE RIVERVALE SHORES SINGAPORE 541172"
+},
+"SENGKANG EAST RD": {
+"block": "200D",
+"postal": "544200",
+"district": 19,
+"address": "200D SENGKANG EAST ROAD COMPASSVALE SOUTH GATE SINGAPORE 544200"
+},
+"SENGKANG EAST WAY": {
+"block": "323A",
+"postal": "541323",
+"district": 19,
+"address": "323A SENGKANG EAST WAY ANCHORVALE GROVE SINGAPORE 541323"
+},
+"SENGKANG WEST AVE": {
+"block": "439A",
+"postal": "791439",
+"district": 28,
+"address": "439A SENGKANG WEST AVENUE FERNVALE COURT SINGAPORE 791439"
+},
+"SENGKANG WEST RD": {
+"block": "457B",
+"postal": "792457",
+"district": 28,
+"address": "457B SENGKANG WEST ROAD FERNVALE WOODS SINGAPORE 792457"
+},
+"SENGKANG WEST WAY": {
+"block": "451B",
+"postal": "792451",
+"district": 28,
+"address": "451B SENGKANG WEST WAY FERNVALE FOLIAGE SINGAPORE 792451"
+},
+"SENJA CL": {
+"block": "640A",
+"postal": "671640",
+"district": 23,
+"address": "640A SENJA CLOSE SENJA HEIGHTS SINGAPORE 671640"
+},
+"SENJA LINK": {
+"block": "652",
+"postal": "670652",
+"district": 23,
+"address": "652 SENJA LINK SINGAPORE 670652"
+},
+"SENJA RD": {
+"block": "630",
+"postal": "670630",
+"district": 23,
+"address": "630 SENJA ROAD SENJA GRAND SINGAPORE 670630"
+},
+"SERANGOON AVE 1": {
+"block": "401",
+"postal": "550401",
+"district": 19,
+"address": "401 SERANGOON AVENUE 1 SINGAPORE 550401"
+},
+"SERANGOON AVE 2": {
+"block": "303",
+"postal": "550303",
+"district": 19,
+"address": "303 SERANGOON AVENUE 2 CHUAN VILLAGE SINGAPORE 550303"
+},
+"SERANGOON AVE 3": {
+"block": "241",
+"postal": "550241",
+"district": 19,
+"address": "241 SERANGOON AVENUE 3 SINGAPORE 550241"
+},
+"SERANGOON AVE 4": {
+"block": "222",
+"postal": "550222",
+"district": 19,
+"address": "222 SERANGOON AVENUE 4 SINGAPORE 550222"
+},
+"SERANGOON CTRL": {
+"block": "203",
+"postal": "550203",
+"district": 19,
+"address": "203 SERANGOON CENTRAL SINGAPORE 550203"
+},
+"SERANGOON CTRL DR": {
+"block": "263",
+"postal": "550263",
+"district": 19,
+"address": "263 SERANGOON CENTRAL DRIVE SINGAPORE 550263"
+},
+"SERANGOON NTH AVE 1": {
+"block": "108",
+"postal": "550108",
+"district": 19,
+"address": "108 SERANGOON NORTH AVENUE 1 HWI YOH COURT SINGAPORE 550108"
+},
+"SERANGOON NTH AVE 2": {
+"block": "151",
+"postal": "550151",
+"district": 19,
+"address": "151 SERANGOON NORTH AVENUE 2 SINGAPORE 550151"
+},
+"SERANGOON NTH AVE 3": {
+"block": "547",
+"postal": "550547",
+"district": 19,
+"address": "547 SERANGOON NORTH AVENUE 3 SINGAPORE 550547"
+},
+"SERANGOON NTH AVE 4": {
+"block": "500",
+"postal": "550500",
+"district": 19,
+"address": "500 SERANGOON NORTH AVENUE 4 SINGAPORE 550500"
+},
+"SHUNFU RD": {
+"block": "305",
+"postal": "570305",
+"district": 20,
+"address": "305 SHUNFU ROAD SHOOTING STAR CHILD DEVELOPMENT CENTRE SINGAPORE 570305"
+},
+"SILAT AVE": {
+"block": "148",
+"postal": "160148",
+"district": 3,
+"address": "148 SILAT AVENUE SINGAPORE 160148"
+},
+"SIMEI LANE": {
+"block": "168A",
+"postal": "521168",
+"district": 18,
+"address": "168A SIMEI LANE PARC LUMIERE SINGAPORE 521168"
+},
+"SIMEI RD": {
+"block": "155",
+"postal": "520155",
+"district": 18,
+"address": "155 SIMEI ROAD SINGAPORE 520155"
+},
+"SIMEI ST 1": {
+"block": "124",
+"postal": "520124",
+"district": 18,
+"address": "124 SIMEI STREET 1 SINGAPORE 520124"
+},
+"SIMEI ST 2": {
+"block": "141",
+"postal": "520141",
+"district": 18,
+"address": "141 SIMEI STREET 2 SINGAPORE 520141"
+},
+"SIMEI ST 4": {
+"block": "231",
+"postal": "520231",
+"district": 18,
+"address": "231 SIMEI STREET 4 SINGAPORE 520231"
+},
+"SIMEI ST 5": {
+"block": "244",
+"postal": "520244",
+"district": 18,
+"address": "244 SIMEI STREET 5 SINGAPORE 520244"
+},
+"SIMS AVE": {
+"block": "846",
+"postal": "400846",
+"district": 14,
+"address": "846 SIMS AVENUE SINGAPORE 400846"
+},
+"SIMS DR": {
+"block": "45",
+"postal": "380045",
+"district": 14,
+"address": "45 SIMS DRIVE SIMS VISTA SINGAPORE 380045"
+},
+"SIMS PL": {
+"block": "52",
+"postal": "380052",
+"district": 14,
+"address": "52 SIMS PLACE SIMS VISTA SINGAPORE 380052"
+},
+"SIN MING AVE": {
+"block": "407",
+"postal": "570407",
+"district": 20,
+"address": "407 SIN MING AVENUE SIN MING GARDEN SINGAPORE 570407"
+},
+"SIN MING RD": {
+"block": "22",
+"postal": "570022",
+"district": 20,
+"address": "22 SIN MING ROAD SINGAPORE 570022"
+},
+"SMITH ST": {
+"block": "335B",
+"postal": "052335",
+"district": 1,
+"address": "335B SMITH STREET SINGAPORE 052335"
+},
+"ST. GEORGE'S LANE": {
+"block": "8",
+"postal": "320008",
+"district": 12,
+"address": "8 SAINT GEORGE'S LANE SINGAPORE 320008"
+},
+"ST. GEORGE'S RD": {
+"block": "3",
+"postal": "320003",
+"district": 12,
+"address": "3 SAINT GEORGE'S ROAD SINGAPORE 320003"
+},
+"STIRLING RD": {
+"block": "170",
+"postal": "140170",
+"district": 3,
+"address": "170 STIRLING ROAD STIRLING VIEW SINGAPORE 140170"
+},
+"STRATHMORE AVE": {
+"block": "48",
+"postal": "140048",
+"district": 3,
+"address": "48 STRATHMORE AVENUE FORFAR HEIGHTS SINGAPORE 140048"
+},
+"SUMANG LANE": {
+"block": "233A",
+"postal": "821233",
+"district": 19,
+"address": "233A SUMANG LANE MATILDA COURT SINGAPORE 821233"
+},
+"SUMANG LINK": {
+"block": "312B",
+"postal": "822312",
+"district": 19,
+"address": "312B SUMANG LINK PUNGGOL PARCVISTA SINGAPORE 822312"
+},
+"SUMANG WALK": {
+"block": "327C",
+"postal": "823327",
+"district": 19,
+"address": "327C SUMANG WALK PUNGGOL VUE SINGAPORE 823327"
+},
+"TAH CHING RD": {
+"block": "337C",
+"postal": "613337",
+"district": 22,
+"address": "337C TAH CHING ROAD SINGAPORE 613337"
+},
+"TAMAN HO SWEE": {
+"block": "14",
+"postal": "161014",
+"district": 3,
+"address": "14 TAMAN HO SWEE BUKIT HO SWEE VIEW SINGAPORE 161014"
+},
+"TAMPINES AVE 1": {
+"block": "890B",
+"postal": "522890",
+"district": 18,
+"address": "890B TAMPINES AVENUE 1 TAMPINES GREENTERRACE SINGAPORE 522890"
+},
+"TAMPINES AVE 12": {
+"block": "624A",
+"postal": "521624",
+"district": 18,
+"address": "624A TAMPINES AVENUE 12 TAMPINES GREENVERGE SINGAPORE 521624"
+},
+"TAMPINES AVE 4": {
+"block": "909",
+"postal": "520909",
+"district": 18,
+"address": "909 TAMPINES AVENUE 4 TAMPINES PALMSVILLE SINGAPORE 520909"
+},
+"TAMPINES AVE 5": {
+"block": "146",
+"postal": "521146",
+"district": 18,
+"address": "146 TAMPINES AVENUE 5 SINGAPORE 521146"
+},
+"TAMPINES AVE 7": {
+"block": "393",
+"postal": "520393",
+"district": 18,
+"address": "393 TAMPINES AVENUE 7 SINGAPORE 520393"
+},
+"TAMPINES AVE 8": {
+"block": "879",
+"postal": "520879",
+"district": 18,
+"address": "879 TAMPINES AVENUE 8 TAMPINES SPRING SINGAPORE 520879"
+},
+"TAMPINES AVE 9": {
+"block": "486B",
+"postal": "521486",
+"district": 18,
+"address": "486B TAMPINES AVENUE 9 SINGAPORE 521486"
+},
+"TAMPINES CTRL 1": {
+"block": "503",
+"postal": "520503",
+"district": 18,
+"address": "503 TAMPINES CENTRAL 1 TAMPINES HEART SINGAPORE 520503"
+},
+"TAMPINES CTRL 7": {
+"block": "524A",
+"postal": "521524",
+"district": 18,
+"address": "524A TAMPINES CENTRAL 7 SKOOL4KIDZ CENTRE SINGAPORE 521524"
+},
+"TAMPINES CTRL 8": {
+"block": "520C",
+"postal": "523520",
+"district": 18,
+"address": "520C TAMPINES CENTRAL 8 CENTRALE 8 AT TAMPINES SINGAPORE 523520"
+},
+"TAMPINES NTH DR 1": {
+"block": "608C",
+"postal": "523608",
+"district": 18,
+"address": "608C TAMPINES NORTH DRIVE 1 TAMPINES GREENWEAVE SINGAPORE 523608"
+},
+"TAMPINES NTH DR 2": {
+"block": "632A",
+"postal": "521632",
+"district": 18,
+"address": "632A TAMPINES NORTH DRIVE 2 TAMPINES GREENCOURT SINGAPORE 521632"
+},
+"TAMPINES ST 11": {
+"block": "124",
+"postal": "521124",
+"district": 18,
+"address": "124 TAMPINES STREET 11 SINGAPORE 521124"
+},
+"TAMPINES ST 12": {
+"block": "157",
+"postal": "521157",
+"district": 18,
+"address": "157 TAMPINES STREET 12 SINGAPORE 521157"
+},
+"TAMPINES ST 21": {
+"block": "267",
+"postal": "520267",
+"district": 18,
+"address": "267 TAMPINES STREET 21 SINGAPORE 520267"
+},
+"TAMPINES ST 22": {
+"block": "283",
+"postal": "520283",
+"district": 18,
+"address": "283 TAMPINES STREET 22 SINGAPORE 520283"
+},
+"TAMPINES ST 23": {
+"block": "210",
+"postal": "520210",
+"district": 18,
+"address": "210 TAMPINES STREET 23 SINGAPORE 520210"
+},
+"TAMPINES ST 24": {
+"block": "221",
+"postal": "521221",
+"district": 18,
+"address": "221 TAMPINES STREET 24 SINGAPORE 521221"
+},
+"TAMPINES ST 32": {
+"block": "382",
+"postal": "520382",
+"district": 18,
+"address": "382 TAMPINES STREET 32 SINGAPORE 520382"
+},
+"TAMPINES ST 33": {
+"block": "346",
+"postal": "520346",
+"district": 18,
+"address": "346 TAMPINES STREET 33 SINGAPORE 520346"
+},
+"TAMPINES ST 34": {
+"block": "367",
+"postal": "520367",
+"district": 18,
+"address": "367 TAMPINES STREET 34 SINGAPORE 520367"
+},
+"TAMPINES ST 41": {
+"block": "406",
+"postal": "520406",
+"district": 18,
+"address": "406 TAMPINES STREET 41 SUN PLAZA GREEN SINGAPORE 520406"
+},
+"TAMPINES ST 42": {
+"block": "450G",
+"postal": "527450",
+"district": 18,
+"address": "450G TAMPINES STREET 42 SINGAPORE 527450"
+},
+"TAMPINES ST 43": {
+"block": "438",
+"postal": "520438",
+"district": 18,
+"address": "438 TAMPINES STREET 43 SINGAPORE 520438"
+},
+"TAMPINES ST 44": {
+"block": "469",
+"postal": "520469",
+"district": 18,
+"address": "469 TAMPINES STREET 44 SINGAPORE 520469"
+},
+"TAMPINES ST 45": {
+"block": "497B",
+"postal": "521497",
+"district": 18,
+"address": "497B TAMPINES STREET 45 SINGAPORE 521497"
+},
+"TAMPINES ST 61": {
+"block": "606C",
+"postal": "523606",
+"district": 18,
+"address": "606C TAMPINES STREET 61 TAMPINES GREENRIDGES SINGAPORE 523606"
+},
+"TAMPINES ST 62": {
+"block": "646B",
+"postal": "522646",
+"district": 18,
+"address": "646B TAMPINES STREET 62 TAMPINES GREENFOLIAGE SINGAPORE 522646"
+},
+"TAMPINES ST 64": {
+"block": "663A",
+"postal": "521663",
+"district": 18,
+"address": "663A TAMPINES STREET 64 TAMPINES GREENGLEN SINGAPORE 521663"
+},
+"TAMPINES ST 71": {
+"block": "724",
+"postal": "520724",
+"district": 18,
+"address": "724 TAMPINES STREET 71 TAMPINES COURTVIEW SINGAPORE 520724"
+},
+"TAMPINES ST 72": {
+"block": "717",
+"postal": "520717",
+"district": 18,
+"address": "717 TAMPINES STREET 72 HDB PUBLIC SHELTERS SINGAPORE 520717"
+},
+"TAMPINES ST 81": {
+"block": "897A",
+"postal": "521897",
+"district": 18,
+"address": "897A TAMPINES STREET 81 TAMPINES POLYVIEW SINGAPORE 521897"
+},
+"TAMPINES ST 82": {
+"block": "856",
+"postal": "520856",
+"district": 18,
+"address": "856 TAMPINES STREET 82 PCF SPARKLETOTS PRESCHOOL @ TAMPINES CENTRAL BLK 856 (KN) SINGAPORE 520856"
+},
+"TAMPINES ST 83": {
+"block": "851",
+"postal": "520851",
+"district": 18,
+"address": "851 TAMPINES STREET 83 TAMPINES VILLE SINGAPORE 520851"
+},
+"TAMPINES ST 84": {
+"block": "875",
+"postal": "520875",
+"district": 18,
+"address": "875 TAMPINES STREET 84 TAMPINES SPRING SINGAPORE 520875"
+},
+"TAMPINES ST 85": {
+"block": "874D",
+"postal": "524874",
+"district": 18,
+"address": "874D TAMPINES STREET 85 TAMPINES GREENFLORA SINGAPORE 524874"
+},
+"TAMPINES ST 86": {
+"block": "871B",
+"postal": "522871",
+"district": 18,
+"address": "871B TAMPINES STREET 86 TAMPINES GREENLACE SINGAPORE 522871"
+},
+"TAMPINES ST 91": {
+"block": "921",
+"postal": "520921",
+"district": 18,
+"address": "921 TAMPINES STREET 91 TAMPINES PALMSVILLE SINGAPORE 520921"
+},
+"TAMPINES ST 96": {
+"block": "956B",
+"postal": "522956",
+"district": 18,
+"address": "956B TAMPINES STREET 96 TAMPINES GREENJADE SINGAPORE 522956"
+},
+"TAMPINES WALK": {
+"block": "858C",
+"postal": "523858",
+"district": 18,
+"address": "858C TAMPINES WALK TAMPINES GREENSPRING SINGAPORE 523858"
+},
+"TANGLIN HALT RD": {
+"block": "89",
+"postal": "141089",
+"district": 3,
+"address": "89 TANGLIN HALT ROAD COMMONWEALTH VIEW SINGAPORE 141089"
+},
+"TAO CHING RD": {
+"block": "113",
+"postal": "610113",
+"district": 22,
+"address": "113 TAO CHING ROAD SINGAPORE 610113"
+},
+"TEBAN GDNS RD": {
+"block": "20",
+"postal": "600020",
+"district": 22,
+"address": "20 TEBAN GARDENS ROAD TEBAN VISTA SINGAPORE 600020"
+},
+"TECK WHYE AVE": {
+"block": "10",
+"postal": "680010",
+"district": 23,
+"address": "10 TECK WHYE AVENUE PCF SPARKLETOTS PRESCHOOL @ CHUA CHU KANG BLK 10 (KN) SINGAPORE 680010"
+},
+"TECK WHYE CRES": {
+"block": "166B",
+"postal": "682166",
+"district": 23,
+"address": "166B TECK WHYE CRESCENT TECK WHYE CREST SINGAPORE 682166"
+},
+"TECK WHYE LANE": {
+"block": "110",
+"postal": "680110",
+"district": 23,
+"address": "110 TECK WHYE LANE SINGAPORE 680110"
+},
+"TELOK BLANGAH CRES": {
+"block": "15",
+"postal": "090015",
+"district": 4,
+"address": "15 TELOK BLANGAH CRESCENT MOUNT FABER VIEW SINGAPORE 090015"
+},
+"TELOK BLANGAH DR": {
+"block": "45",
+"postal": "100045",
+"district": 4,
+"address": "45 TELOK BLANGAH DRIVE BLANGAH COURT SINGAPORE 100045"
+},
+"TELOK BLANGAH HTS": {
+"block": "60",
+"postal": "100060",
+"district": 4,
+"address": "60 TELOK BLANGAH HEIGHTS BLANGAH GARDEN SINGAPORE 100060"
+},
+"TELOK BLANGAH RISE": {
+"block": "43",
+"postal": "090043",
+"district": 4,
+"address": "43 TELOK BLANGAH RISE SINGAPORE 090043"
+},
+"TELOK BLANGAH ST 31": {
+"block": "93B",
+"postal": "102093",
+"district": 4,
+"address": "93B TELOK BLANGAH STREET 31 TELOK BLANGAH PARCVIEW SINGAPORE 102093"
+},
+"TELOK BLANGAH WAY": {
+"block": "27",
+"postal": "090027",
+"district": 4,
+"address": "27 TELOK BLANGAH WAY SINGAPORE 090027"
+},
+"TENGAH CTRL": {
+"block": "241C",
+"postal": "693241",
+"district": 24,
+"address": "241C TENGAH CENTRAL GARDEN BLOOM @ TENGAH SINGAPORE 693241"
+},
+"TENGAH DR": {
+"block": "323A",
+"postal": "691323",
+"district": 24,
+"address": "323A TENGAH DRIVE PARC WOODS @ TENGAH SINGAPORE 691323"
+},
+"TENGAH GDN AVE": {
+"block": "225B",
+"postal": "692225",
+"district": 24,
+"address": "225B TENGAH GARDEN AVENUE GARDEN TERRACE @ TENGAH SINGAPORE 692225"
+},
+"TENGAH GDN WALK": {
+"block": "219A",
+"postal": "691219",
+"district": 24,
+"address": "219A TENGAH GARDEN WALK GARDEN COURT @ TENGAH SINGAPORE 691219"
+},
+"TESSENSOHN RD": {
+"block": "683",
+"postal": "210683",
+"district": 8,
+"address": "683 TESSENSOHN ROAD SINGAPORE 210683"
+},
+"TG PAGAR PLAZA": {
+"block": "3",
+"postal": "081003",
+"district": 2,
+"address": "3 TANJONG PAGAR PLAZA SINGAPORE 081003"
+},
+"TIONG BAHRU RD": {
+"block": "26",
+"postal": "164026",
+"district": 3,
+"address": "26 TIONG BAHRU ROAD SINGAPORE 164026"
+},
+"TOA PAYOH CTRL": {
+"block": "79A",
+"postal": "311079",
+"district": 12,
+"address": "79A TOA PAYOH CENTRAL CENTRAL HORIZON SINGAPORE 311079"
+},
+"TOA PAYOH EAST": {
+"block": "26",
+"postal": "310026",
+"district": 12,
+"address": "26 TOA PAYOH EAST SINGAPORE 310026"
+},
+"TOA PAYOH NTH": {
+"block": "206",
+"postal": "310206",
+"district": 12,
+"address": "206 TOA PAYOH NORTH AI ZI LEARNING CENTRE SINGAPORE 310206"
+},
+"TOH GUAN RD": {
+"block": "278",
+"postal": "600278",
+"district": 22,
+"address": "278 TOH GUAN ROAD TOH GUAN VIEW SINGAPORE 600278"
+},
+"TOH YI DR": {
+"block": "5",
+"postal": "590005",
+"district": 21,
+"address": "5 TOH YI DRIVE CARPE DIEM SCHOOLHOUSE PTE. LTD. SINGAPORE 590005"
+},
+"TOWNER RD": {
+"block": "107",
+"postal": "321107",
+"district": 12,
+"address": "107 TOWNER ROAD SINGAPORE 321107"
+},
+"UBI AVE 1": {
+"block": "348",
+"postal": "400348",
+"district": 14,
+"address": "348 UBI AVENUE 1 KAMPONG UBI VIEW SINGAPORE 400348"
+},
+"UBI RD 3": {
+"block": "356A",
+"postal": "401356",
+"district": 14,
+"address": "356A UBI ROAD 3 UBI GROVE SINGAPORE 401356"
+},
+"UPP ALJUNIED LANE": {
+"block": "4",
+"postal": "360004",
+"district": 13,
+"address": "4 UPPER ALJUNIED LANE JOO SENG GREEN SINGAPORE 360004"
+},
+"UPP ALJUNIED RD": {
+"block": "233C",
+"postal": "363233",
+"district": 13,
+"address": "233C UPPER ALJUNIED ROAD PARKVIEW @ BIDADARI SINGAPORE 363233"
+},
+"UPP BOON KENG RD": {
+"block": "11",
+"postal": "380011",
+"district": 14,
+"address": "11 UPPER BOON KENG ROAD BOON KENG VILLE SINGAPORE 380011"
+},
+"UPP CROSS ST": {
+"block": "34",
+"postal": "050034",
+"district": 1,
+"address": "34 UPPER CROSS STREET SINGAPORE 050034"
+},
+"UPP JURONG RD": {
+"block": "991B",
+"postal": "632991",
+"district": 22,
+"address": "991B UPPER JURONG ROAD JURONG WEST JEWEL SINGAPORE 632991"
+},
+"UPP SERANGOON CRES": {
+"block": "470B",
+"postal": "532470",
+"district": 19,
+"address": "470B UPPER SERANGOON CRESCENT HOUGANG PARKVIEW SINGAPORE 532470"
+},
+"UPP SERANGOON RD": {
+"block": "464",
+"postal": "534794",
+"district": 19,
+"address": "464 UPPER SERANGOON ROAD SINGAPORE 534794"
+},
+"UPP SERANGOON VIEW": {
+"block": "476C",
+"postal": "533476",
+"district": 19,
+"address": "476C UPPER SERANGOON VIEW HOUGANG CAPEVIEW SINGAPORE 533476"
+},
+"VEERASAMY RD": {
+"block": "633",
+"postal": "200633",
+"district": 8,
+"address": "633 VEERASAMY ROAD LAVENDER MEADOWS ACADEMY PTE. LTD. SINGAPORE 200633"
+},
+"WATERLOO ST": {
+"block": "264",
+"postal": "180264",
+"district": 7,
+"address": "264 WATERLOO STREET SINGAPORE 180264"
+},
+"WELLINGTON CIRCLE": {
+"block": "507B",
+"postal": "752507",
+"district": 27,
+"address": "507B WELLINGTON CIRCLE MONTREAL SPRING SINGAPORE 752507"
+},
+"WEST COAST DR": {
+"block": "509",
+"postal": "120509",
+"district": 5,
+"address": "509 WEST COAST DRIVE STAR KIDSCAMPUS SINGAPORE 120509"
+},
+"WEST COAST RD": {
+"block": "704",
+"postal": "120704",
+"district": 5,
+"address": "704 WEST COAST ROAD SINGAPORE 120704"
+},
+"WHAMPOA DR": {
+"block": "98",
+"postal": "320098",
+"district": 12,
+"address": "98 WHAMPOA DRIVE WHAMPOA VIEW SINGAPORE 320098"
+},
+"WHAMPOA RD": {
+"block": "112",
+"postal": "321112",
+"district": 12,
+"address": "112 WHAMPOA ROAD PCF SPARKLETOTS PRESCHOOL @ WHAMPOA BLK 112 (KN) SINGAPORE 321112"
+},
+"WHAMPOA STH": {
+"block": "49",
+"postal": "330049",
+"district": 12,
+"address": "49 WHAMPOA SOUTH SINGAPORE 330049"
+},
+"WHAMPOA WEST": {
+"block": "34",
+"postal": "330034",
+"district": 12,
+"address": "34 WHAMPOA WEST BENDEMEER VILLE SINGAPORE 330034"
+},
+"WOODLANDS AVE 1": {
+"block": "351",
+"postal": "730351",
+"district": 25,
+"address": "351 WOODLANDS AVENUE 1 SINGAPORE 730351"
+},
+"WOODLANDS AVE 3": {
+"block": "347",
+"postal": "730347",
+"district": 25,
+"address": "347 WOODLANDS AVENUE 3 SINGAPORE 730347"
+},
+"WOODLANDS AVE 4": {
+"block": "618",
+"postal": "730618",
+"district": 25,
+"address": "618 WOODLANDS AVENUE 4 SINGAPORE 730618"
+},
+"WOODLANDS AVE 5": {
+"block": "366",
+"postal": "730366",
+"district": 25,
+"address": "366 WOODLANDS AVENUE 5 SINGAPORE 730366"
+},
+"WOODLANDS AVE 6": {
+"block": "722",
+"postal": "730722",
+"district": 25,
+"address": "722 WOODLANDS AVENUE 6 SINGAPORE 730722"
+},
+"WOODLANDS AVE 9": {
+"block": "877",
+"postal": "730877",
+"district": 25,
+"address": "877 WOODLANDS AVENUE 9 SINGAPORE 730877"
+},
+"WOODLANDS CIRCLE": {
+"block": "766",
+"postal": "730766",
+"district": 25,
+"address": "766 WOODLANDS CIRCLE SINGAPORE 730766"
+},
+"WOODLANDS CRES": {
+"block": "780F",
+"postal": "736780",
+"district": 25,
+"address": "780F WOODLANDS CRESCENT WOODLANDS DEW SINGAPORE 736780"
+},
+"WOODLANDS DR 14": {
+"block": "513",
+"postal": "730513",
+"district": 25,
+"address": "513 WOODLANDS DRIVE 14 SINGAPORE 730513"
+},
+"WOODLANDS DR 16": {
+"block": "573A",
+"postal": "731573",
+"district": 25,
+"address": "573A WOODLANDS DRIVE 16 WOODLANDS GLEN SINGAPORE 731573"
+},
+"WOODLANDS DR 40": {
+"block": "707",
+"postal": "730707",
+"district": 25,
+"address": "707 WOODLANDS DRIVE 40 ADMIRALTY CLOVER SINGAPORE 730707"
+},
+"WOODLANDS DR 42": {
+"block": "604",
+"postal": "730604",
+"district": 25,
+"address": "604 WOODLANDS DRIVE 42 SINGAPORE 730604"
+},
+"WOODLANDS DR 44": {
+"block": "550",
+"postal": "730550",
+"district": 25,
+"address": "550 WOODLANDS DRIVE 44 SINGAPORE 730550"
+},
+"WOODLANDS DR 50": {
+"block": "898B",
+"postal": "731898",
+"district": 25,
+"address": "898B WOODLANDS DRIVE 50 SINGAPORE 731898"
+},
+"WOODLANDS DR 52": {
+"block": "624A",
+"postal": "731624",
+"district": 25,
+"address": "624A WOODLANDS DRIVE 52 SINGAPORE 731624"
+},
+"WOODLANDS DR 53": {
+"block": "556",
+"postal": "730556",
+"district": 25,
+"address": "556 WOODLANDS DRIVE 53 SINGAPORE 730556"
+},
+"WOODLANDS DR 60": {
+"block": "786C",
+"postal": "733786",
+"district": 25,
+"address": "786C WOODLANDS DRIVE 60 SINGAPORE 733786"
+},
+"WOODLANDS DR 62": {
+"block": "694D",
+"postal": "734694",
+"district": 25,
+"address": "694D WOODLANDS DRIVE 62 ADMIRALTY GROVE SINGAPORE 734694"
+},
+"WOODLANDS DR 70": {
+"block": "711",
+"postal": "730711",
+"district": 25,
+"address": "711 WOODLANDS DRIVE 70 ADMIRALTY CLOVER SINGAPORE 730711"
+},
+"WOODLANDS DR 71": {
+"block": "673",
+"postal": "730673",
+"district": 25,
+"address": "673 WOODLANDS DRIVE 71 SINGAPORE 730673"
+},
+"WOODLANDS DR 72": {
+"block": "795",
+"postal": "730795",
+"district": 25,
+"address": "795 WOODLANDS DRIVE 72 SINGAPORE 730795"
+},
+"WOODLANDS DR 73": {
+"block": "686B",
+"postal": "732686",
+"district": 25,
+"address": "686B WOODLANDS DRIVE 73 SINGAPORE 732686"
+},
+"WOODLANDS DR 75": {
+"block": "687C",
+"postal": "733687",
+"district": 25,
+"address": "687C WOODLANDS DRIVE 75 SINGAPORE 733687"
+},
+"WOODLANDS RING RD": {
+"block": "651",
+"postal": "730651",
+"district": 25,
+"address": "651 WOODLANDS RING ROAD SINGAPORE 730651"
+},
+"WOODLANDS RISE": {
+"block": "785B",
+"postal": "732785",
+"district": 25,
+"address": "785B WOODLANDS RISE WOODLANDS PASTURE II SINGAPORE 732785"
+},
+"WOODLANDS ST 11": {
+"block": "168",
+"postal": "730168",
+"district": 25,
+"address": "168 WOODLANDS STREET 11 SINGAPORE 730168"
+},
+"WOODLANDS ST 13": {
+"block": "182A",
+"postal": "731182",
+"district": 25,
+"address": "182A WOODLANDS STREET 13 MARSILING GREENVIEW SINGAPORE 731182"
+},
+"WOODLANDS ST 31": {
+"block": "318",
+"postal": "730318",
+"district": 25,
+"address": "318 WOODLANDS STREET 31 SINGAPORE 730318"
+},
+"WOODLANDS ST 32": {
+"block": "335",
+"postal": "730335",
+"district": 25,
+"address": "335 WOODLANDS STREET 32 SINGAPORE 730335"
+},
+"WOODLANDS ST 41": {
+"block": "428",
+"postal": "730428",
+"district": 25,
+"address": "428 WOODLANDS STREET 41 SINGAPORE 730428"
+},
+"WOODLANDS ST 81": {
+"block": "801",
+"postal": "730801",
+"district": 25,
+"address": "801 WOODLANDS STREET 81 SINGAPORE 730801"
+},
+"WOODLANDS ST 82": {
+"block": "843",
+"postal": "730843",
+"district": 25,
+"address": "843 WOODLANDS STREET 82 SINGAPORE 730843"
+},
+"WOODLANDS ST 83": {
+"block": "858",
+"postal": "730858",
+"district": 25,
+"address": "858 WOODLANDS STREET 83 SINGAPORE 730858"
+},
+"WOODLEIGH LINK": {
+"block": "207A",
+"postal": "361207",
+"district": 13,
+"address": "207A WOODLEIGH LINK WOODLEIGH GLEN SINGAPORE 361207"
+},
+"YISHUN AVE 1": {
+"block": "431D",
+"postal": "764431",
+"district": 27,
+"address": "431D YISHUN AVENUE 1 VISTA SPRING @ YISHUN SINGAPORE 764431"
+},
+"YISHUN AVE 11": {
+"block": "439",
+"postal": "760439",
+"district": 27,
+"address": "439 YISHUN AVENUE 11 SINGAPORE 760439"
+},
+"YISHUN AVE 2": {
+"block": "784",
+"postal": "760784",
+"district": 27,
+"address": "784 YISHUN AVENUE 2 KHATIB VALE SINGAPORE 760784"
+},
+"YISHUN AVE 3": {
+"block": "774",
+"postal": "760774",
+"district": 27,
+"address": "774 YISHUN AVENUE 3 SINGAPORE 760774"
+},
+"YISHUN AVE 4": {
+"block": "672A",
+"postal": "761672",
+"district": 27,
+"address": "672A YISHUN AVENUE 4 VINE GROVE @ YISHUN SINGAPORE 761672"
+},
+"YISHUN AVE 5": {
+"block": "742",
+"postal": "760742",
+"district": 27,
+"address": "742 YISHUN AVENUE 5 AVERBEL CHILD DEVELOPMENT CENTRE PTE LTD SINGAPORE 760742"
+},
+"YISHUN AVE 6": {
+"block": "462B",
+"postal": "762462",
+"district": 27,
+"address": "462B YISHUN AVENUE 6 BLOSSOM SPRING @ YISHUN SINGAPORE 762462"
+},
+"YISHUN AVE 7": {
+"block": "173",
+"postal": "760173",
+"district": 27,
+"address": "173 YISHUN AVENUE 7 SINGAPORE 760173"
+},
+"YISHUN AVE 9": {
+"block": "315C",
+"postal": "763315",
+"district": 27,
+"address": "315C YISHUN AVENUE 9 ACEKIDZ @ SG PTE. LTD. SINGAPORE 763315"
+},
+"YISHUN CTRL": {
+"block": "304",
+"postal": "760304",
+"district": 27,
+"address": "304 YISHUN CENTRAL YISHUN RIVERGREEN SINGAPORE 760304"
+},
+"YISHUN CTRL 1": {
+"block": "935",
+"postal": "760935",
+"district": 27,
+"address": "935 YISHUN CENTRAL 1 SINGAPORE 760935"
+},
+"YISHUN RING RD": {
+"block": "107",
+"postal": "760107",
+"district": 27,
+"address": "107 YISHUN RING ROAD CHONG PANG GARDEN SINGAPORE 760107"
+},
+"YISHUN ST 11": {
+"block": "128",
+"postal": "760128",
+"district": 27,
+"address": "128 YISHUN STREET 11 SINGAPORE 760128"
+},
+"YISHUN ST 20": {
+"block": "296",
+"postal": "760296",
+"district": 27,
+"address": "296 YISHUN STREET 20 SINGAPORE 760296"
+},
+"YISHUN ST 21": {
+"block": "205",
+"postal": "760205",
+"district": 27,
+"address": "205 YISHUN STREET 21 SINGAPORE 760205"
+},
+"YISHUN ST 22": {
+"block": "270",
+"postal": "760270",
+"district": 27,
+"address": "270 YISHUN STREET 22 SINGAPORE 760270"
+},
+"YISHUN ST 31": {
+"block": "335C",
+"postal": "763335",
+"district": 27,
+"address": "335C YISHUN STREET 31 YISHUN RIVERWALK SINGAPORE 763335"
+},
+"YISHUN ST 41": {
+"block": "456",
+"postal": "760456",
+"district": 27,
+"address": "456 YISHUN STREET 41 DEW SPRING @ YISHUN SINGAPORE 760456"
+},
+"YISHUN ST 42": {
+"block": "479A",
+"postal": "761479",
+"district": 27,
+"address": "479A YISHUN STREET 42 VALLEY SPRING @ YISHUN SINGAPORE 761479"
+},
+"YISHUN ST 43": {
+"block": "469A",
+"postal": "761469",
+"district": 27,
+"address": "469A YISHUN STREET 43 MEADOW SPRING @ YISHUN SINGAPORE 761469"
+},
+"YISHUN ST 44": {
+"block": "478B",
+"postal": "762478",
+"district": 27,
+"address": "478B YISHUN STREET 44 VALLEY SPRING @ YISHUN SINGAPORE 762478"
+},
+"YISHUN ST 51": {
+"block": "513A",
+"postal": "761513",
+"district": 27,
+"address": "513A YISHUN STREET 51 SARACA BREEZE @ YISHUN SINGAPORE 761513"
+},
+"YISHUN ST 61": {
+"block": "644",
+"postal": "760644",
+"district": 27,
+"address": "644 YISHUN STREET 61 SINGAPORE 760644"
+},
+"YISHUN ST 71": {
+"block": "727",
+"postal": "760727",
+"district": 27,
+"address": "727 YISHUN STREET 71 KHATIB SPRING SINGAPORE 760727"
+},
+"YISHUN ST 72": {
+"block": "738",
+"postal": "760738",
+"district": 27,
+"address": "738 YISHUN STREET 72 NEE SOON CENTRAL SPRING SINGAPORE 760738"
+},
+"YISHUN ST 81": {
+"block": "829",
+"postal": "760829",
+"district": 27,
+"address": "829 YISHUN STREET 81 SINGAPORE 760829"
+},
+"YUAN CHING RD": {
+"block": "122",
+"postal": "610122",
+"district": 22,
+"address": "122 YUAN CHING ROAD SINGAPORE 610122"
+},
+"YUNG AN RD": {
+"block": "360",
+"postal": "610360",
+"district": 22,
+"address": "360 YUNG AN ROAD SINGAPORE 610360"
+},
+"YUNG HO RD": {
+"block": "153",
+"postal": "610153",
+"district": 22,
+"address": "153 YUNG HO ROAD SINGAPORE 610153"
+},
+"YUNG KUANG RD": {
+"block": "175A",
+"postal": "611175",
+"district": 22,
+"address": "175A YUNG KUANG ROAD ACEKIDZ @ SG PTE. LTD. SINGAPORE 611175"
+},
+"YUNG LOH RD": {
+"block": "157",
+"postal": "610157",
+"district": 22,
+"address": "157 YUNG LOH ROAD SINGAPORE 610157"
+},
+"YUNG PING RD": {
+"block": "161",
+"postal": "610161",
+"district": 22,
+"address": "161 YUNG PING ROAD SINGAPORE 610161"
+},
+"YUNG SHENG RD": {
+"block": "178",
+"postal": "610178",
+"district": 22,
+"address": "178 YUNG SHENG ROAD CORPORATION SPRING SINGAPORE 610178"
+},
+"ZION RD": {
+"block": "87",
+"postal": "160087",
+"district": 3,
+"address": "87 ZION ROAD SINGAPORE 160087"
+}
+}

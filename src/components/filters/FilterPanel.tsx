@@ -195,8 +195,8 @@ export function FilterPanel({
             {/* Disclaimer */}
             <div className="text-[11px] text-muted-foreground space-y-1">
               <p>
-                HDB data: rental approvals from Jul 2025 to Jun 2026 (data.gov.sg, HDB).
-                Condo/Landed data: URA rental contracts from Jul 2025 to May 2026.
+                HDB data: rental approvals from Nov 2025 to Oct 2026 (data.gov.sg, HDB).
+                Condo/Landed data: URA rental contracts from Oct 2025 to Sep 2026.
               </p>
               <p>
                 For more details, visit{' '}
