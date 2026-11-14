@@ -8,26 +8,37 @@ import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { Cross2Icon } from "@radix-ui/react-icons"
-import { Filter } from "lucide-react"
+import { ChevronDown, Filter } from "lucide-react"
 import { PropertyTypeFilter } from './PropertyTypeFilter'
 import { DistrictFilter } from './DistrictFilter'
 import { BedroomFilter } from './BedroomFilter'
 import { SqftFilter } from './SqftFilter'
 import { FilterSummary } from './FilterSummary'
 import type { PropertyType } from '@/types/property'
+import { cn } from '@/lib/utils'
 
 interface FilterPanelProps {
   filters: FilterParams
   onChange: (filters: FilterParams) => void
   properties: Property[]
+  /**
+   * `sidebar` (default) is the fixed 380px desktop panel. `sheet` fills its
+   * container, drops the eyebrow and title (the phone top bar shows them)
+   * and adds a close control that calls `onClose`.
+   */
+  variant?: 'sidebar' | 'sheet'
+  onClose?: () => void
 }
 
-export function FilterPanel({ 
-  filters, 
-  onChange, 
-  properties
+export function FilterPanel({
+  filters,
+  onChange,
+  properties,
+  variant = 'sidebar',
+  onClose
 }: FilterPanelProps) {
   const scrollRef = useRef<HTMLDivElement>(null)
+  const isSheet = variant === 'sheet'
 
   const hasFilters = Object.values(filters).some(value => 
     Array.isArray(value) ? value.length > 0 : value !== undefined
@@ -41,27 +52,74 @@ export function FilterPanel({
     })
   }
 
+  const summary = (
+    <FilterSummary
+      properties={properties}
+      selectedDistricts={filters.district_ids || []}
+      selectedTypes={filters.property_type || []}
+      selectedBeds={filters.beds || []}
+      sqftRange={{
+        min: filters.sqft_min,
+        max: filters.sqft_max
+      }}
+    />
+  )
+
   return (
-    <Card className="h-full border-0 rounded-none w-[380px] overflow-hidden">
+    <Card className={cn("h-full border-0 rounded-none overflow-hidden", isSheet ? "w-full" : "w-[380px]")}>
       <div className="flex flex-col h-full">
         <div className="sticky top-0 z-10 bg-background shadow-[0_4px_10px_-4px_rgba(0,0,0,0.1)]">
-          <div className="p-4 space-y-4">
-            <div>
-              <a
-                href="https://www.lifekit.sg"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-mono text-[10px] tracking-widest uppercase text-muted-foreground hover:text-[#b5484d] transition-colors"
-              >
-                lifekit.sg / housing
-              </a>
-              <h1 className="text-lg font-semibold tracking-tight mt-1">Singapore Rent Map</h1>
-            </div>
+          <div className={cn("p-4 space-y-4", isSheet && "pt-2")}>
+            {!isSheet && (
+              <div>
+                <a
+                  href="https://www.lifekit.sg"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-mono text-[10px] tracking-widest uppercase text-muted-foreground hover:text-[#b5484d] transition-colors"
+                >
+                  lifekit.sg / housing
+                </a>
+                <h1 className="text-lg font-semibold tracking-tight mt-1">Singapore Rent Map</h1>
+              </div>
+            )}
             <div className="flex items-center justify-between">
-              <h2 className="text-sm font-medium text-muted-foreground">Filters</h2>
-              {hasFilters && (
-                <Button 
-                  variant="ghost" 
+              <h2
+                className={cn(
+                  "text-sm font-medium text-muted-foreground",
+                  isSheet && "text-base font-semibold tracking-tight text-foreground"
+                )}
+              >
+                Filters
+              </h2>
+              {isSheet ? (
+                <div className="flex items-center gap-1 -mr-2">
+                  {hasFilters && (
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={handleReset}
+                      className="h-11 px-3 text-muted-foreground hover:text-foreground"
+                    >
+                      <Cross2Icon className="h-4 w-4 mr-1" />
+                      Reset
+                    </Button>
+                  )}
+                  {onClose && (
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      onClick={onClose}
+                      aria-label="Close filters"
+                      className="h-11 w-11 text-muted-foreground hover:text-foreground"
+                    >
+                      <ChevronDown className="h-5 w-5" aria-hidden="true" />
+                    </Button>
+                  )}
+                </div>
+              ) : hasFilters && (
+                <Button
+                  variant="ghost"
                   size="sm"
                   onClick={handleReset}
                   className="h-8 px-2 text-muted-foreground hover:text-foreground"
@@ -72,21 +130,21 @@ export function FilterPanel({
               )}
             </div>
 
-            <FilterSummary 
-              properties={properties}
-              selectedDistricts={filters.district_ids || []}
-              selectedTypes={filters.property_type || []}
-              selectedBeds={filters.beds || []}
-              sqftRange={{
-                min: filters.sqft_min,
-                max: filters.sqft_max
-              }}
-            />
+            {!isSheet && summary}
           </div>
         </div>
 
         <ScrollArea className="flex-1 px-4" ref={scrollRef}>
-          <div className="space-y-6 pb-8 pt-6">
+          <div className={cn("space-y-6 pb-8 pt-6", isSheet && "pt-4")}>
+            {/* In the sheet the summary scrolls with the filters, so a tall
+                summary (many chips) can't squeeze the controls on a phone */}
+            {isSheet && (
+              <>
+                {summary}
+                <Separator />
+              </>
+            )}
+
             {/* Property Type */}
             <div className="space-y-4">
               <Label className="text-sm font-medium">Property Type</Label>

@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import 'leaflet/dist/leaflet.css'
@@ -14,6 +14,14 @@ verifyEnvironment()
 export const metadata: Metadata = {
   title: 'Singapore Rental Dashboard',
   description: 'Interactive dashboard for Singapore rental properties',
+}
+
+// viewport-fit=cover lets the map run under the notch and home indicator on
+// phones; the phone layout pads for them with env(safe-area-inset-*).
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: 'cover',
 }
 
 export default function RootLayout({

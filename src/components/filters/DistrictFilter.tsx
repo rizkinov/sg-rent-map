@@ -79,12 +79,12 @@ export function DistrictFilter({ selected, onChange, properties }: DistrictFilte
     <div className="space-y-4">
       {/* Search input - more compact */}
       <div className="relative">
-        <Search className="absolute left-2 top-1.5 h-4 w-4 text-muted-foreground" />
+        <Search className="absolute left-2 top-1.5 h-4 w-4 text-muted-foreground max-md:top-3.5" />
         <Input
           placeholder="Search districts..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="pl-8 h-7 text-sm"
+          className="pl-8 h-7 text-sm max-md:h-11 max-md:text-base"
         />
       </div>
 
@@ -95,7 +95,7 @@ export function DistrictFilter({ selected, onChange, properties }: DistrictFilte
             key={region}
             onClick={() => handleRegionToggle(region)}
             className={cn(
-              "px-2 py-1 text-xs rounded-md border transition-colors",
+              "px-2 py-1 text-xs rounded-md border transition-colors max-md:min-h-11 max-md:px-3",
               "hover:bg-muted",
               regionStates[region].isSelected && "bg-primary text-primary-foreground border-primary",
               regionStates[region].isPartiallySelected && "bg-muted border-muted-foreground",

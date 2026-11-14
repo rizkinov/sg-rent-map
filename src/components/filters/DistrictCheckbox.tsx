@@ -19,8 +19,8 @@ export function DistrictCheckbox({
   propertyCount
 }: DistrictCheckboxProps) {
   return (
-    <div className="flex items-center justify-between py-0.5">
-      <div className="flex items-center space-x-2">
+    <div className="flex items-center justify-between py-0.5 max-md:min-h-11 max-md:py-0">
+      <div className="flex items-center space-x-2 max-md:flex-1 max-md:self-stretch">
         <Checkbox
           id={`district-${district.id}`}
           checked={checked}
@@ -33,7 +33,9 @@ export function DistrictCheckbox({
           className={cn(
             "text-[11px]",
             disabled && "text-muted-foreground",
-            "cursor-pointer leading-none"
+            "cursor-pointer leading-none",
+            // On phones the label fills the row so the whole 44px row toggles
+            "max-md:flex max-md:flex-1 max-md:self-stretch max-md:items-center max-md:text-[13px]"
           )}
         >
           D{district.id} {district.name}

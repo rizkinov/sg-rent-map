@@ -37,7 +37,7 @@ export function BedroomFilter({ selected, onChange, properties }: BedroomFilterP
             key={value}
             type="button"
             variant={selected.includes(value) ? "default" : "outline"}
-            className="h-8 px-0"
+            className="h-8 px-0 max-md:h-11"
             onClick={() => toggleBedroom(value)}
           >
             {label}

@@ -70,7 +70,7 @@ export function SqftFilter({ min, max, onChange, properties }: SqftFilterProps) 
         step={STEP}
         value={sliderValue}
         onValueChange={handleSliderChange}
-        className="py-1"
+        className="py-1 max-md:py-3.5"
       />
       
       <div className="flex items-center gap-2 text-sm">
@@ -81,7 +81,7 @@ export function SqftFilter({ min, max, onChange, properties }: SqftFilterProps) 
           placeholder={MIN_SQFT.toString()}
           value={localMin}
           onChange={(e) => handleInputChange(e.target.value, 'min')}
-          className="h-7 px-2"
+          className="h-7 px-2 max-md:h-11 max-md:text-base"
         />
         <span className="text-muted-foreground text-xs">to</span>
         <Input
@@ -91,7 +91,7 @@ export function SqftFilter({ min, max, onChange, properties }: SqftFilterProps) 
           placeholder={MAX_SQFT.toString()}
           value={localMax}
           onChange={(e) => handleInputChange(e.target.value, 'max')}
-          className="h-7 px-2"
+          className="h-7 px-2 max-md:h-11 max-md:text-base"
         />
         <span className="text-xs text-muted-foreground">sqft</span>
       </div>
