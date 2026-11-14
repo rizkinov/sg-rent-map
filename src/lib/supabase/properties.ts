@@ -25,6 +25,10 @@ export async function getProperties(page = 0): Promise<PaginatedResponse<Propert
       .select('*')
       .range(page * PAGE_SIZE, (page + 1) * PAGE_SIZE - 1)
       .order('created_at', { ascending: false })
+      // Rows were loaded in batches that share a created_at, so ties need a
+      // stable tiebreaker or pages overlap: without it each load showed about
+      // 5,500 rows twice and missed as many.
+      .order('id', { ascending: true })
 
     if (error) {
       throw new ApiError(error.message, 500)
