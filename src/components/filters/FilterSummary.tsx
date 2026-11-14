@@ -50,8 +50,8 @@ export function FilterSummary({ properties, selectedDistricts, selectedTypes, se
     return {
       avg: Math.round(prices.reduce((a, b) => a + b, 0) / prices.length),
       median: calcMedian(prices),
-      min: Math.min(...prices),
-      max: Math.max(...prices),
+      min: prices.reduce((a, b) => Math.min(a, b), Infinity),
+      max: prices.reduce((a, b) => Math.max(a, b), -Infinity),
     }
   }, [filteredProperties])
 

@@ -30,8 +30,8 @@ function createPopupContent(district: District, properties: Property[]) {
     avgPrice: properties.length
       ? Math.round(properties.reduce((sum, p) => sum + p.rental_price, 0) / properties.length)
       : 0,
-    minPrice: properties.length ? Math.min(...properties.map(p => p.rental_price)) : 0,
-    maxPrice: properties.length ? Math.max(...properties.map(p => p.rental_price)) : 0,
+    minPrice: properties.length ? properties.map(p => p.rental_price).reduce((a, b) => Math.min(a, b), Infinity) : 0,
+    maxPrice: properties.length ? properties.map(p => p.rental_price).reduce((a, b) => Math.max(a, b), -Infinity) : 0,
     avgSize: properties.length
       ? Math.round(properties.reduce((sum, p) => sum + p.sqft, 0) / properties.length)
       : 0,

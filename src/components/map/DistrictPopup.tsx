@@ -35,8 +35,8 @@ export function DistrictPopup({ district, properties }: DistrictPopupProps) {
       return acc
     }, {} as Record<string, number>),
     priceRange: {
-      min: properties.length ? Math.min(...properties.map(p => p.rental_price)) : 0,
-      max: properties.length ? Math.max(...properties.map(p => p.rental_price)) : 0
+      min: properties.length ? properties.map(p => p.rental_price).reduce((a, b) => Math.min(a, b), Infinity) : 0,
+      max: properties.length ? properties.map(p => p.rental_price).reduce((a, b) => Math.max(a, b), -Infinity) : 0
     },
     avgSize: properties.length
       ? Math.round(properties.reduce((sum, p) => sum + p.sqft, 0) / properties.length)

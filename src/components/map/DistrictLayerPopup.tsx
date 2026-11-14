@@ -53,8 +53,8 @@ export function DistrictLayerPopup({ district, properties }: DistrictLayerPopupP
       return acc
     }, {} as Record<string, number>),
     priceRange: {
-      min: Math.min(...uniqueProperties.map(p => p.rental_price)),
-      max: Math.max(...uniqueProperties.map(p => p.rental_price))
+      min: uniqueProperties.map(p => p.rental_price).reduce((a, b) => Math.min(a, b), Infinity),
+      max: uniqueProperties.map(p => p.rental_price).reduce((a, b) => Math.max(a, b), -Infinity)
     },
     avgSize: Math.round(
       uniqueProperties.reduce((sum, p) => sum + p.sqft, 0) / uniqueProperties.length
