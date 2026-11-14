@@ -2,7 +2,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Building2, Home, Building } from "lucide-react"
 import { formatPrice } from "@/lib/utils"
 import { cn } from "@/lib/utils"
-import { calcMedian } from "@/lib/utils/district-utils"
+import { calcMedian, calcTypicalRange } from "@/lib/utils/district-utils"
 import type { District } from "@/types/district"
 import type { Property } from "@/types/property"
 
@@ -34,10 +34,7 @@ export function DistrictPopup({ district, properties }: DistrictPopupProps) {
       acc[p.property_type] = (acc[p.property_type] || 0) + 1
       return acc
     }, {} as Record<string, number>),
-    priceRange: {
-      min: properties.length ? Math.min(...properties.map(p => p.rental_price)) : 0,
-      max: properties.length ? Math.max(...properties.map(p => p.rental_price)) : 0
-    },
+    typicalRange: calcTypicalRange(properties.map(p => p.rental_price)),
     avgSize: properties.length
       ? Math.round(properties.reduce((sum, p) => sum + p.sqft, 0) / properties.length)
       : 0
@@ -77,7 +74,7 @@ export function DistrictPopup({ district, properties }: DistrictPopupProps) {
             <div>Average: ${formatPrice(stats.avgPrice)}</div>
             <div>Median: ${formatPrice(stats.medianPrice)}</div>
             <div className="text-muted-foreground">
-              Range: ${formatPrice(stats.priceRange.min)} - ${formatPrice(stats.priceRange.max)}
+              Typical range: ${formatPrice(stats.typicalRange.low)} to ${formatPrice(stats.typicalRange.high)} (middle 98% of rents)
             </div>
           </div>
         </div>

@@ -5,7 +5,7 @@ import type { District } from '@/data/districts/singapore-districts'
 import type { Property } from '@/types/property'
 import { formatPrice } from '@/lib/utils'
 import { cn } from '@/lib/utils'
-import { calcMedian } from '@/lib/utils/district-utils'
+import { calcMedian, calcTypicalRange } from '@/lib/utils/district-utils'
 
 interface DistrictLayerPopupProps {
   district: District
@@ -52,10 +52,8 @@ export function DistrictLayerPopup({ district, properties }: DistrictLayerPopupP
       acc[p.property_type] = (acc[p.property_type] || 0) + 1
       return acc
     }, {} as Record<string, number>),
-    priceRange: {
-      min: Math.min(...uniqueProperties.map(p => p.rental_price)),
-      max: Math.max(...uniqueProperties.map(p => p.rental_price))
-    },
+    // 1st to 99th percentile; the list below already names the extremes
+    typicalRange: calcTypicalRange(uniqueProperties.map(p => p.rental_price)),
     avgSize: Math.round(
       uniqueProperties.reduce((sum, p) => sum + p.sqft, 0) / uniqueProperties.length
     ),
@@ -109,13 +107,13 @@ export function DistrictLayerPopup({ district, properties }: DistrictLayerPopupP
             <div className="font-bold text-primary">${formatPrice(stats.medianPrice)}</div>
             <div className="text-[10px] text-muted-foreground">Median</div>
           </div>
-          <div>
-            <div className="font-bold text-primary">${formatPrice(stats.priceRange.min)}</div>
-            <div className="text-[10px] text-muted-foreground">Min</div>
-          </div>
-          <div>
-            <div className="font-bold text-primary">${formatPrice(stats.priceRange.max)}</div>
-            <div className="text-[10px] text-muted-foreground">Max</div>
+          <div className="col-span-2">
+            <div className="font-bold text-primary">
+              ${formatPrice(stats.typicalRange.low)} to ${formatPrice(stats.typicalRange.high)}
+            </div>
+            <div className="text-[10px] text-muted-foreground">
+              Typical range <span className="opacity-70">· middle 98% of rents</span>
+            </div>
           </div>
         </div>
 

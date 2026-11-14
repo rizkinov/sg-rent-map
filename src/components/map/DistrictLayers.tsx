@@ -4,6 +4,7 @@ import L from 'leaflet'
 import { districtData, type District } from '@/data/districts/singapore-districts'
 import { Property } from '@/types/property'
 import { formatPrice } from '@/lib/utils'
+import { calcTypicalRange } from '@/lib/utils/district-utils'
 import { Building2, Home, Building, Bed, Square } from 'lucide-react'
 import { DistrictLayerPopup } from './DistrictLayerPopup'
 
@@ -30,8 +31,7 @@ function createPopupContent(district: District, properties: Property[]) {
     avgPrice: properties.length
       ? Math.round(properties.reduce((sum, p) => sum + p.rental_price, 0) / properties.length)
       : 0,
-    minPrice: properties.length ? Math.min(...properties.map(p => p.rental_price)) : 0,
-    maxPrice: properties.length ? Math.max(...properties.map(p => p.rental_price)) : 0,
+    typicalRange: calcTypicalRange(properties.map(p => p.rental_price)),
     avgSize: properties.length
       ? Math.round(properties.reduce((sum, p) => sum + p.sqft, 0) / properties.length)
       : 0,
@@ -64,13 +64,9 @@ function createPopupContent(district: District, properties: Property[]) {
             <div class="font-bold text-primary">$${formatPrice(stats.avgPrice)}</div>
             <div class="text-muted-foreground text-[10px]">Average</div>
           </div>
-          <div>
-            <div class="font-bold text-primary">$${formatPrice(stats.minPrice)}</div>
-            <div class="text-muted-foreground text-[10px]">Min</div>
-          </div>
-          <div>
-            <div class="font-bold text-primary">$${formatPrice(stats.maxPrice)}</div>
-            <div class="text-muted-foreground text-[10px]">Max</div>
+          <div class="col-span-2">
+            <div class="font-bold text-primary">$${formatPrice(stats.typicalRange.low)} to $${formatPrice(stats.typicalRange.high)}</div>
+            <div class="text-muted-foreground text-[10px]">Typical range · middle 98% of rents</div>
           </div>
         </div>
 
