@@ -19,7 +19,7 @@
  * Both providers need the map's attribution control. Do not turn it off.
  *
  * maplibre-gl is pinned to 4.7.1, which carries its worker inline. 6.16.0
- * failed under this Next version with "Worker failed to load".
+ * failed under Next 14 with "Worker failed to load" (not retried on 15).
  */
 export const BASEMAP_STYLE = 'https://tiles.openfreemap.org/styles/positron'
 

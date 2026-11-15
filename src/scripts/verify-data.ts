@@ -62,7 +62,8 @@ async function verifyData() {
   console.log('\nValidating CSV data...')
   const csvPath = path.join(process.cwd(), 'src/data/properties_fixed.csv')
   const csvContent = fs.readFileSync(csvPath)
-  const csvRecords = parse(csvContent, { 
+  // csv-parse 7 types rows as unknown unless told; 5 returned any
+  const csvRecords = parse<Record<string, any>>(csvContent, {
     columns: true,
     skip_empty_lines: true,
     trim: true
