@@ -24,29 +24,41 @@ const propertyTypeColors: Record<string, string> = {
 }
 
 export function DistrictPopup({ district, properties }: DistrictPopupProps) {
+  const header = (
+    <div className="space-y-1">
+      <h3 className="font-medium">District {district.id}</h3>
+      <p className="text-sm text-muted-foreground">{district.name}</p>
+    </div>
+  )
+
+  // The filters can leave a district with no rentals; don't show $0 for it
+  if (properties.length === 0) {
+    return (
+      <Card className="min-w-[280px] border-0 shadow-none">
+        <CardContent className="p-4 space-y-4">
+          {header}
+          <p className="text-sm text-muted-foreground">No rentals match your filters</p>
+        </CardContent>
+      </Card>
+    )
+  }
+
   // Calculate live statistics from properties
   const stats = {
-    avgPrice: properties.length
-      ? Math.round(properties.reduce((sum, p) => sum + p.rental_price, 0) / properties.length)
-      : 0,
+    avgPrice: Math.round(properties.reduce((sum, p) => sum + p.rental_price, 0) / properties.length),
     medianPrice: calcMedian(properties.map(p => p.rental_price)),
     propertyTypes: properties.reduce((acc, p) => {
       acc[p.property_type] = (acc[p.property_type] || 0) + 1
       return acc
     }, {} as Record<string, number>),
     typicalRange: calcTypicalRange(properties.map(p => p.rental_price)),
-    avgSize: properties.length
-      ? Math.round(properties.reduce((sum, p) => sum + p.sqft, 0) / properties.length)
-      : 0
+    avgSize: Math.round(properties.reduce((sum, p) => sum + p.sqft, 0) / properties.length)
   }
 
   return (
     <Card className="min-w-[280px] border-0 shadow-none">
       <CardContent className="p-4 space-y-4">
-        <div className="space-y-1">
-          <h3 className="font-medium">District {district.id}</h3>
-          <p className="text-sm text-muted-foreground">{district.name}</p>
-        </div>
+        {header}
 
         {/* Property Types */}
         <div className="space-y-1">

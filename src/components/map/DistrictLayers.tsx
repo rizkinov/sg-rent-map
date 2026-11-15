@@ -26,15 +26,28 @@ const propertyTypeColors: Record<string, string> = {
 }
 
 function createPopupContent(district: District, properties: Property[]) {
+  const header = `
+        <div>
+          <div class="text-sm font-medium">District ${district.id}</div>
+          <div class="text-xs text-muted-foreground">${district.name}</div>
+        </div>`
+
+  // The filters can leave a district with no rentals; don't show $0 for it
+  if (properties.length === 0) {
+    return `
+    <div class="min-w-[250px]">
+      <div class="space-y-3 p-2">${header}
+        <div class="text-xs text-muted-foreground">No rentals match your filters</div>
+      </div>
+    </div>
+  `
+  }
+
   // Calculate stats
   const stats = {
-    avgPrice: properties.length
-      ? Math.round(properties.reduce((sum, p) => sum + p.rental_price, 0) / properties.length)
-      : 0,
+    avgPrice: Math.round(properties.reduce((sum, p) => sum + p.rental_price, 0) / properties.length),
     typicalRange: calcTypicalRange(properties.map(p => p.rental_price)),
-    avgSize: properties.length
-      ? Math.round(properties.reduce((sum, p) => sum + p.sqft, 0) / properties.length)
-      : 0,
+    avgSize: Math.round(properties.reduce((sum, p) => sum + p.sqft, 0) / properties.length),
     typeCounts: properties.reduce((acc, p) => {
       acc[p.property_type] = (acc[p.property_type] || 0) + 1
       return acc
@@ -53,11 +66,7 @@ function createPopupContent(district: District, properties: Property[]) {
 
   return `
     <div class="min-w-[250px]">
-      <div class="space-y-3 p-2">
-        <div>
-          <div class="text-sm font-medium">District ${district.id}</div>
-          <div class="text-xs text-muted-foreground">${district.name}</div>
-        </div>
+      <div class="space-y-3 p-2">${header}
 
         <div class="grid grid-cols-3 gap-2 text-[11px]">
           <div>

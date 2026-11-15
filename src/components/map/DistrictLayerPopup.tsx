@@ -42,11 +42,31 @@ export function DistrictLayerPopup({ district, properties }: DistrictLayerPopupP
     }, new Map<string, Property>())
   ).map(([_, property]) => property)
 
+  const header = (
+    <div className="flex items-center gap-2">
+      <div className="bg-primary text-primary-foreground px-2 py-1 rounded text-sm font-medium">
+        D{district.id}
+      </div>
+      <div className="text-xs text-muted-foreground">{district.name}</div>
+    </div>
+  )
+
+  // The filters can leave a district with no rentals. Say so instead of
+  // averaging nothing ($0, NaN sqft).
+  if (uniqueProperties.length === 0) {
+    return (
+      <Card className="min-w-[280px] border-0 shadow-none font-inter">
+        <CardContent className="p-3 space-y-3">
+          {header}
+          <p className="text-xs text-muted-foreground">No rentals match your filters</p>
+        </CardContent>
+      </Card>
+    )
+  }
+
   // Calculate statistics using unique properties
   const stats = {
-    avgPrice: uniqueProperties.length
-      ? Math.round(uniqueProperties.reduce((sum, p) => sum + p.rental_price, 0) / uniqueProperties.length)
-      : 0,
+    avgPrice: Math.round(uniqueProperties.reduce((sum, p) => sum + p.rental_price, 0) / uniqueProperties.length),
     medianPrice: calcMedian(uniqueProperties.map(p => p.rental_price)),
     propertyTypes: uniqueProperties.reduce((acc, p) => {
       acc[p.property_type] = (acc[p.property_type] || 0) + 1
@@ -90,12 +110,7 @@ export function DistrictLayerPopup({ district, properties }: DistrictLayerPopupP
     <Card className="min-w-[280px] border-0 shadow-none font-inter">
       <CardContent className="p-3 space-y-3">
         {/* Header with styled district number */}
-        <div className="flex items-center gap-2">
-          <div className="bg-primary text-primary-foreground px-2 py-1 rounded text-sm font-medium">
-            D{district.id}
-          </div>
-          <div className="text-xs text-muted-foreground">{district.name}</div>
-        </div>
+        {header}
 
         {/* Price Stats */}
         <div className="grid grid-cols-2 gap-2">
